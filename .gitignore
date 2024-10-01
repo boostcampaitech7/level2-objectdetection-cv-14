@@ -22,3 +22,6 @@ __pycache__
 
 # output 제외
 sample_submission/
+
+# baseline code 제외
+*.ipynb
