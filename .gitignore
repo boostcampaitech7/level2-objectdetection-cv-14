@@ -1,0 +1,27 @@
+# 데이터 제외
+*.csv
+*.png
+*.jpg
+*.jpeg
+*.json
+
+# 모델 checkpoint 제외
+*.pt
+*.pkl
+*.pth
+
+# python cache 제외
+__pycache__
+*.pyc
+*.pyd
+
+# editor settings
+.idea
+.vscode
+.DS_Store
+
+# output 제외
+sample_submission/
+
+# baseline code 제외
+*.ipynb
