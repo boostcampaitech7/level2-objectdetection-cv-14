@@ -21,6 +21,44 @@
     </tr>
 </table>
 
+<br/>
+
+# 📋 Project Overview
+
+![project_image](https://github.com/user-attachments/assets/a15ac710-0ed3-496b-9e86-00213727cde5)
+
+바야흐로 대량 생산, 대량 소비의 시대. 우리는 많은 물건이 대량으로 생산되고, 소비되는 시대를 살고 있습니다. 하지만 이러한 문화는 '쓰레기 대란', '매립지 부족'과 같은 여러 사회 문제를 낳고 있습니다.
+
+분리수거는 이러한 환경 부담을 줄일 수 있는 방법 중 하나입니다. 잘 분리배출 된 쓰레기는 자원으로서 가치를 인정받아 재활용되지만, 잘못 분리배출 되면 그대로 폐기물로 분류되어 매립 또는 소각되기 때문입니다.
+
+따라서 우리는 사진에서 쓰레기를 Detection 하는 모델을 만들어 이러한 문제점을 해결해보고자 합니다.
+
+- 입력
+  - **쓰레기 객체가 담긴 이미지, bbox 정보(좌표, 카테고리)**
+  - bbox annotation은 **COCO format**
+- 출력
+  - **bbox 좌표, 카테고리, score** 값을 리턴.
+  - submission 양식에 맞게 csv 파일을 만들어 제출
+  - COCO format이 아닌 **Pascal VOC format**
+
+<br/>
+
+# 🗃️ Dataset
+
+- 전체 이미지
+  - **9754 images**
+  - train
+    - **4883 images**
+  - test
+    - **4871 images**
+- 클래스 수
+  - **10 class**
+  - General trash, Paper, Paper pack, Metal, Glass, Plastic, Styrofoam, Plastic bag, Battery, Clothing
+- 이미지 크기
+  - **1024 x 1024**
+
+<br/>
+
 ## Commit Convention
 
 1. `Feature` : **새로운 기능 추가**
@@ -35,7 +73,7 @@
 
 ### 예시
 
-> `git commit -m "[#issue] Feature : message content"`
+- `git commit -m "[#issue] Feature : message content"`
 
 커밋할 때 상세 내용을 작성해야 한다면 아래와 같이 진행합니다.
 
@@ -47,11 +85,13 @@
 > . **(한 줄 비워야 함)**  
 > 상세 내용
 
+<br/>
+
 ## Branch Naming Convention
 
 브랜치를 새롭게 만들 때, 브랜치 이름은 항상 위 `Commit Convention`의 Header와 함께 작성되어야 합니다.
 
 ### 예시
 
-> `Feature/haru`  
-> `Refactor/haru`
+- `Feature/~~~`
+- `Refactor/~~~`
