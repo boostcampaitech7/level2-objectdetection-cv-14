@@ -1,4 +1,7 @@
 # 모듈 import
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from mmengine.config import Config
 # from mmcv import Config
 from mmdet.datasets import build_dataset
@@ -7,14 +10,16 @@ from mmdet.apis import train_detector
 from mmdet.datasets import (build_dataloader, build_dataset,
                             replace_ImageToTensor)
 from mmdet.utils import get_device
+from mmdet.utils.Gsheet import Gsheet_param
+
 
 classes = ("General trash", "Paper", "Paper pack", "Metal", "Glass",
            "Plastic", "Styrofoam", "Plastic bag", "Battery", "Clothing")
 
 # config file 들고오기
-cfg = Config.fromfile('./configs/faster_rcnn/faster_rcnn_r50_fpn_1x_coco.py')
+cfg = Config.fromfile('../configs/faster_rcnn/faster_rcnn_r50_fpn_1x_coco.py')
 
-root = '../dataset/'
+root = '/data/ephemeral/home/level2-objectdetection-cv-14/dataset/'
 
 # dataset config 수정
 cfg.data.train.classes = classes
@@ -47,3 +52,6 @@ model = build_detector(cfg.model)
 model.init_weights()
 
 train_detector(model, datasets[0], cfg, distributed=False, validate=False)
+
+Gsheet_param(cfg)
+
