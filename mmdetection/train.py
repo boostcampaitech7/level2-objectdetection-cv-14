@@ -10,11 +10,7 @@ from mmdet.datasets import (build_dataloader, build_dataset,
 from mmdet.utils import get_device
 import argparse
 
-classes = ("General trash", "Paper", "Paper pack", "Metal", "Glass",
-           "Plastic", "Styrofoam", "Plastic bag", "Battery", "Clothing")
-
 # config file 들고오기
-
 parser = argparse.ArgumentParser()
 
 # config 파일 경로
@@ -30,6 +26,9 @@ parser.add_argument('-o', '--output', help='output file path')
 args = parser.parse_args()
 if args.output is None:
     args.output = os.path.join("./work_dirs", os.path.split(args.config)[1][:-3])
+
+classes = ("General trash", "Paper", "Paper pack", "Metal", "Glass",
+           "Plastic", "Styrofoam", "Plastic bag", "Battery", "Clothing")
 
 cfg = Config.fromfile(args.config)
 
