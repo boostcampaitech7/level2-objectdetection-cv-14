@@ -7,24 +7,35 @@ from mmdet.apis import train_detector
 from mmdet.datasets import (build_dataloader, build_dataset,
                             replace_ImageToTensor)
 from mmdet.utils import get_device
+import argparse
 
 classes = ("General trash", "Paper", "Paper pack", "Metal", "Glass",
            "Plastic", "Styrofoam", "Plastic bag", "Battery", "Clothing")
 
 # config file 들고오기
-cfg = Config.fromfile('./configs/faster_rcnn/faster_rcnn_r50_fpn_1x_coco.py')
 
-root = '../../../dataset/'
+parser = argparse.ArgumentParser()
+
+# config 파일 경로
+parser.add_argument('config', help='train config file path')
+
+# dataset 파일 경로
+parser.add_argument('--dataset', help='data file path', default='../../../dataset/')
+
+# 인자 받기
+args = parser.parse_args()
+
+cfg = Config.fromfile(args.config)
 
 # dataset config 수정
 cfg.data.train.classes = classes
-cfg.data.train.img_prefix = root
-cfg.data.train.ann_file = root + 'train.json'  # train json 정보
+cfg.data.train.img_prefix = args.dataset
+cfg.data.train.ann_file = args.dataset + 'train.json'  # train json 정보
 cfg.data.train.pipeline[2]['img_scale'] = (512, 512)  # Resize
 
 cfg.data.test.classes = classes
-cfg.data.test.img_prefix = root
-cfg.data.test.ann_file = root + 'test.json'  # test json 정보
+cfg.data.test.img_prefix = args.dataset
+cfg.data.test.ann_file = args.dataset + 'test.json'  # test json 정보
 cfg.data.test.pipeline[1]['img_scale'] = (512, 512)  # Resize
 
 cfg.data.samples_per_gpu = 4
