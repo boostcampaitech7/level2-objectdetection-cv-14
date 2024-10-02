@@ -1,3 +1,4 @@
+import os
 # 모듈 import
 from mmengine.config import Config
 # from mmcv import Config
@@ -20,10 +21,15 @@ parser = argparse.ArgumentParser()
 parser.add_argument('config', help='train config file path')
 
 # dataset 파일 경로
-parser.add_argument('--dataset', help='data file path', default='../../../dataset/')
+parser.add_argument('-d', '--dataset', help='data file path', default='../../../dataset/')
+
+# 결과 저장 경로
+parser.add_argument('-o', '--output', help='output file path')
 
 # 인자 받기
 args = parser.parse_args()
+if args.output is None:
+    args.output = os.path.join("./work_dirs", os.path.split(args.config)[1][:-3])
 
 cfg = Config.fromfile(args.config)
 
@@ -42,7 +48,7 @@ cfg.data.samples_per_gpu = 4
 
 cfg.seed = 2022
 cfg.gpu_ids = [0]
-cfg.work_dir = './work_dirs/faster_rcnn_r50_fpn_1x_trash'
+cfg.work_dir = args.output
 
 cfg.model.roi_head.bbox_head.num_classes = 10
 
