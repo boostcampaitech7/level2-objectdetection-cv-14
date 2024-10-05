@@ -16,12 +16,12 @@ from detectron2.data import build_detection_test_loader, build_detection_train_l
 
 # Register Dataset
 try:
-    register_coco_instances('coco_trash_train', {}, '../../dataset/train.json', '../../dataset/')
+    register_coco_instances('coco_trash_train', {}, '../dataset/train.json', '../dataset/')
 except AssertionError:
     pass
 
 try:
-    register_coco_instances('coco_trash_test', {}, '../../dataset/test.json', '../../dataset/')
+    register_coco_instances('coco_trash_test', {}, '../dataset/test.json', '../dataset/')
 except AssertionError:
     pass
 
