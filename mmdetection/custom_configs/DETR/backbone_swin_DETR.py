@@ -28,5 +28,5 @@ model = dict(
 )
 
 # learning policy
-lr_config = dict(policy='step', step=[10, 15])
+lr_config = dict(policy='step', step=[5, 10, 15])
 runner = dict(max_epochs=30)
