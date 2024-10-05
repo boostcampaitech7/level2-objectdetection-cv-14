@@ -36,10 +36,12 @@ test_pipeline = [
 data = dict(
     train=dict(
         ann_file=data_root + 'train.json',
-        img_prefix=data_root),
+        img_prefix=data_root,
+        pipeline=train_pipeline),
     test=dict(
         ann_file=data_root + 'test.json',
-        img_prefix=data_root))
+        img_prefix=data_root,
+        pipeline=test_pipeline))
 
 
 # model 관련 class 개수 수정
