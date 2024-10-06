@@ -13,7 +13,10 @@ data = dict(
 
 model = dict(
     bbox_head=dict(
-        num_classes=10
+        num_classes=10,
+        # box refine 기능 추가
+        # 모든 디코더 레이어에서 바운딩 박스를 정제하는 기능
+        with_box_refine=True
     ),
     init_cfg=dict(
         type="Pretrained",
