@@ -16,12 +16,15 @@ model = dict(
         num_classes=10,
         # box refine 기능 추가
         # 모든 디코더 레이어에서 바운딩 박스를 정제하는 기능
-        with_box_refine=True
+        with_box_refine=True,
+        as_two_stage=True
     ),
     init_cfg=dict(
         type="Pretrained",
+        checkpoint="https://download.openmmlab.com/mmdetection/v2.0/deformable_detr/deformable_detr_twostage_refine_r50_16x2_50e_coco/deformable_detr_twostage_refine_r50_16x2_50e_coco_20210419_220613-9d28ab72.pth"
+        
         # box refinement feature added model
-        checkpoint="https://download.openmmlab.com/mmdetection/v2.0/deformable_detr/deformable_detr_refine_r50_16x2_50e_coco/deformable_detr_refine_r50_16x2_50e_coco_20210419_220503-5f5dff21.pth"
+        # checkpoint="https://download.openmmlab.com/mmdetection/v2.0/deformable_detr/deformable_detr_refine_r50_16x2_50e_coco/deformable_detr_refine_r50_16x2_50e_coco_20210419_220503-5f5dff21.pth"
 
         # Basic Deformable DETR
         # checkpoint="https://download.openmmlab.com/mmdetection/v2.0/deformable_detr/deformable_detr_r50_16x2_50e_coco/deformable_detr_r50_16x2_50e_coco_20210419_220030-a12b9512.pth"
