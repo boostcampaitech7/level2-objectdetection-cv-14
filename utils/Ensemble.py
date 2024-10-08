@@ -5,7 +5,7 @@ from tqdm import tqdm
 from ensemble_boxes import *
 
 def main() : 
-    csv_files = [ ]  # 필수 ! Ensemble을 진행할 csv file 경로 입력
+    csv_files = [ ]  # Ensemble을 진행할 csv file 경로 입력
     combined_df = [pd.read_csv(f) for f in csv_files]
 
     image_ids = combined_df[0]['image_id'].tolist()
@@ -48,19 +48,19 @@ def main() :
         if len(boxes_list) :
             
             # NMS
-            # boxes, scores, labels = nms(boxes_list, scores_list, labels_list, iou_thr=iou_thr)
+            #boxes, scores, labels = nms(boxes_list, scores_list, labels_list, iou_thr=iou_thr)
             
             # Soft_NMS
-            # boxes, scores, labels = soft_nms(box_list, scores_list, labels_list, iou_thr=iou_thr)
+            #boxes, scores, labels = soft_nms(boxes_list, scores_list, labels_list, iou_thr=iou_thr)
 
             # WBF
-            boxes, scores, labels = weighted_boxes_fusion(boxes_list, scores_list, labels_list, iou_thr=iou_thr)
+            #boxes, scores, labels = weighted_boxes_fusion(boxes_list, scores_list, labels_list, iou_thr=iou_thr)
 
             # WBF with box_and_model_avg
-            # boxes, scores, labels = weighted_boxes_fusion(boxes_list, scores_list, labels_list, iou_thr=iou_thr, conf_type='box_and_model_avg')
+            boxes, scores, labels = weighted_boxes_fusion(boxes_list, scores_list, labels_list, iou_thr=iou_thr, conf_type='box_and_model_avg')
             
             # NMW
-            # boxes, scores, labels = non_maximum_weighted(boxes_list, scores_list, labels_list, iou_thr=iou_thr)
+            #boxes, scores, labels = non_maximum_weighted(boxes_list, scores_list, labels_list, iou_thr=iou_thr)
             
             for box, score, label in zip(boxes, scores, labels) :
                 prediction_string += str(int(label)) + ' ' + str(score) + ' ' + str(box[0] * img_width) + ' ' + str(box[1] * img_height) + ' ' + str(box[2] * img_width) + ' ' + str(box[3] * img_height) + ' '
@@ -72,7 +72,7 @@ def main() :
     submission['PredictionString'] = prediction_strings
     submission['image_id'] = file_names
 
-    # 필수 ! csv file 경로 입력
+    # csv file 경로 입력
     save_dir = ''
 
     submission.to_csv(os.path.join(save_dir, 'ensemble.csv'), index=False)
