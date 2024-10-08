@@ -25,6 +25,7 @@ category_names = [category_map[ann['category_id']] for ann in annotations]
 iscrowd_flags = [ann['iscrowd'] for ann in annotations]
 areas = [ann['area'] for ann in annotations]
 
+
 # DataFrame 생성
 df = pd.DataFrame({
     'bbox': bbox_data,

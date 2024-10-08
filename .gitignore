@@ -24,4 +24,6 @@ __pycache__
 sample_submission/
 
 # baseline code 제외
-*.ipynb
+#*.ipynb
+.ipynb_checkpoints/
+
