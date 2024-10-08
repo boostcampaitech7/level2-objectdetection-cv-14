@@ -5,8 +5,8 @@ from tqdm import tqdm
 from ensemble_boxes import *
 
 def main() : 
-    csv_files = [ ]  # Ensemble을 진행할 csv file 경로 입력
-    combined_df = [pd.read_csv() for f in csv_files]
+    csv_files = [ ]  # 필수 ! Ensemble을 진행할 csv file 경로 입력
+    combined_df = [pd.read_csv(f) for f in csv_files]
 
     image_ids = combined_df[0]['image_id'].tolist()
     assert len(image_ids) == 4871
@@ -17,7 +17,7 @@ def main() :
     img_width, img_height = 1024, 1024
 
     for i, image_id in tqdm(enumerate(image_ids), total=len(image_ids)) :
-        predict_string = ''
+        prediction_string = ''
         boxes_list = []
         scores_list = []
         labels_list = []
@@ -72,7 +72,7 @@ def main() :
     submission['PredictionString'] = prediction_strings
     submission['image_id'] = file_names
 
-    # csv file 경로 입력
+    # 필수 ! csv file 경로 입력
     save_dir = ''
 
     submission.to_csv(os.path.join(save_dir, 'ensemble.csv'), index=False)
