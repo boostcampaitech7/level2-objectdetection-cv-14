@@ -74,18 +74,18 @@ def main():
             "annotations" : [data['annotations'][idx] for idx in val_idx]
         }
 
-        # /data/ephemeral/home/dataset/sgkf
-        basic_path = os.path.join(os.path.split(annotation)[0], "sgkf")
+        # /data/ephemeral/home/dataset/sgkf_kfold_seed
+        basic_path = os.path.join(os.path.split(annotation)[0], f"sgkf_{args.kfold}_{args.seed}")
 
         if not os.path.exists(basic_path):
             os.mkdir(basic_path)
 
-        # /data/ephemeral/home/dataset/sgkf/train_1fold.json
+        # /data/ephemeral/home/dataset/sgkf_kfold_seed/train_1fold.json
         train_path = os.path.join(basic_path, f"train_{fold_ind}fold.json")
         with open(train_path, "w") as f:
             json.dump(train_data, f, indent=4)
         
-        # /data/ephemeral/home/dataset/sgkf/val_1fold.json
+        # /data/ephemeral/home/dataset/sgkf_kfold_seed/val_1fold.json
         val_path = os.path.join(basic_path, f"val_{fold_ind}fold.json")
         with open(val_path, "w") as f:
             json.dump(val_data, f, indent=4)
