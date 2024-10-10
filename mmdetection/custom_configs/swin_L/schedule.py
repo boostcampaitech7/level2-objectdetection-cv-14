@@ -2,7 +2,7 @@ optimizer_config = dict(grad_clip=None)
 
 optimizer = dict(
     type='AdamW',
-    lr=1e-4,
+    lr=0.00005,
     betas=(0.9, 0.999),
     weight_decay=0.05,
     paramwise_cfg=dict(
@@ -14,12 +14,13 @@ optimizer = dict(
         )
     )
 
-# learning policy
 lr_config = dict(
     policy='step',
     warmup='linear',
-    warmup_iters=1000,
+    warmup_iters=500,
     warmup_ratio=0.001,
-    step=5,
-    gamma=0.6)
+    step=[2, 5, 8, 11],
+    gamma=0.5
+)
+
 runner = dict(type='EpochBasedRunner', max_epochs=36)

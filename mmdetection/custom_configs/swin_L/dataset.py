@@ -38,17 +38,18 @@ data = dict(
     workers_per_gpu=2,
     train=dict(
         type=dataset_type,
-        ann_file=data_root + 'annotations/instances_train2017.json',
-        img_prefix=data_root + 'train2017/',
+        ann_file=data_root + 'sgkf_5_14/train_1fold.json',
+        img_prefix=data_root,
         pipeline=train_pipeline),
     val=dict(
         type=dataset_type,
-        ann_file=data_root + 'annotations/instances_val2017.json',
-        img_prefix=data_root + 'val2017/',
+        ann_file=data_root + 'sgkf_5_14/val_1fold.json',
+        img_prefix=data_root,
         pipeline=test_pipeline),
     test=dict(
         type=dataset_type,
-        ann_file=data_root + 'annotations/instances_val2017.json',
-        img_prefix=data_root + 'val2017/',
+        ann_file=data_root + 'test.json',
+        img_prefix=data_root ,
         pipeline=test_pipeline))
+
 evaluation = dict(interval=1, metric='bbox', save_best='bbox_mAP_50')

@@ -5,12 +5,12 @@ _base_ = [
 ]
 
 # 총 epochs 사이즈
-runner = dict(max_epochs=20)
+runner = dict(max_epochs=12)
 
 # samples_per_gpu -> batch size라 생각하면 됨
 data = dict(
     samples_per_gpu=3,
-    workers_per_gpu=2)
+    workers_per_gpu=8)
 
 checkpoint_config = dict(interval=-1)
 
