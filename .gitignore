@@ -25,3 +25,6 @@ sample_submission/
 
 # baseline code 제외
 *.ipynb
+
+# EDA 폴더 내부 ipynb파일 제외
+!EDA_data/*.ipynb
