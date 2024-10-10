@@ -18,7 +18,7 @@ from detectron2.data import build_detection_test_loader
 
 # Register Dataset
 try:
-    register_coco_instances('coco_trash_test', {}, '../../dataset/test.json', '../../dataset/')
+    register_coco_instances('coco_trash_test', {}, '../dataset/test.json', '../dataset/')
 except AssertionError:
     pass
 
@@ -78,7 +78,7 @@ for data in tqdm(test_loader):
         + str(box[1]) + ' ' + str(box[2]) + ' ' + str(box[3]) + ' ')
     
     prediction_strings.append(prediction_string)
-    file_names.append(data['file_name'].replace('../../dataset/',''))
+    file_names.append(data['file_name'].replace('../dataset/',''))
 
 submission = pd.DataFrame()
 submission['PredictionString'] = prediction_strings
