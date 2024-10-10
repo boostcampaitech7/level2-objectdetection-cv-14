@@ -31,18 +31,11 @@ cfg = Config.fromfile(args.config)
 
 # dataset config 수정
 cfg.data.train.classes = classes
-cfg.data.train.pipeline[2]['img_scale'] = (512, 512)  # Resize
-
 cfg.data.test.classes = classes
-cfg.data.test.pipeline[1]['img_scale'] = (512, 512)  # Resize
-
-cfg.data.samples_per_gpu = 4
 
 cfg.seed = 2022
 cfg.gpu_ids = [0]
 cfg.work_dir = args.output
-
-cfg.model.roi_head.bbox_head.num_classes = 10
 
 cfg.optimizer_config.grad_clip = dict(max_norm=35, norm_type=2)
 cfg.checkpoint_config = dict(max_keep_ckpts=3, interval=1)
