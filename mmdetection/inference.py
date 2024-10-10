@@ -19,9 +19,6 @@ parser = argparse.ArgumentParser()
 # config 파일 경로
 parser.add_argument('config', help='test config file path')
 
-# dataset 파일 경로
-parser.add_argument('-d', '--dataset', help='test data file path', default='../../../dataset/')
-
 # 결과 저장 경로
 parser.add_argument('-o', '--output', help='output file path')
 
@@ -40,20 +37,12 @@ epoch = 'latest'
 
 # dataset config 수정
 cfg.data.test.classes = classes
-cfg.data.test.img_prefix = args.dataset
-cfg.data.test.ann_file = args.dataset + 'test.json'
-cfg.data.test.pipeline[1]['img_scale'] = (512,512) # Resize
 cfg.data.test.test_mode = True
 
-cfg.data.samples_per_gpu = 4
-
-cfg.seed=2021
+cfg.seed=2024
 cfg.gpu_ids = [1]
 cfg.work_dir = args.output
 
-cfg.model.roi_head.bbox_head.num_classes = 10
-
-cfg.optimizer_config.grad_clip = dict(max_norm=35, norm_type=2)
 cfg.model.train_cfg = None
 
 # build dataset & dataloader
