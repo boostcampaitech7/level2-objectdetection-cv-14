@@ -11,33 +11,40 @@ import pandas as pd
 from pandas import DataFrame
 from pycocotools.coco import COCO
 import numpy as np
+import argparse
+
+# config file 들고오기
+parser = argparse.ArgumentParser()
+
+# config 파일 경로
+parser.add_argument('config', help='test config file path')
+
+# 결과 저장 경로
+parser.add_argument('-o', '--output', help='output file path')
+
+# 인자 받기
+args = parser.parse_args()
+if args.output is None:
+    args.output = os.path.join("./work_dirs", os.path.split(args.config)[1][:-3])
 
 classes = ("General trash", "Paper", "Paper pack", "Metal", "Glass", 
            "Plastic", "Styrofoam", "Plastic bag", "Battery", "Clothing")
 
 # config file 들고오기
-cfg = Config.fromfile('./configs/faster_rcnn/faster_rcnn_r50_fpn_1x_coco.py')
-
-root='../dataset/'
+cfg = Config.fromfile(args.config)
 
 epoch = 'latest'
 
 # dataset config 수정
 cfg.data.test.classes = classes
-cfg.data.test.img_prefix = root
-cfg.data.test.ann_file = root + 'test.json'
-cfg.data.test.pipeline[1]['img_scale'] = (512,512) # Resize
 cfg.data.test.test_mode = True
 
 cfg.data.samples_per_gpu = 4
 
-cfg.seed=2021
+cfg.seed=2024
 cfg.gpu_ids = [1]
-cfg.work_dir = './work_dirs/faster_rcnn_r50_fpn_1x_trash'
+cfg.work_dir = args.output
 
-cfg.model.roi_head.bbox_head.num_classes = 10
-
-cfg.optimizer_config.grad_clip = dict(max_norm=35, norm_type=2)
 cfg.model.train_cfg = None
 
 # build dataset & dataloader
