@@ -39,6 +39,8 @@ epoch = 'latest'
 cfg.data.test.classes = classes
 cfg.data.test.test_mode = True
 
+cfg.data.samples_per_gpu = 4
+
 cfg.seed=2024
 cfg.gpu_ids = [1]
 cfg.work_dir = args.output
