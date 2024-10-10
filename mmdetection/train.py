@@ -16,9 +16,6 @@ parser = argparse.ArgumentParser()
 # config 파일 경로
 parser.add_argument('config', help='train config file path')
 
-# dataset 파일 경로
-parser.add_argument('-d', '--dataset', help='data file path', default='../../../dataset/')
-
 # 결과 저장 경로
 parser.add_argument('-o', '--output', help='output file path')
 
@@ -34,13 +31,9 @@ cfg = Config.fromfile(args.config)
 
 # dataset config 수정
 cfg.data.train.classes = classes
-cfg.data.train.img_prefix = args.dataset
-cfg.data.train.ann_file = args.dataset + 'train.json'  # train json 정보
 cfg.data.train.pipeline[2]['img_scale'] = (512, 512)  # Resize
 
 cfg.data.test.classes = classes
-cfg.data.test.img_prefix = args.dataset
-cfg.data.test.ann_file = args.dataset + 'test.json'  # test json 정보
 cfg.data.test.pipeline[1]['img_scale'] = (512, 512)  # Resize
 
 cfg.data.samples_per_gpu = 4
