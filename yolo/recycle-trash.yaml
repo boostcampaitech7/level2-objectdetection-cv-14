@@ -1,5 +1,5 @@
-train: ../recycle_trash_dataset/train/images/
-val: ../recycle_trash_dataset/valid/images/
+train: ./recycle_trash_dataset/train/images/
+val: ./recycle_trash_dataset/valid/images/
 
 names:
   0: General trash
