@@ -1,8 +1,9 @@
+import os
+import json
 import gspread
 from gspread.exceptions import WorksheetNotFound
-import json
+from gspread_formatting import *
 from dotenv import dotenv_values
-import os
 
 # json 파일이 위치한 경로를 값으로 줘야 합니다.
 def Gsheet_param(cfg, output_dir):
@@ -63,11 +64,9 @@ def Gsheet_param(cfg, output_dir):
     #=================================================================================================================#
 
     params = [param_dict[k] for k in param_dict]
-    print(params)
 
     cols = [k.capitalize() for k in param_dict]
     cols[0] = 'Model'
-    print(cols)
     
     try:
         # 워크시트가 있는지 확인
@@ -76,6 +75,23 @@ def Gsheet_param(cfg, output_dir):
         # 워크시트가 없으면 새로 생성
         worksheet = doc.add_worksheet(title=param_dict['worksheet_name'], rows="1000", cols="30")
         worksheet.append_rows([cols])
+
+        header_formatter = CellFormat(
+            backgroundColor=Color(0.9, 0.9, 0.9),
+            textFormat=TextFormat(bold=True, fontSize=12),
+            horizontalAlignment='CENTER',
+        )
+        
+        header_range = f"A1:{chr(ord('A') + len(cols) - 1)}1"
+
+        format_cell_range(worksheet, header_range, header_formatter)
+
+        for idx, header in enumerate(cols):
+            column_letter = chr(ord('A') + idx) 
+            if idx == 0:
+                header = param_dict['worksheet_name']
+            width = max((len(header) + 2) * 10, 70)
+            set_column_width(worksheet, column_letter, width)
 
         print(f"'{param_dict['worksheet_name']}' 워크시트가 생성되었습니다.")
 
