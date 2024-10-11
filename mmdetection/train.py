@@ -56,4 +56,4 @@ model.init_weights()
 
 train_detector(model, datasets[0], cfg, distributed=False, validate=args.validation)
 
-Gsheet_param(cfg)
+Gsheet_param(cfg, args.output)

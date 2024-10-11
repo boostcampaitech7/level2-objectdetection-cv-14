@@ -5,12 +5,13 @@ from dotenv import dotenv_values
 import os
 
 # json 파일이 위치한 경로를 값으로 줘야 합니다.
-def Gsheet_param(cfg):
+def Gsheet_param(cfg, output_dir):
+    # env 파일 불러오기
     env_path = "/data/ephemeral/home/dataset/.env"
     env = dotenv_values(env_path)
 
     # train log 파일 경로 설정
-    log_file_path = "JYP/level2-objectdetection-cv-14/mmdetection/work_dirs/swin_v4.log.json"
+    log_file_path = os.path.join(output_dir, "None.log.json")
 
     # 서비스 연결
     gc = gspread.service_account(env['JSON_PATH'])
@@ -24,17 +25,24 @@ def Gsheet_param(cfg):
     # Samples per GPU
     samples_per_gpu = cfg['data']['samples_per_gpu']
 
-    # Loss 정보
-    # rpn_cls_loss = cfg['model']['rpn_head']['loss_cls']['type']
-    # rpn_bbox_loss = cfg['model']['rpn_head']['loss_bbox']['type']
-    # roi_cls_loss = cfg['model']['roi_head']['bbox_head']['loss_cls']['type']
-    # roi_bbox_loss = cfg['model']['roi_head']['bbox_head']['loss_bbox']['type']
-
     # Optimizer 정보
     optimizer = cfg['optimizer']['type']
 
-    # Learning rate
+    # Learning data
     learning_rate = cfg['optimizer']['lr']
+    weight_decay = cfg['optimizer']['weight_decay']
+
+    # train시 image scale
+    for pipe in cfg['train_pipeline']:
+        if pipe['type'] == "Resize":
+            img_scale = pipe['img_scale']
+            break
+
+
+    # scheduler
+    scheduler = cfg['lr_config']['policy']
+    lr_step = cfg['lr_config']['step']
+    lr_gamma = cfg['lr_config']['gamma']
 
     # Epoch
     epochs = cfg['runner']['max_epochs']
