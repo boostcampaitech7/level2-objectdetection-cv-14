@@ -8,6 +8,7 @@ from mmdet.apis import train_detector
 from mmdet.datasets import (build_dataloader, build_dataset,
                             replace_ImageToTensor)
 from mmdet.utils import get_device
+from mmdet.utils.Gsheet import Gsheet_param
 import argparse
 
 # config file 들고오기
@@ -49,7 +50,7 @@ cfg.seed = 2022
 cfg.gpu_ids = [0]
 cfg.work_dir = args.output
 
-cfg.model.roi_head.bbox_head.num_classes = 10
+# cfg.model.roi_head.bbox_head.num_classes = 10
 
 cfg.optimizer_config.grad_clip = dict(max_norm=35, norm_type=2)
 cfg.checkpoint_config = dict(max_keep_ckpts=3, interval=1)
@@ -62,4 +63,6 @@ datasets = [build_dataset(cfg.data.train)]
 model = build_detector(cfg.model)
 model.init_weights()
 
-train_detector(model, datasets[0], cfg, distributed=False, validate=False)
+# train_detector(model, datasets[0], cfg, distributed=False, validate=False)
+
+Gsheet_param(cfg)
