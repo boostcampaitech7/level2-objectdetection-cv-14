@@ -1,20 +1,22 @@
 import gspread
 from gspread.exceptions import WorksheetNotFound
 import json
+from dotenv import dotenv_values
 import os
 
 # json 파일이 위치한 경로를 값으로 줘야 합니다.
 def Gsheet_param(cfg):
-    # level2-objectdetection-cv-14-bde074188a7e.json 파일 경로 설정
-    json_file_path = "/data/ephemeral/level2-objectdetection-cv-14-bde074188a7e.json"
+    env_path = "/data/ephemeral/home/dataset/.env"
+    env = dotenv_values(env_path)
 
     # train log 파일 경로 설정
     log_file_path = "JYP/level2-objectdetection-cv-14/mmdetection/work_dirs/swin_v4.log.json"
 
-    gc = gspread.service_account(json_file_path)
-    spreadsheet_url = "https://docs.google.com/spreadsheets/d/1ElPQJ4cm0pka6ilYtxyynCzT80zLOryZhOnHDH2dWIc/edit?gid=0#gid=0"
-    doc = gc.open_by_url(spreadsheet_url)
+    # 서비스 연결
+    gc = gspread.service_account(env['JSON_PATH'])
 
+    # url에 따른 spread sheet 열기
+    doc = gc.open_by_url(env['URL'])
 
     # model type
     worksheet_name = cfg['model']['type']
