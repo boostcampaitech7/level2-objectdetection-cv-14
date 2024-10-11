@@ -3,16 +3,22 @@ _base_ = "../../configs/deformable_detr/deformable_detr_r50_16x2_50e_coco.py"
 # data 관련 부분 수정
 data_root = "../../../dataset/"
 
+classes = ("General trash", "Paper", "Paper pack", "Metal", "Glass", 
+           "Plastic", "Styrofoam", "Plastic bag", "Battery", "Clothing")
+
 data = dict(
     train=dict(
         ann_file=data_root + 'sgkf/train_1fold.json',
-        img_prefix=data_root),
+        img_prefix=data_root,
+        classes = classes),
     val=dict(
         ann_file=data_root + 'sgkf/val_1fold.json',
-        img_prefix=data_root),
+        img_prefix=data_root,
+        classes = classes),
     test=dict(
-        ann_file=data_root + 'test.json',
-        img_prefix=data_root))
+        ann_file=data_root + 'sgkf/val_1fold.json',
+        img_prefix=data_root,
+        classes = classes))
 
 model = dict(
     backbone=dict(
