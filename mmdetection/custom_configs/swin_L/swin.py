@@ -5,7 +5,7 @@ _base_ = [
 ]
 
 # 총 epochs 사이즈
-runner = dict(max_epochs=12)
+#runner = dict(max_epochs=12)
 
 # samples_per_gpu -> batch size라 생각하면 됨
 data = dict(
