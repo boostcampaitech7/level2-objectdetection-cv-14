@@ -9,8 +9,8 @@ runner = dict(max_epochs=12)
 
 # samples_per_gpu -> batch size라 생각하면 됨
 data = dict(
-    samples_per_gpu=3,
-    workers_per_gpu=8)
+    samples_per_gpu=1,
+    workers_per_gpu=4)
 
 checkpoint_config = dict(interval=-1)
 
@@ -100,7 +100,7 @@ model = dict(
         nms_pre=1000,
         min_bbox_size=0,
         score_thr=0.05,
-        nms=dict(type='nms', iou_threshold=0.5),
+        nms=dict(type='nms', iou_threshold=0.6),
         max_per_img=100))
 
 find_unused_parameters = True
