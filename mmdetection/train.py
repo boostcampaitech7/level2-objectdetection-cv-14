@@ -8,6 +8,7 @@ from mmdet.apis import train_detector
 from mmdet.datasets import (build_dataloader, build_dataset,
                             replace_ImageToTensor)
 from mmdet.utils import get_device
+from mmdet.utils.Gsheet import Gsheet_param
 import argparse
 
 # config file 들고오기
@@ -54,3 +55,5 @@ model = build_detector(cfg.model)
 model.init_weights()
 
 train_detector(model, datasets[0], cfg, distributed=False, validate=args.validation)
+
+Gsheet_param(cfg)
