@@ -19,33 +19,33 @@ def Gsheet_param(cfg, output_dir):
     # url에 따른 spread sheet 열기
     doc = gc.open_by_url(env['URL'])
 
+    # 저장할 변수 dict 선언
+    param_dict = dict()
     # model type
-    worksheet_name = cfg['model']['type']
+    param_dict['worksheet_name'] = cfg['model']['type']
     
     # Samples per GPU
-    samples_per_gpu = cfg['data']['samples_per_gpu']
+    param_dict['samples_per_gpu'] = cfg['data']['samples_per_gpu']
 
     # Optimizer 정보
-    optimizer = cfg['optimizer']['type']
+    param_dict['optimizer'] = cfg['optimizer']['type']
 
     # Learning data
-    learning_rate = cfg['optimizer']['lr']
-    weight_decay = cfg['optimizer']['weight_decay']
+    param_dict['lr'] = cfg['optimizer']['lr']
+    param_dict['weight_decay'] = cfg['optimizer']['weight_decay']
 
     # train시 image scale
     for pipe in cfg['train_pipeline']:
         if pipe['type'] == "Resize":
-            img_scale = pipe['img_scale']
+            param_dict['img_scale'] = pipe['img_scale']
             break
 
-
     # scheduler
-    scheduler = cfg['lr_config']['policy']
-    lr_step = cfg['lr_config']['step']
-    lr_gamma = cfg['lr_config']['gamma']
+    param_dict['scheduler'] = cfg['lr_config']['policy']
+    param_dict['lr_step'] = cfg['lr_config']['step']
 
     # Epoch
-    epochs = cfg['runner']['max_epochs']
+    param_dict['max_epochs'] = cfg['runner']['max_epochs']
 
     #=================================================================================================================#
     # train log loader
@@ -57,55 +57,27 @@ def Gsheet_param(cfg, output_dir):
     # JSON 문자열을 딕셔너리로 변환
     train_log = json.loads(last_line)
 
-    last_lr = train_log['lr']
-    loss_cls = train_log['loss_cls']
-    loss_bbox = train_log['loss_bbox']
-    loss_centerness = train_log['loss_centerness']
-    total_loss = train_log['loss']
+    param_dict['loss_cls'] = train_log['loss_cls']
+    param_dict['loss_bbox'] = train_log['loss_bbox']
+    param_dict['loss'] = train_log['loss']
     #=================================================================================================================#
 
-    params = []
-    params.append(samples_per_gpu)
-    # params.append(rpn_cls_loss)
-    # params.append(rpn_bbox_loss)
-    # params.append(roi_cls_loss)
-    # params.append(roi_bbox_loss)
-    params.append(optimizer)
-    params.append(learning_rate)
-    params.append(epochs)
-    params.append(last_lr)
-    params.append(loss_cls)
-    params.append(loss_bbox)
-    params.append(loss_centerness)
-    params.append(total_loss)
+    params = [param_dict[k] for k in param_dict]
+    print(params)
 
-    cols = []
-
-    cols.append('Samples/GPU')
-    # cols.append('RPN Cls Loss')
-    # cols.append('RPN BBox Loss')
-    # cols.append('RoI Cls Loss')
-    # cols.append('RoI BBox Loss')
-    cols.append('Optimizer')
-    cols.append('Lr')
-    cols.append('epochs')
-    cols.append('last_lr')
-    cols.append('loss_cls')
-    cols.append('loss_bbox')
-    cols.append('loss_centerness')
-    cols.append('total_loss')
-    
+    cols = [k.capitalize() for k in param_dict]
+    cols[0] = 'Model'
+    print(cols)
     
     try:
         # 워크시트가 있는지 확인
-        worksheet = doc.worksheet(worksheet_name)
+        worksheet = doc.worksheet(param_dict['worksheet_name'])
     except WorksheetNotFound:
         # 워크시트가 없으면 새로 생성
-        worksheet = doc.add_worksheet(title=worksheet_name, rows="1000", cols="30")
+        worksheet = doc.add_worksheet(title=param_dict['worksheet_name'], rows="1000", cols="30")
         worksheet.append_rows([cols])
 
-        print(f"'{worksheet_name}' 워크시트가 생성되었습니다.")
-
+        print(f"'{param_dict['worksheet_name']}' 워크시트가 생성되었습니다.")
 
     worksheet = doc.worksheet(cfg['model']['type'])
     worksheet.append_rows([params])
