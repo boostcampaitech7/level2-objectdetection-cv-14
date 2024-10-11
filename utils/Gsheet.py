@@ -22,6 +22,10 @@ def Gsheet_param(cfg, output_dir):
 
     # 저장할 변수 dict 선언
     param_dict = dict()
+
+    # User 명
+    param_dict['user'] = os.path.abspath(__file__).split("/")[4]
+
     # model type
     param_dict['worksheet_name'] = cfg['model']['type']
     
@@ -66,7 +70,7 @@ def Gsheet_param(cfg, output_dir):
     params = [param_dict[k] for k in param_dict]
 
     cols = [k.capitalize() for k in param_dict]
-    cols[0] = 'Model'
+    cols[1] = 'Model'
     
     try:
         # 워크시트가 있는지 확인
@@ -78,7 +82,7 @@ def Gsheet_param(cfg, output_dir):
 
         header_formatter = CellFormat(
             backgroundColor=Color(0.9, 0.9, 0.9),
-            textFormat=TextFormat(bold=True, fontSize=12),
+            textFormat=TextFormat(bold=True, fontSize=15),
             horizontalAlignment='CENTER',
         )
         
@@ -88,12 +92,30 @@ def Gsheet_param(cfg, output_dir):
 
         for idx, header in enumerate(cols):
             column_letter = chr(ord('A') + idx) 
-            if idx == 0:
+            if idx == 1:
                 header = param_dict['worksheet_name']
-            width = max((len(header) + 2) * 10, 70)
+            width = max((len(header) + 4) * 10, 80)
             set_column_width(worksheet, column_letter, width)
 
         print(f"'{param_dict['worksheet_name']}' 워크시트가 생성되었습니다.")
 
     worksheet = doc.worksheet(cfg['model']['type'])
     worksheet.append_rows([params])
+
+    row_formatter = CellFormat(
+        backgroundColor=Color(1, 1, 0),
+        textFormat=TextFormat(fontSize=12),
+        horizontalAlignment="CENTER"
+    )
+
+    rollback_formatter = CellFormat(
+        backgroundColor=Color(1.0, 1.0, 1.0)
+    )
+    
+    last_row = len(worksheet.get_all_values())
+    row_range = f"A{last_row}:{chr(ord('A') + len(cols) - 1)}{last_row}"
+    rollback_range = f"A{last_row - 1}:{chr(ord('A') + len(cols) - 1)}{last_row - 1}"
+    
+    if last_row - 1 != 1:
+        format_cell_range(worksheet, rollback_range, rollback_formatter)
+    format_cell_range(worksheet, row_range, row_formatter)
