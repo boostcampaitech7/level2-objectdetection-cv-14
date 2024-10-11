@@ -16,9 +16,11 @@ optimizer = dict(
 
 lr_config = dict(
     policy='step',
-    gamma=0.3,
     warmup='linear',
     warmup_iters=500,
-    warmup_ratio=0.3333333333333333,
-    step=[12, 20])
-runner = dict(type='EpochBasedRunner', max_epochs=30)
+    warmup_ratio=0.001,
+    step=[2, 5, 8, 11],
+    gamma=0.5
+)
+
+runner = dict(type='EpochBasedRunner', max_epochs=36)
