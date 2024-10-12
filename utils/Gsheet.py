@@ -27,7 +27,7 @@ def Gsheet_param(cfg, output_dir):
     param_dict['user'] = os.path.abspath(__file__).split("/")[4]
 
     # model type
-    param_dict['worksheet_name'] = cfg['model']['type']
+    param_dict['model'] = cfg['model']['type']
     
     # Samples per GPU
     param_dict['samples_per_gpu'] = cfg['data']['samples_per_gpu']
@@ -62,60 +62,76 @@ def Gsheet_param(cfg, output_dir):
     # JSON 문자열을 딕셔너리로 변환
     train_log = json.loads(last_line)
 
+    # log에서 추출 가능한 loss 중에서 공통적인 것들로 구성
     param_dict['loss_cls'] = train_log['loss_cls']
     param_dict['loss_bbox'] = train_log['loss_bbox']
     param_dict['loss'] = train_log['loss']
     #=================================================================================================================#
 
+    # sheet에 추가하기 위해서 값들을 list로 저장
     params = [param_dict[k] for k in param_dict]
 
+    # sheet가 없는 경우 Head Row를 구성하기 위해서 Col 명을 list로 저장
     cols = [k.capitalize() for k in param_dict]
-    cols[1] = 'Model'
     
     try:
         # 워크시트가 있는지 확인
-        worksheet = doc.worksheet(param_dict['worksheet_name'])
+        worksheet = doc.worksheet(param_dict['model'])
     except WorksheetNotFound:
         # 워크시트가 없으면 새로 생성
-        worksheet = doc.add_worksheet(title=param_dict['worksheet_name'], rows="1000", cols="30")
+        worksheet = doc.add_worksheet(title=param_dict['model'], rows="1000", cols="30")
+        # Col 명 추가
         worksheet.append_rows([cols])
 
+        # Header Cell 서식 
         header_formatter = CellFormat(
             backgroundColor=Color(0.9, 0.9, 0.9),
             textFormat=TextFormat(bold=True, fontSize=15),
             horizontalAlignment='CENTER',
         )
         
+        # Header의 서식을 적용할 범위
         header_range = f"A1:{chr(ord('A') + len(cols) - 1)}1"
 
+        # Header 서식 적용
         format_cell_range(worksheet, header_range, header_formatter)
 
+        # Header Cell의 넓이 조정
         for idx, header in enumerate(cols):
             column_letter = chr(ord('A') + idx) 
             if idx == 1:
-                header = param_dict['worksheet_name']
+                header = param_dict['model']
             width = max((len(header) + 4) * 10, 80)
             set_column_width(worksheet, column_letter, width)
 
-        print(f"'{param_dict['worksheet_name']}' 워크시트가 생성되었습니다.")
+        print(f"'{param_dict['model']}' 워크시트가 생성되었습니다.")
 
+    # 실험 인자를 작성한 worksheet
     worksheet = doc.worksheet(cfg['model']['type'])
+
+    # 실험 인자 worksheet에 추가
     worksheet.append_rows([params])
 
+    # 현재 작성하는 실험 인자들 Cell의 서식
+    # 노란색으로 하이라이트
     row_formatter = CellFormat(
         backgroundColor=Color(1, 1, 0),
         textFormat=TextFormat(fontSize=12),
         horizontalAlignment="CENTER"
     )
 
+    # 이전 작성 실험인자들 배경색 원상복구
     rollback_formatter = CellFormat(
         backgroundColor=Color(1.0, 1.0, 1.0)
     )
     
+    # 마지막 줄에만 하이라이팅이 들어가야 하므로 마지막 row 저장
     last_row = len(worksheet.get_all_values())
     row_range = f"A{last_row}:{chr(ord('A') + len(cols) - 1)}{last_row}"
     rollback_range = f"A{last_row - 1}:{chr(ord('A') + len(cols) - 1)}{last_row - 1}"
     
+    # 헤더셀의 서식이 초기화되는 것을 방지하기 위한 조건문
     if last_row - 1 != 1:
         format_cell_range(worksheet, rollback_range, rollback_formatter)
+    
     format_cell_range(worksheet, row_range, row_formatter)
