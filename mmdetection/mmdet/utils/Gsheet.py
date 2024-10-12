@@ -20,7 +20,7 @@ def Gsheet_param(cfg):
     worksheet_name = cfg['model']['type']
     
     # Samples per GPU
-    samples_per_gpu = cfg['data']['samples_per_gpu']
+    # samples_per_gpu = cfg['data']['samples_per_gpu']
 
     # Loss 정보
     # rpn_cls_loss = cfg['model']['rpn_head']['loss_cls']['type']
@@ -55,7 +55,7 @@ def Gsheet_param(cfg):
     #=================================================================================================================#
 
     params = []
-    params.append(samples_per_gpu)
+    # params.append(samples_per_gpu)
     # params.append(rpn_cls_loss)
     # params.append(rpn_bbox_loss)
     # params.append(roi_cls_loss)

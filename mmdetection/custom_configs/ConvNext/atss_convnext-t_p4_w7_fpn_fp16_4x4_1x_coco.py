@@ -1,7 +1,7 @@
 _base_ = [
     'atss_convnext-t_p4_w7_fpn.py',
-    'datasets/coco_detection.py',
-    'schedules/schedule_1x.py', 'default_runtime.py'
+    'coco_detection.py',
+    'schedule_1x.py', 'default_runtime.py'
 ]
 
 # drop_path_rate could be tuned for better results
@@ -26,4 +26,6 @@ optimizer_config = dict(
     _delete_=True, grad_clip=dict(max_norm=35, norm_type=2))
 lr_config = dict(warmup_iters=1000)
 
-fp16 = dict(loss_scale=dict(init_scale=512))
+# fp16 = dict(loss_scale=dict(init_scale=512))
+fp16 = dict(loss_scale='dynamic')
+# runner = dict(type='EpochBasedRunner', max_epochs=30)
