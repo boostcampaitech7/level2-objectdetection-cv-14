@@ -10,7 +10,7 @@ with open('/data/ephemeral/home/dataset/train.json', 'r') as f:
 pseudo_labels = pd.read_csv('./work_dirs/origin_RetinaNet/realorigin_retinanet.csv')  # Test 데이터 추론 결과
 
 # Confidence score가 0.65 이상인 Pseudo Label 필터링 함수 정의
-def filter_by_confidence(pred_string, threshold=0.6):
+def filter_by_confidence(pred_string, threshold=0.7):
     try:
         pred_list = pred_string.split()
         # pred_list가 올바른 길이를 가지는지 확인하고 confidence score 기준으로 필터링
@@ -21,7 +21,7 @@ def filter_by_confidence(pred_string, threshold=0.6):
 
 # 필터링을 적용
 pseudo_labels = pseudo_labels[pseudo_labels['PredictionString'].apply(
-    lambda x: isinstance(x, str) and filter_by_confidence(x, threshold=0.6))]
+    lambda x: isinstance(x, str) and filter_by_confidence(x, threshold=0.7))]
 
 # 기존 train.json에서 마지막 이미지 및 어노테이션 ID 확인
 last_image_id = max([img['id'] for img in train_data['images']])
