@@ -1,4 +1,7 @@
-import os
+import os, sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from utils.Gsheet import Gsheet_param
+
 # 모듈 import
 from mmengine.config import Config
 # from mmcv import Config
@@ -8,8 +11,8 @@ from mmdet.apis import train_detector
 from mmdet.datasets import (build_dataloader, build_dataset,
                             replace_ImageToTensor)
 from mmdet.utils import get_device
-from mmdet.utils.Gsheet import Gsheet_param
 import argparse
+
 
 # config file 들고오기
 parser = argparse.ArgumentParser()
@@ -43,7 +46,6 @@ cfg.data.test.classes = classes
 cfg.seed = 2024
 cfg.gpu_ids = [0]
 cfg.work_dir = args.output
-
 cfg.checkpoint_config = dict(max_keep_ckpts=3, interval=1)
 cfg.device = get_device()
 
@@ -56,4 +58,4 @@ model.init_weights()
 
 train_detector(model, datasets[0], cfg, distributed=False, validate=args.validation)
 
-Gsheet_param(cfg)
+Gsheet_param(cfg, args.output)
