@@ -28,6 +28,9 @@ def Gsheet_param(cfg, output_dir):
 
     # model type
     param_dict['model'] = cfg['model']['type']
+
+    # backbone type
+    param_dict['backbone'] = cfg['model']['backbone']['type']
     
     # Samples per GPU
     param_dict['samples_per_gpu'] = cfg['data']['samples_per_gpu']
@@ -42,12 +45,12 @@ def Gsheet_param(cfg, output_dir):
     # train시 image scale
     for pipe in cfg['train_pipeline']:
         if pipe['type'] == "Resize":
-            param_dict['img_scale'] = pipe['img_scale']
+            param_dict['img_scale'] = str(pipe['img_scale'])
             break
 
     # scheduler
     param_dict['scheduler'] = cfg['lr_config']['policy']
-    param_dict['lr_step'] = cfg['lr_config']['step']
+    param_dict['lr_step'] = str(cfg['lr_config']['step'])
 
     # Epoch
     param_dict['max_epochs'] = cfg['runner']['max_epochs']
@@ -101,6 +104,8 @@ def Gsheet_param(cfg, output_dir):
             column_letter = chr(ord('A') + idx) 
             if idx == 1:
                 header = param_dict['model']
+            elif idx == 2:
+                header = param_dict['backbone']
             width = max((len(header) + 4) * 10, 80)
             set_column_width(worksheet, column_letter, width)
 
