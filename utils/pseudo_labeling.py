@@ -7,10 +7,10 @@ with open('/data/ephemeral/home/dataset/train.json', 'r') as f:
     train_data = json.load(f)
 
 # 2. Test 데이터 예측 결과 CSV 파일 로드
-pseudo_labels = pd.read_csv('./work_dirs/origin_RetinaNet/realorigin_retinanet.csv')  # Test 데이터 추론 결과
+pseudo_labels = pd.read_csv('./swin_inference.csv')  # Test 데이터 추론 결과
 
 # Confidence score가 0.65 이상인 Pseudo Label 필터링 함수 정의
-def filter_by_confidence(pred_string, threshold=0.7):
+def filter_by_confidence(pred_string, threshold=0.65):
     try:
         pred_list = pred_string.split()
         # pred_list가 올바른 길이를 가지는지 확인하고 confidence score 기준으로 필터링
@@ -21,7 +21,7 @@ def filter_by_confidence(pred_string, threshold=0.7):
 
 # 필터링을 적용
 pseudo_labels = pseudo_labels[pseudo_labels['PredictionString'].apply(
-    lambda x: isinstance(x, str) and filter_by_confidence(x, threshold=0.7))]
+    lambda x: isinstance(x, str) and filter_by_confidence(x, threshold=0.65))]
 
 # 기존 train.json에서 마지막 이미지 및 어노테이션 ID 확인
 last_image_id = max([img['id'] for img in train_data['images']])
@@ -32,7 +32,7 @@ next_image_id = last_image_id + 1
 next_annotation_id = last_annotation_id + 1
 
 # COCO 형식의 새로운 어노테이션 정보를 저장할 리스트
-new_images = []
+new_images = {}
 new_annotations = []
 
 # 필터링된 Pseudo Label을 COCO 형식으로 변환
@@ -40,6 +40,21 @@ for idx, row in pseudo_labels.iterrows():
     image_id = next_image_id + idx  # 새로운 image_id 부여
     image_name = row['image_id']  # Pseudo Label의 이미지 파일명
     prediction_string = row['PredictionString'].split()
+    
+     # 기존에 이미지가 추가된 적이 있는지 확인
+    if image_name not in new_images:
+        # 이미지가 아직 추가되지 않았으면 새 이미지 추가
+        new_images[image_name] = {
+            "id": next_image_id,
+            "file_name": image_name,
+            "width": 1024,
+            "height": 1024
+        }
+        image_id = next_image_id
+        next_image_id += 1
+    else:
+        image_id = new_images[image_name]['id']
+
 
     # Pseudo Label에서 class_id, Confidence, BBox, Class 정보를 파싱
     for i in range(0, len(prediction_string), 6):
@@ -55,14 +70,6 @@ for idx, row in pseudo_labels.iterrows():
             # COCO 형식의 Bounding Box: [x_min, y_min, width, height]
             bbox = [x_min, y_min, x_max - x_min, y_max - y_min]
             area = (x_max - x_min) * (y_max - y_min)
-
-            # 이미지 정보 추가
-            new_images.append({
-                "id": image_id,
-                "file_name": image_name,
-                "width": 1024,
-                "height": 1024
-            })
 
             # 어노테이션 정보 추가 (is_pseudo 필드 포함)
             new_annotations.append({
@@ -80,13 +87,15 @@ for idx, row in pseudo_labels.iterrows():
             print(f"Error in row {idx}: {e}, PredictionString: {prediction_string}")
             continue
 
-
+# 추가된 이미지 및 어노테이션 개수 출력
+print(f'추가된 이미지 개수: {len(new_images)}')
+print(f'추가된 어노테이션 개수: {len(new_annotations)}')
 # 기존 train.json에 새로운 이미지 및 어노테이션 병합
-train_data['images'].extend(new_images)
+train_data['images'].extend(new_images.values())
 train_data['annotations'].extend(new_annotations)
 
 # 6. 병합된 데이터를 새로운 train_with_pseudo_labels.json으로 저장
-with open('/data/ephemeral/home/dataset/train_with_pseudo_labels.json', 'w') as f:
+with open('/data/ephemeral/home/dataset/train_swin_pseudo_labels.json', 'w') as f:
     json.dump(train_data, f, indent=4)
 
 print("Pseudo Label이 추가된 train_with_pseudo_labels.json 파일이 생성되었습니다.")
