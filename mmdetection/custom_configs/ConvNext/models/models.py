@@ -2,19 +2,29 @@
 # import mmcls.models to trigger register_module in mmcls
 custom_imports = dict(imports=['mmcls.models'], allow_failed_imports=False)
 checkpoint_file = 'https://download.openmmlab.com/mmclassification/v0/convnext/downstream/convnext-tiny_3rdparty_32xb128-noema_in1k_20220301-795e9634.pth'  # noqa
+checkpoint_ConvNext_Base = 'https://dl.fbaipublicfiles.com/convnext/convnext_base_22k_1k_384.pth'
+checkpoint_ConvNext_B_22k = 'https://dl.fbaipublicfiles.com/convnext/convnext_base_22k_224.pth'
+
+checkpoint_ConvNext_Large = 'https://dl.fbaipublicfiles.com/convnext/convnext_large_22k_1k_384.pth'
+checkpoint_ConvNext_L_22k = 'https://dl.fbaipublicfiles.com/convnext/convnext_large_22k_224.pth'
+
+checkpoint_ConvNext_XL = 'https://dl.fbaipublicfiles.com/convnext/convnext_xlarge_22k_1k_384_ema.pth'
+checkpoint_ConvNext_XL_22k = 'https://dl.fbaipublicfiles.com/convnext/convnext_xlarge_22k_224.pth'
+
 
 model = dict(
     type='ATSS',
     backbone=dict(
-        type='mmcls.ConvNeXt',
-        arch='tiny',
-        out_indices=[1, 2, 3],
+        backbone=dict(
+        type='ConvNeXt',
+        in_chans=3,
+        depths=[3, 3, 9, 3], 
+        dims=[96, 192, 384, 768], 
         drop_path_rate=0.2,
-        layer_scale_init_value=1.0,
-        gap_before_final_norm=False,
+        layer_scale_init_value=1e-6,
+        out_indices=[0, 1, 2, 3],
         init_cfg=dict(
-            type='Pretrained', checkpoint=checkpoint_file,
-            prefix='backbone.')),
+            type='Pretrained', checkpoint=checkpoint_ConvNext_Base))),
     neck=dict(
         type='FPN',
         in_channels=[192, 384, 768],

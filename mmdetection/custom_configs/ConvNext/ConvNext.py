@@ -1,7 +1,8 @@
 _base_ = [
-    'atss_convnext-t_p4_w7_fpn.py',
-    'coco_detection.py',
-    'schedule_1x.py', 'default_runtime.py'
+    'models.py',
+    'dataset.py',
+    'schedule.py',
+    'runtime.py'
 ]
 
 # drop_path_rate could be tuned for better results
