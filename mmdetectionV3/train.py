@@ -105,7 +105,7 @@ def main():
         cfg.resume = True
         cfg.load_from = args.resume
     else:
-        cfg.resume = True
+        cfg.resume = False
 
     # build the runner from config
     if 'runner_type' not in cfg:
