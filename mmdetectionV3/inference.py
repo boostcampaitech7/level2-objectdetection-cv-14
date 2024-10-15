@@ -23,7 +23,7 @@ def parse_args():
     parser.add_argument('checkpoint', help='checkpoint file')
     parser.add_argument(
         '--work-dir',
-        help='the directory to save the file containing evaluation metrics')
+        help='the name of the subdirectory linked to ./work_dirs/{config file}')
     parser.add_argument(
         '--out',
         type=str,
@@ -90,22 +90,6 @@ def main():
     if args.show or args.show_dir:
         cfg = trigger_visualization_hook(cfg, args)
 
-
-LANG=ko_KR.UTF-8
-LANGUAGE=ko_KR:ko:en_GB:en
-LC_CTYPE="ko_KR.UTF-8"
-LC_NUMERIC="ko_KR.UTF-8"
-LC_TIME="ko_KR.UTF-8"
-LC_COLLATE="ko_KR.UTF-8"
-LC_MONETARY="ko_KR.UTF-8"
-LC_MESSAGES=POSIX
-LC_PAPER="ko_KR.UTF-8"
-LC_NAME="ko_KR.UTF-8"
-LC_ADDRESS="ko_KR.UTF-8"
-LC_TELEPHONE="ko_KR.UTF-8"
-LC_MEASUREMENT="ko_KR.UTF-8"
-LC_IDENTIFICATION="ko_KR.UTF-8"
-LC_ALL=
     if args.tta:
 
         if 'tta_model' not in cfg:
@@ -141,6 +125,7 @@ LC_ALL=
         cfg.model = ConfigDict(**cfg.tta_model, module=cfg.model)
         cfg.test_dataloader.dataset.pipeline = cfg.tta_pipeline
 
+    # 제출 형식 맞추기
     cfg.custom_hooks = [
         dict(type="SubmissionHook", test_out_dir=cfg.work_dir),
     ]

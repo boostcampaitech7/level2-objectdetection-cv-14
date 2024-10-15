@@ -62,8 +62,7 @@ class SubmissionHook(Hook):
             runner (:obj:`Runner`): The runner of the testing process.
         """
         if self.test_out_dir is not None:
-            self.test_out_dir = osp.join(runner.work_dir, runner.timestamp,
-                                         self.test_out_dir)
+            self.test_out_dir = osp.join(runner.work_dir, self.test_out_dir)
             mkdir_or_exist(self.test_out_dir)
 
         submission = pd.DataFrame()
