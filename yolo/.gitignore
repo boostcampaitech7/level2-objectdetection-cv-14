@@ -3,3 +3,4 @@ datasets/
 runs/
 wandb/
 custom-ultralytics/
+nohup.out
