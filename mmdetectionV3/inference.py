@@ -23,7 +23,7 @@ def parse_args():
     parser.add_argument('checkpoint', help='checkpoint file')
     parser.add_argument(
         '--work-dir',
-        help='the name of the subdirectory linked to ./work_dirs/{config file}')
+        help='Path to save the results')
     parser.add_argument(
         '--out',
         type=str,

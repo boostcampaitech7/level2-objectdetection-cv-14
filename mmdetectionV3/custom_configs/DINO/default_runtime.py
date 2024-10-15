@@ -8,7 +8,7 @@ default_hooks = dict(
         type='CheckpointHook', 
         save_best="coco/bbox_mAP_50",
         rule="greater",
-        interval=1
+        interval=-1
     ),
     sampler_seed=dict(type='DistSamplerSeedHook'),
     visualization=dict(type='DetVisualizationHook')

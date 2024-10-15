@@ -26,7 +26,7 @@ class SubmissionHook(Hook):
         test_out_dir (str) : 저장할 경로
     """
 
-    def __init__(self, test_out_dir='submit'):
+    def __init__(self, test_out_dir=None):
         self.prediction_strings = []
         self.file_names = []
         self.test_out_dir = test_out_dir
@@ -61,10 +61,8 @@ class SubmissionHook(Hook):
         Args:
             runner (:obj:`Runner`): The runner of the testing process.
         """
-        if self.test_out_dir is not None:
-            self.test_out_dir = osp.join(runner.work_dir, self.test_out_dir)
-            mkdir_or_exist(self.test_out_dir)
-
+        
+        mkdir_or_exist(self.test_out_dir)
         submission = pd.DataFrame()
         submission['PredictionString'] = self.prediction_strings
         submission['image_id'] = self.file_names
