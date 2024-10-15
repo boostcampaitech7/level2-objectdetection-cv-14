@@ -11,6 +11,8 @@ optim_wrapper = dict(
     paramwise_cfg=dict(custom_keys={'backbone': dict(lr_mult=0.1)})
 )  # custom_keys contains sampling_offsets and reference_points in DeformDETR  # noqa
 
+load_from = "https://download.openmmlab.com/mmdetection/v3.0/dino/dino-4scale_r50_8xb2-12e_coco/dino-4scale_r50_8xb2-12e_coco_20221202_182705-55b2bba2.pth"
+
 # learning policy
 max_epochs = 12
 train_cfg = dict(
