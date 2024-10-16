@@ -1,7 +1,6 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import argparse
 import os
-import sys
 import os.path as osp
 
 from mmengine.config import Config, DictAction
@@ -9,6 +8,8 @@ from mmengine.registry import RUNNERS
 from mmengine.runner import Runner
 
 from mmdet.utils import setup_cache_size_limit_of_dynamo
+
+import wandb
 
 
 def parse_args():
@@ -51,6 +52,13 @@ def parse_args():
     # will pass the `--local-rank` parameter to `tools/train.py` instead
     # of `--local_rank`.
     parser.add_argument('--local_rank', '--local-rank', type=int, default=0)
+
+    # WandB 프로젝트 이름
+    parser.add_argument('-p', '--project', help='wandb project name', required=True)
+
+    # WandB 실험 이름
+    parser.add_argument('-n', '--name', help='wandb experiment name', required=True)
+
     args = parser.parse_args()
     if 'LOCAL_RANK' not in os.environ:
         os.environ['LOCAL_RANK'] = str(args.local_rank)
@@ -64,6 +72,9 @@ def main():
     # Reduce the number of repeated compilations and improve
     # training speed.
     setup_cache_size_limit_of_dynamo()
+
+    # WandB 초기화
+    wandb.init(project=args.project, name=args.name)
 
     # load config
     cfg = Config.fromfile(args.config)
