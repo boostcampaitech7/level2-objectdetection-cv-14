@@ -12,7 +12,9 @@ from mmdet.datasets import (build_dataloader, build_dataset,
                             replace_ImageToTensor)
 from mmdet.utils import get_device
 import argparse
+import wandb
 
+wandb.init(project='Cascade_rcnn_ConvNeXt', name='test1')
 
 # config file 들고오기
 parser = argparse.ArgumentParser()
@@ -56,6 +58,9 @@ datasets = [build_dataset(cfg.data.train)]
 model = build_detector(cfg.model)
 model.init_weights()
 
-train_detector(model, datasets[0], cfg, distributed=False, validate=args.validation)
+# train_detector(model, datasets[0], cfg, distributed=False, validate=args.validation)
+print(cfg)
 
-Gsheet_param(cfg, args.output)
+output = '/data/ephemeral/home/JYP/level2-objectdetection-cv-14/mmdetection/work_dirs/cascade_rcnn_ConvNeXt_multi_scale/'
+
+Gsheet_param(cfg, output)

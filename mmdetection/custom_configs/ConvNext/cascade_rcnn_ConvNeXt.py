@@ -12,6 +12,45 @@ _base_ = [
     'schedules/schedule_CosineAnnealing.py',
     'runtime.py'
 ]
+multi_scale = [(w,w) for w in range(512, 1024+1, 32)]
+
+albu_train_transforms = [
+    dict(
+        type='OneOf',
+        transforms=[
+            dict(type='Flip',p=1.0),
+            dict(type='RandomRotate90',p=1.0)
+        ],
+        p = 0.1
+    ),
+    dict(
+        type='RandomBrightnessContrast',
+        brightness_limit=[0.1, 0.3],
+        contrast_limit=[0.1, 0.3],
+        p=0.2),
+    dict(type='RandomResizedCrop',height=1024, width=1024, scale=(0.5, 1.0), p=0.2),
+    dict(
+        type='OneOf',
+        transforms=[
+            dict(
+                type='ChannelShuffle',
+                p=1.0),
+            dict(
+                type='RandomGamma',
+                p=1.0),
+            dict(
+                type='RGBShift',
+                p=1.0)
+        ],
+        p=0.1),
+    dict(
+        type='OneOf',
+        transforms=[
+            dict(type='Blur', blur_limit=3, p=1.0),
+            dict(type='MedianBlur', blur_limit=3, p=1.0)
+        ],
+        p=0.1),
+    ]
 
 model = dict(
     backbone=dict(
@@ -92,35 +131,57 @@ train_pipeline = [
     dict(type='LoadImageFromFile'),
     dict(type='LoadAnnotations', with_bbox=True),
     dict(type='RandomFlip', flip_ratio=0.5),
-    dict(type='AutoAugment',
-         policies=[
-             [
-                 dict(type='Resize',
-                      img_scale=[(480, 1333), (512, 1333), (544, 1333), (576, 1333),
-                                 (608, 1333), (640, 1333), (672, 1333), (704, 1333),
-                                 (736, 1333), (768, 1333), (800, 1333)],
-                      multiscale_mode='value',
-                      keep_ratio=True)
-             ],
-             [
-                 dict(type='Resize',
-                      img_scale=[(400, 1333), (500, 1333), (600, 1333)],
-                      multiscale_mode='value',
-                      keep_ratio=True),
-                 dict(type='RandomCrop',
-                      crop_type='absolute_range',
-                      crop_size=(384, 600),
-                      allow_negative_crop=True),
-                 dict(type='Resize',
-                      img_scale=[(480, 1333), (512, 1333), (544, 1333),
-                                 (576, 1333), (608, 1333), (640, 1333),
-                                 (672, 1333), (704, 1333), (736, 1333),
-                                 (768, 1333), (800, 1333)],
-                      multiscale_mode='value',
-                      override=True,
-                      keep_ratio=True)
-             ]
-         ]),
+    dict(
+        type='Resize', 
+        img_scale=multi_scale,
+        multiscale_mode='value',
+        keep_ratio=True,
+        ),
+    dict(
+    type='Albu',
+    transforms=albu_train_transforms,
+    bbox_params=dict(
+        type='BboxParams',
+        format='pascal_voc',
+        label_fields=['gt_labels'],
+        min_visibility=0.0,
+        filter_lost_elements=True),
+    keymap={
+        'img': 'image',
+        'gt_bboxes': 'bboxes'
+    },
+    update_pad_shape=False,
+    skip_img_without_anno=True
+    ),
+    # dict(type='AutoAugment',
+    #      policies=[
+    #          [
+    #              dict(type='Resize',
+    #                   img_scale=[(480, 1333), (512, 1333), (544, 1333), (576, 1333),
+    #                              (608, 1333), (640, 1333), (672, 1333), (704, 1333),
+    #                              (736, 1333), (768, 1333), (800, 1333)],
+    #                   multiscale_mode='value',
+    #                   keep_ratio=True)
+    #          ],
+    #          [
+    #              dict(type='Resize',
+    #                   img_scale=[(400, 1333), (500, 1333), (600, 1333)],
+    #                   multiscale_mode='value',
+    #                   keep_ratio=True),
+    #              dict(type='RandomCrop',
+    #                   crop_type='absolute_range',
+    #                   crop_size=(384, 600),
+    #                   allow_negative_crop=True),
+    #              dict(type='Resize',
+    #                   img_scale=[(480, 1333), (512, 1333), (544, 1333),
+    #                              (576, 1333), (608, 1333), (640, 1333),
+    #                              (672, 1333), (704, 1333), (736, 1333),
+    #                              (768, 1333), (800, 1333)],
+    #                   multiscale_mode='value',
+    #                   override=True,
+    #                   keep_ratio=True)
+    #          ]
+    #      ]),
     dict(type='Normalize', **img_norm_cfg),
     dict(type='Pad', size_divisor=32),
     dict(type='DefaultFormatBundle'),
@@ -134,7 +195,7 @@ optimizer = dict(constructor='LearningRateDecayOptimizerConstructor', _delete_=T
                                 'decay_type': 'layer_wise',
                                 'num_layers': 12})
 #lr_config = dict(step=[27, 33])
-runner = dict(type='EpochBasedRunner', max_epochs=36)
+runner = dict(type='EpochBasedRunner', max_epochs=12)
 
 # do not use mmdet version fp16
 fp16 = None

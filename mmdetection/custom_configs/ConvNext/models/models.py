@@ -1,6 +1,5 @@
 # please install mmcls>=0.22.0
 # import mmcls.models to trigger register_module in mmcls
-custom_imports = dict(imports=['mmcls.models'], allow_failed_imports=False)
 checkpoint_file = 'https://download.openmmlab.com/mmclassification/v0/convnext/downstream/convnext-tiny_3rdparty_32xb128-noema_in1k_20220301-795e9634.pth'  # noqa
 checkpoint_ConvNext_Base = 'https://dl.fbaipublicfiles.com/convnext/convnext_base_22k_1k_384.pth'
 checkpoint_ConvNext_B_22k = 'https://dl.fbaipublicfiles.com/convnext/convnext_base_22k_224.pth'

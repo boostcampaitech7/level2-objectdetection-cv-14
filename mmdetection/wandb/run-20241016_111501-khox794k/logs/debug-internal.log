@@ -1,0 +1,18 @@
+{"time":"2024-10-16T11:15:01.506018992+09:00","level":"INFO","msg":"using version","core version":"0.18.3"}
+{"time":"2024-10-16T11:15:01.506045269+09:00","level":"INFO","msg":"created symlink","path":"/data/ephemeral/home/JYP/level2-objectdetection-cv-14/mmdetection/wandb/run-20241016_111501-khox794k/logs/debug-core.log"}
+{"time":"2024-10-16T11:15:01.507683799+09:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-10-16T11:15:01.509961171+09:00","level":"INFO","msg":"created new stream","id":"khox794k"}
+{"time":"2024-10-16T11:15:01.50998601+09:00","level":"INFO","msg":"stream: started","id":"khox794k"}
+{"time":"2024-10-16T11:15:01.510028788+09:00","level":"INFO","msg":"handler: started","stream_id":{"value":"khox794k"}}
+{"time":"2024-10-16T11:15:01.510115508+09:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"khox794k"}}
+{"time":"2024-10-16T11:15:01.51041854+09:00","level":"INFO","msg":"sender: started","stream_id":{"value":"khox794k"}}
+{"time":"2024-10-16T11:15:01.859608657+09:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-10-16T11:15:01.860456953+09:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-10-16T11:15:12.901669006+09:00","level":"INFO","msg":"stream: closing","id":"khox794k"}
+{"time":"2024-10-16T11:15:12.901713639+09:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-10-16T11:15:12.903647019+09:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-10-16T11:15:14.05554062+09:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-10-16T11:15:14.601183021+09:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"khox794k"}}
+{"time":"2024-10-16T11:15:14.601235988+09:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"khox794k"}}
+{"time":"2024-10-16T11:15:14.601259039+09:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"khox794k"}}
+{"time":"2024-10-16T11:15:14.601327367+09:00","level":"INFO","msg":"stream: closed","id":"khox794k"}
