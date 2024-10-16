@@ -1,8 +1,12 @@
-_base_ = "./Base_DINO_E12.py"
+_base_ = './dino-4scale_r50_8xb2-12e_coco.py'
 
 pretrained = 'https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_large_patch4_window12_384_22k.pth'  # noqa
 
+# scale 5개
+num_levels = 5
+
 model = dict(
+    num_feature_levels=num_levels,
     backbone=dict(
         _delete_=True,
         type='SwinTransformer',
@@ -24,20 +28,20 @@ model = dict(
         with_cp=True,
         convert_weights=True,
         init_cfg=dict(type='Pretrained', checkpoint=pretrained)),
-    neck=dict(in_channels=[192, 384, 768, 1536])
-    )
+    neck=dict(in_channels=[192, 384, 768, 1536], num_outs=num_levels),
+    encoder=dict(layer_cfg=dict(self_attn_cfg=dict(num_levels=num_levels))),
+    decoder=dict(layer_cfg=dict(cross_attn_cfg=dict(num_levels=num_levels))))
 
-# dino-4scale_r50_8xb2-12_coco를 사용했다는 것을 명식적으로 표현
-load_from = "https://download.openmmlab.com/mmdetection/v3.0/dino/dino-4scale_r50_8xb2-12e_coco/dino-4scale_r50_8xb2-12e_coco_20221202_182705-55b2bba2.pth"
+load_from = "https://download.openmmlab.com/mmdetection/v3.0/dino/dino-5scale_swin-l_8xb2-12e_coco/dino-5scale_swin-l_8xb2-12e_coco_20230228_072924-a654145f.pth"
 
 vis_backends = [
     dict(type='LocalVisBackend'),
     dict(type='WandbVisBackend',
          init_kwargs={
              'project' : 'Recycle-Object-Detection',
-             'group' : 'DINO-4scale-Swin',
+             'group' : 'DINO-5scale-Swin',
              'entity' : 'cv14_',
-             'tags' : ['Swin384', '12Epoch', '4scale']
+             'tags' : ['Swin384', '12Epoch', '5scale']
          })
 ]
 visualizer = dict(

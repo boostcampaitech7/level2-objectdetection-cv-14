@@ -29,3 +29,16 @@ tta_pipeline = [
                        'img_shape', 'scale_factor', 'flip',
                        'flip_direction'))
        ]])]
+
+vis_backends = [
+    dict(type='LocalVisBackend'),
+    dict(type='WandbVisBackend',
+         init_kwargs={
+             'project' : 'Recycle-Object-Detection',
+             'group' : 'DINO-4scale-Swin',
+             'entity' : 'cv14_',
+             'tags' : ['Swin384', '12Epoch', '4scale', 'TTA']
+         })
+]
+visualizer = dict(
+    type='DetLocalVisualizer', vis_backends=vis_backends, name='visualizer')
