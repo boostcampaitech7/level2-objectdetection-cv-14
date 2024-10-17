@@ -40,6 +40,8 @@ classes = ("General trash", "Paper", "Paper pack", "Metal", "Glass",
 
 cfg = Config.fromfile(args.config)
 
+wandb.init(project=cfg['log_config']['hooks'][1]['init_kwargs']['project'], name=cfg['log_config']['hooks'][1]['init_kwargs']['name'])
+
 # dataset config 수정
 cfg.data.train.classes = classes
 cfg.data.val.classes = classes
