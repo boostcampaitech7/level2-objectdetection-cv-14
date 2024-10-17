@@ -91,7 +91,6 @@ def main():
         cfg = trigger_visualization_hook(cfg, args)
 
     if args.tta:
-
         if 'tta_model' not in cfg:
             warnings.warn('Cannot find ``tta_model`` in config, '
                           'we will set it as default.')
@@ -129,6 +128,9 @@ def main():
     cfg.custom_hooks = [
         dict(type="SubmissionHook", test_out_dir=cfg.work_dir),
     ]
+
+    # inference시에는 wandb 제거
+    cfg.vis_backends = [visBackend for visBackend in cfg.vis_backeds if not visBackend['type'] == 'WandbVisBackend']
 
     # build the runner from config
     if 'runner_type' not in cfg:
