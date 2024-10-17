@@ -116,6 +116,7 @@ val_evaluator = dict(
     ann_file=data_root + 'sgkf_5_14/val_1fold.json',
     metric='bbox',
     format_only=False,
+    classwise=True,
     backend_args=backend_args)
 
 test_evaluator = dict(
