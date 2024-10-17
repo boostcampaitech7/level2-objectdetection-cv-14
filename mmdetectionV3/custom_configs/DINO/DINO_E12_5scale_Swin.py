@@ -1,4 +1,4 @@
-_base_ = './dino-4scale_r50_8xb2-12e_coco.py'
+_base_ = './Base_DINO_E12.py'
 
 pretrained = 'https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_large_patch4_window12_384_22k.pth'  # noqa
 
@@ -40,6 +40,7 @@ vis_backends = [
          init_kwargs={
              'project' : 'Recycle-Object-Detection',
              'group' : 'DINO-5scale-Swin',
+             'name' : 'Base-DINO-5Scale-Swin',
              'entity' : 'cv14_',
              'tags' : ['Swin384', '12Epoch', '5scale']
          })
