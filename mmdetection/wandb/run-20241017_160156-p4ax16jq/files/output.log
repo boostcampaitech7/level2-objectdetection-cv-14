@@ -1,6 +1,0 @@
-Traceback (most recent call last):
-  File "/data/ephemeral/home/JYP/level2-objectdetection-cv-14/mmdetection/train.py", line 68, in <module>
-    Gsheet_param(cfg, output)
-  File "/data/ephemeral/home/JYP/level2-objectdetection-cv-14/utils/Gsheet.py", line 62, in Gsheet_param
-    with open(log_file_path, 'r') as file:
-FileNotFoundError: [Errno 2] No such file or directory: '/data/ephemeral/home/JYP/level2-objectdetection-cv-14/mmdetection/work_dirs/cascade_rcnn_ConvNeXt_multi_scale/None.log.json'
