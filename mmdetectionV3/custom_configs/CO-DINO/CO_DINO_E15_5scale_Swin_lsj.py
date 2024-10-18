@@ -37,7 +37,7 @@ optim_wrapper = dict(
 
 # learning policy
 max_epochs = 15
-train_cfg = dict(_delete_=True, type='EpochBasedTrainLoop', max_epochs=max_epochs, val_interval=1)
+train_cfg = dict(type='EpochBasedTrainLoop', max_epochs=max_epochs, val_interval=1)
 val_cfg = dict(type='ValLoop')
 test_cfg = dict(type='TestLoop')
 
@@ -52,14 +52,16 @@ param_scheduler = [
         convert_to_iter_based=True)
 ]
 
+
 vis_backends = [
     dict(type='LocalVisBackend'),
     dict(type='WandbVisBackend',
          init_kwargs={
             'project' : 'Recycle-Object-Detection',
             'group' : 'CO-DINO-5scale-Swin',
+            'name' : 'CO-DINO-5scale-Swin-1fold',
             'entity' : 'cv14_',
-            'tags' : ['Swin384', '15Epoch', '5scale']
+            'tags' : ['Swin384', '15Epoch', '5scale', 'LSJ']
          })]
 
 visualizer = dict(
