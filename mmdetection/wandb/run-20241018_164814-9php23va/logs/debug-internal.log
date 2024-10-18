@@ -1,0 +1,18 @@
+{"time":"2024-10-18T16:48:14.32923446+09:00","level":"INFO","msg":"using version","core version":"0.18.3"}
+{"time":"2024-10-18T16:48:14.3292476+09:00","level":"INFO","msg":"created symlink","path":"/data/ephemeral/home/JYP/level2-objectdetection-cv-14/mmdetection/wandb/run-20241018_164814-9php23va/logs/debug-core.log"}
+{"time":"2024-10-18T16:48:14.330983627+09:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-10-18T16:48:14.333866551+09:00","level":"INFO","msg":"created new stream","id":"9php23va"}
+{"time":"2024-10-18T16:48:14.333926703+09:00","level":"INFO","msg":"stream: started","id":"9php23va"}
+{"time":"2024-10-18T16:48:14.334061712+09:00","level":"INFO","msg":"handler: started","stream_id":{"value":"9php23va"}}
+{"time":"2024-10-18T16:48:14.333958343+09:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"9php23va"}}
+{"time":"2024-10-18T16:48:14.333953788+09:00","level":"INFO","msg":"sender: started","stream_id":{"value":"9php23va"}}
+{"time":"2024-10-18T16:48:14.695069104+09:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-10-18T16:48:14.695959446+09:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-10-18T16:48:14.957924231+09:00","level":"INFO","msg":"stream: closing","id":"9php23va"}
+{"time":"2024-10-18T16:48:14.957963609+09:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-10-18T16:48:14.959774+09:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-10-18T16:48:16.494535818+09:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-10-18T16:48:16.802824843+09:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"9php23va"}}
+{"time":"2024-10-18T16:48:16.80287741+09:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"9php23va"}}
+{"time":"2024-10-18T16:48:16.80296077+09:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"9php23va"}}
+{"time":"2024-10-18T16:48:16.803003111+09:00","level":"INFO","msg":"stream: closed","id":"9php23va"}

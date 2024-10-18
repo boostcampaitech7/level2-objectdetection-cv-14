@@ -1,0 +1,2871 @@
+loading annotations into memory...
+Done (t=0.07s)
+creating index...
+index created!
+2024-10-17 16:37:54,578 - mmcv - INFO - initialize FPN with init_cfg {'type': 'Xavier', 'layer': 'Conv2d', 'distribution': 'uniform'}
+2024-10-17 16:37:54,601 - mmcv - INFO - initialize RPNHead with init_cfg {'type': 'Normal', 'layer': 'Conv2d', 'std': 0.01}
+2024-10-17 16:37:54,607 - mmcv - INFO - initialize ConvFCBBoxHead with init_cfg [{'type': 'Normal', 'std': 0.01, 'override': {'name': 'fc_cls'}}, {'type': 'Normal', 'std': 0.001, 'override': {'name': 'fc_reg'}}, {'type': 'Xavier', 'distribution': 'uniform', 'override': [{'name': 'shared_fcs'}, {'name': 'cls_fcs'}, {'name': 'reg_fcs'}]}]
+2024-10-17 16:37:54,707 - mmcv - INFO - initialize ConvFCBBoxHead with init_cfg [{'type': 'Normal', 'std': 0.01, 'override': {'name': 'fc_cls'}}, {'type': 'Normal', 'std': 0.001, 'override': {'name': 'fc_reg'}}, {'type': 'Xavier', 'distribution': 'uniform', 'override': [{'name': 'shared_fcs'}, {'name': 'cls_fcs'}, {'name': 'reg_fcs'}]}]
+2024-10-17 16:37:54,807 - mmcv - INFO - initialize ConvFCBBoxHead with init_cfg [{'type': 'Normal', 'std': 0.01, 'override': {'name': 'fc_cls'}}, {'type': 'Normal', 'std': 0.001, 'override': {'name': 'fc_reg'}}, {'type': 'Xavier', 'distribution': 'uniform', 'override': [{'name': 'shared_fcs'}, {'name': 'cls_fcs'}, {'name': 'reg_fcs'}]}]
+2024-10-17 16:37:54,918 - mmcv - INFO -
+backbone.downsample_layers.0.0.weight - torch.Size([128, 3, 4, 4]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,918 - mmcv - INFO -
+backbone.downsample_layers.0.0.bias - torch.Size([128]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,918 - mmcv - INFO -
+backbone.downsample_layers.0.1.weight - torch.Size([128]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,919 - mmcv - INFO -
+backbone.downsample_layers.0.1.bias - torch.Size([128]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,919 - mmcv - INFO -
+backbone.downsample_layers.1.0.weight - torch.Size([128]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,919 - mmcv - INFO -
+backbone.downsample_layers.1.0.bias - torch.Size([128]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,919 - mmcv - INFO -
+backbone.downsample_layers.1.1.weight - torch.Size([256, 128, 2, 2]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,919 - mmcv - INFO -
+backbone.downsample_layers.1.1.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,919 - mmcv - INFO -
+backbone.downsample_layers.2.0.weight - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,919 - mmcv - INFO -
+backbone.downsample_layers.2.0.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,919 - mmcv - INFO -
+backbone.downsample_layers.2.1.weight - torch.Size([512, 256, 2, 2]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,920 - mmcv - INFO -
+backbone.downsample_layers.2.1.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,920 - mmcv - INFO -
+backbone.downsample_layers.3.0.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,920 - mmcv - INFO -
+backbone.downsample_layers.3.0.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,920 - mmcv - INFO -
+backbone.downsample_layers.3.1.weight - torch.Size([1024, 512, 2, 2]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,920 - mmcv - INFO -
+backbone.downsample_layers.3.1.bias - torch.Size([1024]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,920 - mmcv - INFO -
+backbone.stages.0.0.gamma - torch.Size([128]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,920 - mmcv - INFO -
+backbone.stages.0.0.dwconv.weight - torch.Size([128, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,921 - mmcv - INFO -
+backbone.stages.0.0.dwconv.bias - torch.Size([128]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,921 - mmcv - INFO -
+backbone.stages.0.0.norm.weight - torch.Size([128]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,921 - mmcv - INFO -
+backbone.stages.0.0.norm.bias - torch.Size([128]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,921 - mmcv - INFO -
+backbone.stages.0.0.pwconv1.weight - torch.Size([512, 128]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,921 - mmcv - INFO -
+backbone.stages.0.0.pwconv1.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,921 - mmcv - INFO -
+backbone.stages.0.0.pwconv2.weight - torch.Size([128, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,921 - mmcv - INFO -
+backbone.stages.0.0.pwconv2.bias - torch.Size([128]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,921 - mmcv - INFO -
+backbone.stages.0.1.gamma - torch.Size([128]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,922 - mmcv - INFO -
+backbone.stages.0.1.dwconv.weight - torch.Size([128, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,922 - mmcv - INFO -
+backbone.stages.0.1.dwconv.bias - torch.Size([128]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,922 - mmcv - INFO -
+backbone.stages.0.1.norm.weight - torch.Size([128]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,922 - mmcv - INFO -
+backbone.stages.0.1.norm.bias - torch.Size([128]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,922 - mmcv - INFO -
+backbone.stages.0.1.pwconv1.weight - torch.Size([512, 128]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,922 - mmcv - INFO -
+backbone.stages.0.1.pwconv1.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,922 - mmcv - INFO -
+backbone.stages.0.1.pwconv2.weight - torch.Size([128, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,922 - mmcv - INFO -
+backbone.stages.0.1.pwconv2.bias - torch.Size([128]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,923 - mmcv - INFO -
+backbone.stages.0.2.gamma - torch.Size([128]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,923 - mmcv - INFO -
+backbone.stages.0.2.dwconv.weight - torch.Size([128, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,923 - mmcv - INFO -
+backbone.stages.0.2.dwconv.bias - torch.Size([128]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,923 - mmcv - INFO -
+backbone.stages.0.2.norm.weight - torch.Size([128]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,923 - mmcv - INFO -
+backbone.stages.0.2.norm.bias - torch.Size([128]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,923 - mmcv - INFO -
+backbone.stages.0.2.pwconv1.weight - torch.Size([512, 128]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,923 - mmcv - INFO -
+backbone.stages.0.2.pwconv1.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,923 - mmcv - INFO -
+backbone.stages.0.2.pwconv2.weight - torch.Size([128, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,924 - mmcv - INFO -
+backbone.stages.0.2.pwconv2.bias - torch.Size([128]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,924 - mmcv - INFO -
+backbone.stages.1.0.gamma - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,924 - mmcv - INFO -
+backbone.stages.1.0.dwconv.weight - torch.Size([256, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,924 - mmcv - INFO -
+backbone.stages.1.0.dwconv.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,924 - mmcv - INFO -
+backbone.stages.1.0.norm.weight - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,924 - mmcv - INFO -
+backbone.stages.1.0.norm.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,924 - mmcv - INFO -
+backbone.stages.1.0.pwconv1.weight - torch.Size([1024, 256]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,924 - mmcv - INFO -
+backbone.stages.1.0.pwconv1.bias - torch.Size([1024]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,925 - mmcv - INFO -
+backbone.stages.1.0.pwconv2.weight - torch.Size([256, 1024]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,925 - mmcv - INFO -
+backbone.stages.1.0.pwconv2.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,925 - mmcv - INFO -
+backbone.stages.1.1.gamma - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,925 - mmcv - INFO -
+backbone.stages.1.1.dwconv.weight - torch.Size([256, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,925 - mmcv - INFO -
+backbone.stages.1.1.dwconv.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,925 - mmcv - INFO -
+backbone.stages.1.1.norm.weight - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,925 - mmcv - INFO -
+backbone.stages.1.1.norm.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,926 - mmcv - INFO -
+backbone.stages.1.1.pwconv1.weight - torch.Size([1024, 256]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,926 - mmcv - INFO -
+backbone.stages.1.1.pwconv1.bias - torch.Size([1024]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,926 - mmcv - INFO -
+backbone.stages.1.1.pwconv2.weight - torch.Size([256, 1024]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,926 - mmcv - INFO -
+backbone.stages.1.1.pwconv2.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,926 - mmcv - INFO -
+backbone.stages.1.2.gamma - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,926 - mmcv - INFO -
+backbone.stages.1.2.dwconv.weight - torch.Size([256, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,926 - mmcv - INFO -
+backbone.stages.1.2.dwconv.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,926 - mmcv - INFO -
+backbone.stages.1.2.norm.weight - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,927 - mmcv - INFO -
+backbone.stages.1.2.norm.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,927 - mmcv - INFO -
+backbone.stages.1.2.pwconv1.weight - torch.Size([1024, 256]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,927 - mmcv - INFO -
+backbone.stages.1.2.pwconv1.bias - torch.Size([1024]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,927 - mmcv - INFO -
+backbone.stages.1.2.pwconv2.weight - torch.Size([256, 1024]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,927 - mmcv - INFO -
+backbone.stages.1.2.pwconv2.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,927 - mmcv - INFO -
+backbone.stages.2.0.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,927 - mmcv - INFO -
+backbone.stages.2.0.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,927 - mmcv - INFO -
+backbone.stages.2.0.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,927 - mmcv - INFO -
+backbone.stages.2.0.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,928 - mmcv - INFO -
+backbone.stages.2.0.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,928 - mmcv - INFO -
+backbone.stages.2.0.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,928 - mmcv - INFO -
+backbone.stages.2.0.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,928 - mmcv - INFO -
+backbone.stages.2.0.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,928 - mmcv - INFO -
+backbone.stages.2.0.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,928 - mmcv - INFO -
+backbone.stages.2.1.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,928 - mmcv - INFO -
+backbone.stages.2.1.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,928 - mmcv - INFO -
+backbone.stages.2.1.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,929 - mmcv - INFO -
+backbone.stages.2.1.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,929 - mmcv - INFO -
+backbone.stages.2.1.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,929 - mmcv - INFO -
+backbone.stages.2.1.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,929 - mmcv - INFO -
+backbone.stages.2.1.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,929 - mmcv - INFO -
+backbone.stages.2.1.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,929 - mmcv - INFO -
+backbone.stages.2.1.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,929 - mmcv - INFO -
+backbone.stages.2.2.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,929 - mmcv - INFO -
+backbone.stages.2.2.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,929 - mmcv - INFO -
+backbone.stages.2.2.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,930 - mmcv - INFO -
+backbone.stages.2.2.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,930 - mmcv - INFO -
+backbone.stages.2.2.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,930 - mmcv - INFO -
+backbone.stages.2.2.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,930 - mmcv - INFO -
+backbone.stages.2.2.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,930 - mmcv - INFO -
+backbone.stages.2.2.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,930 - mmcv - INFO -
+backbone.stages.2.2.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,930 - mmcv - INFO -
+backbone.stages.2.3.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,930 - mmcv - INFO -
+backbone.stages.2.3.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,931 - mmcv - INFO -
+backbone.stages.2.3.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,931 - mmcv - INFO -
+backbone.stages.2.3.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,931 - mmcv - INFO -
+backbone.stages.2.3.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,931 - mmcv - INFO -
+backbone.stages.2.3.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,931 - mmcv - INFO -
+backbone.stages.2.3.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,931 - mmcv - INFO -
+backbone.stages.2.3.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,931 - mmcv - INFO -
+backbone.stages.2.3.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,931 - mmcv - INFO -
+backbone.stages.2.4.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,932 - mmcv - INFO -
+backbone.stages.2.4.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,932 - mmcv - INFO -
+backbone.stages.2.4.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,932 - mmcv - INFO -
+backbone.stages.2.4.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,932 - mmcv - INFO -
+backbone.stages.2.4.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,932 - mmcv - INFO -
+backbone.stages.2.4.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,932 - mmcv - INFO -
+backbone.stages.2.4.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,932 - mmcv - INFO -
+backbone.stages.2.4.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,932 - mmcv - INFO -
+backbone.stages.2.4.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,933 - mmcv - INFO -
+backbone.stages.2.5.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,933 - mmcv - INFO -
+backbone.stages.2.5.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,933 - mmcv - INFO -
+backbone.stages.2.5.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,933 - mmcv - INFO -
+backbone.stages.2.5.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,933 - mmcv - INFO -
+backbone.stages.2.5.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,933 - mmcv - INFO -
+backbone.stages.2.5.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,933 - mmcv - INFO -
+backbone.stages.2.5.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,934 - mmcv - INFO -
+backbone.stages.2.5.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,934 - mmcv - INFO -
+backbone.stages.2.5.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,934 - mmcv - INFO -
+backbone.stages.2.6.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,934 - mmcv - INFO -
+backbone.stages.2.6.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,934 - mmcv - INFO -
+backbone.stages.2.6.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,934 - mmcv - INFO -
+backbone.stages.2.6.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,934 - mmcv - INFO -
+backbone.stages.2.6.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,934 - mmcv - INFO -
+backbone.stages.2.6.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,934 - mmcv - INFO -
+backbone.stages.2.6.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,935 - mmcv - INFO -
+backbone.stages.2.6.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,935 - mmcv - INFO -
+backbone.stages.2.6.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,935 - mmcv - INFO -
+backbone.stages.2.7.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,935 - mmcv - INFO -
+backbone.stages.2.7.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,935 - mmcv - INFO -
+backbone.stages.2.7.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,935 - mmcv - INFO -
+backbone.stages.2.7.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,935 - mmcv - INFO -
+backbone.stages.2.7.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,936 - mmcv - INFO -
+backbone.stages.2.7.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,936 - mmcv - INFO -
+backbone.stages.2.7.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,936 - mmcv - INFO -
+backbone.stages.2.7.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,936 - mmcv - INFO -
+backbone.stages.2.7.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,936 - mmcv - INFO -
+backbone.stages.2.8.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,936 - mmcv - INFO -
+backbone.stages.2.8.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,936 - mmcv - INFO -
+backbone.stages.2.8.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,936 - mmcv - INFO -
+backbone.stages.2.8.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,937 - mmcv - INFO -
+backbone.stages.2.8.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,937 - mmcv - INFO -
+backbone.stages.2.8.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,937 - mmcv - INFO -
+backbone.stages.2.8.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,937 - mmcv - INFO -
+backbone.stages.2.8.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,937 - mmcv - INFO -
+backbone.stages.2.8.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,938 - mmcv - INFO -
+backbone.stages.2.9.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,938 - mmcv - INFO -
+backbone.stages.2.9.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,938 - mmcv - INFO -
+backbone.stages.2.9.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,938 - mmcv - INFO -
+backbone.stages.2.9.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,938 - mmcv - INFO -
+backbone.stages.2.9.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,938 - mmcv - INFO -
+backbone.stages.2.9.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,938 - mmcv - INFO -
+backbone.stages.2.9.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,938 - mmcv - INFO -
+backbone.stages.2.9.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,939 - mmcv - INFO -
+backbone.stages.2.9.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,939 - mmcv - INFO -
+backbone.stages.2.10.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,939 - mmcv - INFO -
+backbone.stages.2.10.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,939 - mmcv - INFO -
+backbone.stages.2.10.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,939 - mmcv - INFO -
+backbone.stages.2.10.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,939 - mmcv - INFO -
+backbone.stages.2.10.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,939 - mmcv - INFO -
+backbone.stages.2.10.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,939 - mmcv - INFO -
+backbone.stages.2.10.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,939 - mmcv - INFO -
+backbone.stages.2.10.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,940 - mmcv - INFO -
+backbone.stages.2.10.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,940 - mmcv - INFO -
+backbone.stages.2.11.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,940 - mmcv - INFO -
+backbone.stages.2.11.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,945 - mmcv - INFO -
+backbone.stages.2.11.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,945 - mmcv - INFO -
+backbone.stages.2.11.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,946 - mmcv - INFO -
+backbone.stages.2.11.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,946 - mmcv - INFO -
+backbone.stages.2.11.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,946 - mmcv - INFO -
+backbone.stages.2.11.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,946 - mmcv - INFO -
+backbone.stages.2.11.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,946 - mmcv - INFO -
+backbone.stages.2.11.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,946 - mmcv - INFO -
+backbone.stages.2.12.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,946 - mmcv - INFO -
+backbone.stages.2.12.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,946 - mmcv - INFO -
+backbone.stages.2.12.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,947 - mmcv - INFO -
+backbone.stages.2.12.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,947 - mmcv - INFO -
+backbone.stages.2.12.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,947 - mmcv - INFO -
+backbone.stages.2.12.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,947 - mmcv - INFO -
+backbone.stages.2.12.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,947 - mmcv - INFO -
+backbone.stages.2.12.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,947 - mmcv - INFO -
+backbone.stages.2.12.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,947 - mmcv - INFO -
+backbone.stages.2.13.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,947 - mmcv - INFO -
+backbone.stages.2.13.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,948 - mmcv - INFO -
+backbone.stages.2.13.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,948 - mmcv - INFO -
+backbone.stages.2.13.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,948 - mmcv - INFO -
+backbone.stages.2.13.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,948 - mmcv - INFO -
+backbone.stages.2.13.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,948 - mmcv - INFO -
+backbone.stages.2.13.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,948 - mmcv - INFO -
+backbone.stages.2.13.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,948 - mmcv - INFO -
+backbone.stages.2.13.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,948 - mmcv - INFO -
+backbone.stages.2.14.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,949 - mmcv - INFO -
+backbone.stages.2.14.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,949 - mmcv - INFO -
+backbone.stages.2.14.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,949 - mmcv - INFO -
+backbone.stages.2.14.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,949 - mmcv - INFO -
+backbone.stages.2.14.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,950 - mmcv - INFO -
+backbone.stages.2.14.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,950 - mmcv - INFO -
+backbone.stages.2.14.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,951 - mmcv - INFO -
+backbone.stages.2.14.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,951 - mmcv - INFO -
+backbone.stages.2.14.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,952 - mmcv - INFO -
+backbone.stages.2.15.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,952 - mmcv - INFO -
+backbone.stages.2.15.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,953 - mmcv - INFO -
+backbone.stages.2.15.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,954 - mmcv - INFO -
+backbone.stages.2.15.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,954 - mmcv - INFO -
+backbone.stages.2.15.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,954 - mmcv - INFO -
+backbone.stages.2.15.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,954 - mmcv - INFO -
+backbone.stages.2.15.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,954 - mmcv - INFO -
+backbone.stages.2.15.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,955 - mmcv - INFO -
+backbone.stages.2.15.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,955 - mmcv - INFO -
+backbone.stages.2.16.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,955 - mmcv - INFO -
+backbone.stages.2.16.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,955 - mmcv - INFO -
+backbone.stages.2.16.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,956 - mmcv - INFO -
+backbone.stages.2.16.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,956 - mmcv - INFO -
+backbone.stages.2.16.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,956 - mmcv - INFO -
+backbone.stages.2.16.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,956 - mmcv - INFO -
+backbone.stages.2.16.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,956 - mmcv - INFO -
+backbone.stages.2.16.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,957 - mmcv - INFO -
+backbone.stages.2.16.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,957 - mmcv - INFO -
+backbone.stages.2.17.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,957 - mmcv - INFO -
+backbone.stages.2.17.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,957 - mmcv - INFO -
+backbone.stages.2.17.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,957 - mmcv - INFO -
+backbone.stages.2.17.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,957 - mmcv - INFO -
+backbone.stages.2.17.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,958 - mmcv - INFO -
+backbone.stages.2.17.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,958 - mmcv - INFO -
+backbone.stages.2.17.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,958 - mmcv - INFO -
+backbone.stages.2.17.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,958 - mmcv - INFO -
+backbone.stages.2.17.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,958 - mmcv - INFO -
+backbone.stages.2.18.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,958 - mmcv - INFO -
+backbone.stages.2.18.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,958 - mmcv - INFO -
+backbone.stages.2.18.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,959 - mmcv - INFO -
+backbone.stages.2.18.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,959 - mmcv - INFO -
+backbone.stages.2.18.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,959 - mmcv - INFO -
+backbone.stages.2.18.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,959 - mmcv - INFO -
+backbone.stages.2.18.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,959 - mmcv - INFO -
+backbone.stages.2.18.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,959 - mmcv - INFO -
+backbone.stages.2.18.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,959 - mmcv - INFO -
+backbone.stages.2.19.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,959 - mmcv - INFO -
+backbone.stages.2.19.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,959 - mmcv - INFO -
+backbone.stages.2.19.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,960 - mmcv - INFO -
+backbone.stages.2.19.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,960 - mmcv - INFO -
+backbone.stages.2.19.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,960 - mmcv - INFO -
+backbone.stages.2.19.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,960 - mmcv - INFO -
+backbone.stages.2.19.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,960 - mmcv - INFO -
+backbone.stages.2.19.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,960 - mmcv - INFO -
+backbone.stages.2.19.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,960 - mmcv - INFO -
+backbone.stages.2.20.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,960 - mmcv - INFO -
+backbone.stages.2.20.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,960 - mmcv - INFO -
+backbone.stages.2.20.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,961 - mmcv - INFO -
+backbone.stages.2.20.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,961 - mmcv - INFO -
+backbone.stages.2.20.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,961 - mmcv - INFO -
+backbone.stages.2.20.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,961 - mmcv - INFO -
+backbone.stages.2.20.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,961 - mmcv - INFO -
+backbone.stages.2.20.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,961 - mmcv - INFO -
+backbone.stages.2.20.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,961 - mmcv - INFO -
+backbone.stages.2.21.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,961 - mmcv - INFO -
+backbone.stages.2.21.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,961 - mmcv - INFO -
+backbone.stages.2.21.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,962 - mmcv - INFO -
+backbone.stages.2.21.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,962 - mmcv - INFO -
+backbone.stages.2.21.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,962 - mmcv - INFO -
+backbone.stages.2.21.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,962 - mmcv - INFO -
+backbone.stages.2.21.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,962 - mmcv - INFO -
+backbone.stages.2.21.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,962 - mmcv - INFO -
+backbone.stages.2.21.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,962 - mmcv - INFO -
+backbone.stages.2.22.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,962 - mmcv - INFO -
+backbone.stages.2.22.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,963 - mmcv - INFO -
+backbone.stages.2.22.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,963 - mmcv - INFO -
+backbone.stages.2.22.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,963 - mmcv - INFO -
+backbone.stages.2.22.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,963 - mmcv - INFO -
+backbone.stages.2.22.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,963 - mmcv - INFO -
+backbone.stages.2.22.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,963 - mmcv - INFO -
+backbone.stages.2.22.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,963 - mmcv - INFO -
+backbone.stages.2.22.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,963 - mmcv - INFO -
+backbone.stages.2.23.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,963 - mmcv - INFO -
+backbone.stages.2.23.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,964 - mmcv - INFO -
+backbone.stages.2.23.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,964 - mmcv - INFO -
+backbone.stages.2.23.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,964 - mmcv - INFO -
+backbone.stages.2.23.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,964 - mmcv - INFO -
+backbone.stages.2.23.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,964 - mmcv - INFO -
+backbone.stages.2.23.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,964 - mmcv - INFO -
+backbone.stages.2.23.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,964 - mmcv - INFO -
+backbone.stages.2.23.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,964 - mmcv - INFO -
+backbone.stages.2.24.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,965 - mmcv - INFO -
+backbone.stages.2.24.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,965 - mmcv - INFO -
+backbone.stages.2.24.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,965 - mmcv - INFO -
+backbone.stages.2.24.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,965 - mmcv - INFO -
+backbone.stages.2.24.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,965 - mmcv - INFO -
+backbone.stages.2.24.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,965 - mmcv - INFO -
+backbone.stages.2.24.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,965 - mmcv - INFO -
+backbone.stages.2.24.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,965 - mmcv - INFO -
+backbone.stages.2.24.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,965 - mmcv - INFO -
+backbone.stages.2.25.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,966 - mmcv - INFO -
+backbone.stages.2.25.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,966 - mmcv - INFO -
+backbone.stages.2.25.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,966 - mmcv - INFO -
+backbone.stages.2.25.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,966 - mmcv - INFO -
+backbone.stages.2.25.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,966 - mmcv - INFO -
+backbone.stages.2.25.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,966 - mmcv - INFO -
+backbone.stages.2.25.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,966 - mmcv - INFO -
+backbone.stages.2.25.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,966 - mmcv - INFO -
+backbone.stages.2.25.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,966 - mmcv - INFO -
+backbone.stages.2.26.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,967 - mmcv - INFO -
+backbone.stages.2.26.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,967 - mmcv - INFO -
+backbone.stages.2.26.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,967 - mmcv - INFO -
+backbone.stages.2.26.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,967 - mmcv - INFO -
+backbone.stages.2.26.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,967 - mmcv - INFO -
+backbone.stages.2.26.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,967 - mmcv - INFO -
+backbone.stages.2.26.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,967 - mmcv - INFO -
+backbone.stages.2.26.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,967 - mmcv - INFO -
+backbone.stages.2.26.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,968 - mmcv - INFO -
+backbone.stages.3.0.gamma - torch.Size([1024]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,968 - mmcv - INFO -
+backbone.stages.3.0.dwconv.weight - torch.Size([1024, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,968 - mmcv - INFO -
+backbone.stages.3.0.dwconv.bias - torch.Size([1024]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,968 - mmcv - INFO -
+backbone.stages.3.0.norm.weight - torch.Size([1024]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,968 - mmcv - INFO -
+backbone.stages.3.0.norm.bias - torch.Size([1024]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,968 - mmcv - INFO -
+backbone.stages.3.0.pwconv1.weight - torch.Size([4096, 1024]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,968 - mmcv - INFO -
+backbone.stages.3.0.pwconv1.bias - torch.Size([4096]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,969 - mmcv - INFO -
+backbone.stages.3.0.pwconv2.weight - torch.Size([1024, 4096]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,969 - mmcv - INFO -
+backbone.stages.3.0.pwconv2.bias - torch.Size([1024]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,969 - mmcv - INFO -
+backbone.stages.3.1.gamma - torch.Size([1024]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,969 - mmcv - INFO -
+backbone.stages.3.1.dwconv.weight - torch.Size([1024, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,969 - mmcv - INFO -
+backbone.stages.3.1.dwconv.bias - torch.Size([1024]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,969 - mmcv - INFO -
+backbone.stages.3.1.norm.weight - torch.Size([1024]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,969 - mmcv - INFO -
+backbone.stages.3.1.norm.bias - torch.Size([1024]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,969 - mmcv - INFO -
+backbone.stages.3.1.pwconv1.weight - torch.Size([4096, 1024]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,969 - mmcv - INFO -
+backbone.stages.3.1.pwconv1.bias - torch.Size([4096]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,970 - mmcv - INFO -
+backbone.stages.3.1.pwconv2.weight - torch.Size([1024, 4096]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,970 - mmcv - INFO -
+backbone.stages.3.1.pwconv2.bias - torch.Size([1024]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,970 - mmcv - INFO -
+backbone.stages.3.2.gamma - torch.Size([1024]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,970 - mmcv - INFO -
+backbone.stages.3.2.dwconv.weight - torch.Size([1024, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,970 - mmcv - INFO -
+backbone.stages.3.2.dwconv.bias - torch.Size([1024]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,970 - mmcv - INFO -
+backbone.stages.3.2.norm.weight - torch.Size([1024]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,970 - mmcv - INFO -
+backbone.stages.3.2.norm.bias - torch.Size([1024]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,970 - mmcv - INFO -
+backbone.stages.3.2.pwconv1.weight - torch.Size([4096, 1024]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,971 - mmcv - INFO -
+backbone.stages.3.2.pwconv1.bias - torch.Size([4096]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,971 - mmcv - INFO -
+backbone.stages.3.2.pwconv2.weight - torch.Size([1024, 4096]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-17 16:37:54,971 - mmcv - INFO -
+backbone.stages.3.2.pwconv2.bias - torch.Size([1024]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,971 - mmcv - INFO -
+backbone.norm0.weight - torch.Size([128]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,971 - mmcv - INFO -
+backbone.norm0.bias - torch.Size([128]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,971 - mmcv - INFO -
+backbone.norm1.weight - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,971 - mmcv - INFO -
+backbone.norm1.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,971 - mmcv - INFO -
+backbone.norm2.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,972 - mmcv - INFO -
+backbone.norm2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,972 - mmcv - INFO -
+backbone.norm3.weight - torch.Size([1024]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,972 - mmcv - INFO -
+backbone.norm3.bias - torch.Size([1024]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,972 - mmcv - INFO -
+neck.lateral_convs.0.conv.weight - torch.Size([256, 128, 1, 1]):
+XavierInit: gain=1, distribution=uniform, bias=0
+
+2024-10-17 16:37:54,972 - mmcv - INFO -
+neck.lateral_convs.0.conv.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,972 - mmcv - INFO -
+neck.lateral_convs.1.conv.weight - torch.Size([256, 256, 1, 1]):
+XavierInit: gain=1, distribution=uniform, bias=0
+
+2024-10-17 16:37:54,972 - mmcv - INFO -
+neck.lateral_convs.1.conv.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,972 - mmcv - INFO -
+neck.lateral_convs.2.conv.weight - torch.Size([256, 512, 1, 1]):
+XavierInit: gain=1, distribution=uniform, bias=0
+
+2024-10-17 16:37:54,973 - mmcv - INFO -
+neck.lateral_convs.2.conv.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,973 - mmcv - INFO -
+neck.lateral_convs.3.conv.weight - torch.Size([256, 1024, 1, 1]):
+XavierInit: gain=1, distribution=uniform, bias=0
+
+2024-10-17 16:37:54,973 - mmcv - INFO -
+neck.lateral_convs.3.conv.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,973 - mmcv - INFO -
+neck.fpn_convs.0.conv.weight - torch.Size([256, 256, 3, 3]):
+XavierInit: gain=1, distribution=uniform, bias=0
+
+2024-10-17 16:37:54,973 - mmcv - INFO -
+neck.fpn_convs.0.conv.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,973 - mmcv - INFO -
+neck.fpn_convs.1.conv.weight - torch.Size([256, 256, 3, 3]):
+XavierInit: gain=1, distribution=uniform, bias=0
+
+2024-10-17 16:37:54,973 - mmcv - INFO -
+neck.fpn_convs.1.conv.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,973 - mmcv - INFO -
+neck.fpn_convs.2.conv.weight - torch.Size([256, 256, 3, 3]):
+XavierInit: gain=1, distribution=uniform, bias=0
+
+2024-10-17 16:37:54,974 - mmcv - INFO -
+neck.fpn_convs.2.conv.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,974 - mmcv - INFO -
+neck.fpn_convs.3.conv.weight - torch.Size([256, 256, 3, 3]):
+XavierInit: gain=1, distribution=uniform, bias=0
+
+2024-10-17 16:37:54,974 - mmcv - INFO -
+neck.fpn_convs.3.conv.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,974 - mmcv - INFO -
+rpn_head.rpn_conv.weight - torch.Size([256, 256, 3, 3]):
+NormalInit: mean=0, std=0.01, bias=0
+
+2024-10-17 16:37:54,974 - mmcv - INFO -
+rpn_head.rpn_conv.bias - torch.Size([256]):
+NormalInit: mean=0, std=0.01, bias=0
+
+2024-10-17 16:37:54,974 - mmcv - INFO -
+rpn_head.rpn_cls.weight - torch.Size([3, 256, 1, 1]):
+NormalInit: mean=0, std=0.01, bias=0
+
+2024-10-17 16:37:54,974 - mmcv - INFO -
+rpn_head.rpn_cls.bias - torch.Size([3]):
+NormalInit: mean=0, std=0.01, bias=0
+
+2024-10-17 16:37:54,974 - mmcv - INFO -
+rpn_head.rpn_reg.weight - torch.Size([12, 256, 1, 1]):
+NormalInit: mean=0, std=0.01, bias=0
+
+2024-10-17 16:37:54,974 - mmcv - INFO -
+rpn_head.rpn_reg.bias - torch.Size([12]):
+NormalInit: mean=0, std=0.01, bias=0
+
+2024-10-17 16:37:54,975 - mmcv - INFO -
+roi_head.bbox_head.0.fc_cls.weight - torch.Size([11, 1024]):
+NormalInit: mean=0, std=0.01, bias=0
+
+2024-10-17 16:37:54,975 - mmcv - INFO -
+roi_head.bbox_head.0.fc_cls.bias - torch.Size([11]):
+NormalInit: mean=0, std=0.01, bias=0
+
+2024-10-17 16:37:54,975 - mmcv - INFO -
+roi_head.bbox_head.0.fc_reg.weight - torch.Size([40, 1024]):
+NormalInit: mean=0, std=0.001, bias=0
+
+2024-10-17 16:37:54,975 - mmcv - INFO -
+roi_head.bbox_head.0.fc_reg.bias - torch.Size([40]):
+NormalInit: mean=0, std=0.001, bias=0
+
+2024-10-17 16:37:54,975 - mmcv - INFO -
+roi_head.bbox_head.0.shared_convs.0.conv.weight - torch.Size([256, 256, 3, 3]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,975 - mmcv - INFO -
+roi_head.bbox_head.0.shared_convs.0.bn.weight - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,975 - mmcv - INFO -
+roi_head.bbox_head.0.shared_convs.0.bn.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,975 - mmcv - INFO -
+roi_head.bbox_head.0.shared_convs.1.conv.weight - torch.Size([256, 256, 3, 3]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,976 - mmcv - INFO -
+roi_head.bbox_head.0.shared_convs.1.bn.weight - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,976 - mmcv - INFO -
+roi_head.bbox_head.0.shared_convs.1.bn.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,976 - mmcv - INFO -
+roi_head.bbox_head.0.shared_convs.2.conv.weight - torch.Size([256, 256, 3, 3]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,976 - mmcv - INFO -
+roi_head.bbox_head.0.shared_convs.2.bn.weight - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,976 - mmcv - INFO -
+roi_head.bbox_head.0.shared_convs.2.bn.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,976 - mmcv - INFO -
+roi_head.bbox_head.0.shared_convs.3.conv.weight - torch.Size([256, 256, 3, 3]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,976 - mmcv - INFO -
+roi_head.bbox_head.0.shared_convs.3.bn.weight - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,976 - mmcv - INFO -
+roi_head.bbox_head.0.shared_convs.3.bn.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,977 - mmcv - INFO -
+roi_head.bbox_head.0.shared_fcs.0.weight - torch.Size([1024, 12544]):
+XavierInit: gain=1, distribution=uniform, bias=0
+
+2024-10-17 16:37:54,977 - mmcv - INFO -
+roi_head.bbox_head.0.shared_fcs.0.bias - torch.Size([1024]):
+XavierInit: gain=1, distribution=uniform, bias=0
+
+2024-10-17 16:37:54,977 - mmcv - INFO -
+roi_head.bbox_head.1.fc_cls.weight - torch.Size([11, 1024]):
+NormalInit: mean=0, std=0.01, bias=0
+
+2024-10-17 16:37:54,977 - mmcv - INFO -
+roi_head.bbox_head.1.fc_cls.bias - torch.Size([11]):
+NormalInit: mean=0, std=0.01, bias=0
+
+2024-10-17 16:37:54,977 - mmcv - INFO -
+roi_head.bbox_head.1.fc_reg.weight - torch.Size([40, 1024]):
+NormalInit: mean=0, std=0.001, bias=0
+
+2024-10-17 16:37:54,977 - mmcv - INFO -
+roi_head.bbox_head.1.fc_reg.bias - torch.Size([40]):
+NormalInit: mean=0, std=0.001, bias=0
+
+2024-10-17 16:37:54,977 - mmcv - INFO -
+roi_head.bbox_head.1.shared_convs.0.conv.weight - torch.Size([256, 256, 3, 3]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,977 - mmcv - INFO -
+roi_head.bbox_head.1.shared_convs.0.bn.weight - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,978 - mmcv - INFO -
+roi_head.bbox_head.1.shared_convs.0.bn.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,978 - mmcv - INFO -
+roi_head.bbox_head.1.shared_convs.1.conv.weight - torch.Size([256, 256, 3, 3]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,978 - mmcv - INFO -
+roi_head.bbox_head.1.shared_convs.1.bn.weight - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,978 - mmcv - INFO -
+roi_head.bbox_head.1.shared_convs.1.bn.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,978 - mmcv - INFO -
+roi_head.bbox_head.1.shared_convs.2.conv.weight - torch.Size([256, 256, 3, 3]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,978 - mmcv - INFO -
+roi_head.bbox_head.1.shared_convs.2.bn.weight - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,978 - mmcv - INFO -
+roi_head.bbox_head.1.shared_convs.2.bn.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,978 - mmcv - INFO -
+roi_head.bbox_head.1.shared_convs.3.conv.weight - torch.Size([256, 256, 3, 3]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,979 - mmcv - INFO -
+roi_head.bbox_head.1.shared_convs.3.bn.weight - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,979 - mmcv - INFO -
+roi_head.bbox_head.1.shared_convs.3.bn.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,979 - mmcv - INFO -
+roi_head.bbox_head.1.shared_fcs.0.weight - torch.Size([1024, 12544]):
+XavierInit: gain=1, distribution=uniform, bias=0
+
+2024-10-17 16:37:54,979 - mmcv - INFO -
+roi_head.bbox_head.1.shared_fcs.0.bias - torch.Size([1024]):
+XavierInit: gain=1, distribution=uniform, bias=0
+
+2024-10-17 16:37:54,979 - mmcv - INFO -
+roi_head.bbox_head.2.fc_cls.weight - torch.Size([11, 1024]):
+NormalInit: mean=0, std=0.01, bias=0
+
+2024-10-17 16:37:54,979 - mmcv - INFO -
+roi_head.bbox_head.2.fc_cls.bias - torch.Size([11]):
+NormalInit: mean=0, std=0.01, bias=0
+
+2024-10-17 16:37:54,979 - mmcv - INFO -
+roi_head.bbox_head.2.fc_reg.weight - torch.Size([40, 1024]):
+NormalInit: mean=0, std=0.001, bias=0
+
+2024-10-17 16:37:54,979 - mmcv - INFO -
+roi_head.bbox_head.2.fc_reg.bias - torch.Size([40]):
+NormalInit: mean=0, std=0.001, bias=0
+
+2024-10-17 16:37:54,979 - mmcv - INFO -
+roi_head.bbox_head.2.shared_convs.0.conv.weight - torch.Size([256, 256, 3, 3]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,980 - mmcv - INFO -
+roi_head.bbox_head.2.shared_convs.0.bn.weight - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,980 - mmcv - INFO -
+roi_head.bbox_head.2.shared_convs.0.bn.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,980 - mmcv - INFO -
+roi_head.bbox_head.2.shared_convs.1.conv.weight - torch.Size([256, 256, 3, 3]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,980 - mmcv - INFO -
+roi_head.bbox_head.2.shared_convs.1.bn.weight - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,980 - mmcv - INFO -
+roi_head.bbox_head.2.shared_convs.1.bn.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,980 - mmcv - INFO -
+roi_head.bbox_head.2.shared_convs.2.conv.weight - torch.Size([256, 256, 3, 3]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,980 - mmcv - INFO -
+roi_head.bbox_head.2.shared_convs.2.bn.weight - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,980 - mmcv - INFO -
+roi_head.bbox_head.2.shared_convs.2.bn.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,981 - mmcv - INFO -
+roi_head.bbox_head.2.shared_convs.3.conv.weight - torch.Size([256, 256, 3, 3]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,981 - mmcv - INFO -
+roi_head.bbox_head.2.shared_convs.3.bn.weight - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,981 - mmcv - INFO -
+roi_head.bbox_head.2.shared_convs.3.bn.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-17 16:37:54,981 - mmcv - INFO -
+roi_head.bbox_head.2.shared_fcs.0.weight - torch.Size([1024, 12544]):
+XavierInit: gain=1, distribution=uniform, bias=0
+
+2024-10-17 16:37:54,981 - mmcv - INFO -
+roi_head.bbox_head.2.shared_fcs.0.bias - torch.Size([1024]):
+XavierInit: gain=1, distribution=uniform, bias=0
+
+2024-10-17 16:37:57,003 - mmdet - INFO - Automatic scaling of learning rate (LR) has been disabled.
+2024-10-17 16:37:57,003 - mmdet - INFO - self.paramwise_cfg is {'decay_rate': 0.8, 'decay_type': 'layer_wise', 'num_layers': 12}
+2024-10-17 16:37:57,004 - mmdet - INFO - Build LearningRateDecayOptimizerConstructor  layer_wise 0.8 - 14
+2024-10-17 16:37:57,004 - mmdet - INFO - set param backbone.downsample_layers.0.0.weight as id 0
+2024-10-17 16:37:57,004 - mmdet - INFO - set param backbone.downsample_layers.0.0.bias as id 0
+2024-10-17 16:37:57,004 - mmdet - INFO - set param backbone.downsample_layers.0.1.weight as id 0
+2024-10-17 16:37:57,004 - mmdet - INFO - set param backbone.downsample_layers.0.1.bias as id 0
+2024-10-17 16:37:57,004 - mmdet - INFO - set param backbone.downsample_layers.1.0.weight as id 2
+2024-10-17 16:37:57,004 - mmdet - INFO - set param backbone.downsample_layers.1.0.bias as id 2
+2024-10-17 16:37:57,005 - mmdet - INFO - set param backbone.downsample_layers.1.1.weight as id 2
+2024-10-17 16:37:57,005 - mmdet - INFO - set param backbone.downsample_layers.1.1.bias as id 2
+2024-10-17 16:37:57,005 - mmdet - INFO - set param backbone.downsample_layers.2.0.weight as id 3
+2024-10-17 16:37:57,005 - mmdet - INFO - set param backbone.downsample_layers.2.0.bias as id 3
+2024-10-17 16:37:57,005 - mmdet - INFO - set param backbone.downsample_layers.2.1.weight as id 3
+2024-10-17 16:37:57,005 - mmdet - INFO - set param backbone.downsample_layers.2.1.bias as id 3
+2024-10-17 16:37:57,005 - mmdet - INFO - set param backbone.downsample_layers.3.0.weight as id 12
+2024-10-17 16:37:57,006 - mmdet - INFO - set param backbone.downsample_layers.3.0.bias as id 12
+2024-10-17 16:37:57,006 - mmdet - INFO - set param backbone.downsample_layers.3.1.weight as id 12
+2024-10-17 16:37:57,006 - mmdet - INFO - set param backbone.downsample_layers.3.1.bias as id 12
+2024-10-17 16:37:57,006 - mmdet - INFO - set param backbone.stages.0.0.gamma as id 1
+2024-10-17 16:37:57,006 - mmdet - INFO - set param backbone.stages.0.0.dwconv.weight as id 1
+2024-10-17 16:37:57,006 - mmdet - INFO - set param backbone.stages.0.0.dwconv.bias as id 1
+2024-10-17 16:37:57,006 - mmdet - INFO - set param backbone.stages.0.0.norm.weight as id 1
+2024-10-17 16:37:57,007 - mmdet - INFO - set param backbone.stages.0.0.norm.bias as id 1
+2024-10-17 16:37:57,007 - mmdet - INFO - set param backbone.stages.0.0.pwconv1.weight as id 1
+2024-10-17 16:37:57,007 - mmdet - INFO - set param backbone.stages.0.0.pwconv1.bias as id 1
+2024-10-17 16:37:57,007 - mmdet - INFO - set param backbone.stages.0.0.pwconv2.weight as id 1
+2024-10-17 16:37:57,007 - mmdet - INFO - set param backbone.stages.0.0.pwconv2.bias as id 1
+2024-10-17 16:37:57,007 - mmdet - INFO - set param backbone.stages.0.1.gamma as id 1
+2024-10-17 16:37:57,007 - mmdet - INFO - set param backbone.stages.0.1.dwconv.weight as id 1
+2024-10-17 16:37:57,008 - mmdet - INFO - set param backbone.stages.0.1.dwconv.bias as id 1
+2024-10-17 16:37:57,008 - mmdet - INFO - set param backbone.stages.0.1.norm.weight as id 1
+2024-10-17 16:37:57,008 - mmdet - INFO - set param backbone.stages.0.1.norm.bias as id 1
+2024-10-17 16:37:57,008 - mmdet - INFO - set param backbone.stages.0.1.pwconv1.weight as id 1
+2024-10-17 16:37:57,008 - mmdet - INFO - set param backbone.stages.0.1.pwconv1.bias as id 1
+2024-10-17 16:37:57,008 - mmdet - INFO - set param backbone.stages.0.1.pwconv2.weight as id 1
+2024-10-17 16:37:57,008 - mmdet - INFO - set param backbone.stages.0.1.pwconv2.bias as id 1
+2024-10-17 16:37:57,008 - mmdet - INFO - set param backbone.stages.0.2.gamma as id 1
+2024-10-17 16:37:57,009 - mmdet - INFO - set param backbone.stages.0.2.dwconv.weight as id 1
+2024-10-17 16:37:57,009 - mmdet - INFO - set param backbone.stages.0.2.dwconv.bias as id 1
+2024-10-17 16:37:57,009 - mmdet - INFO - set param backbone.stages.0.2.norm.weight as id 1
+2024-10-17 16:37:57,009 - mmdet - INFO - set param backbone.stages.0.2.norm.bias as id 1
+2024-10-17 16:37:57,009 - mmdet - INFO - set param backbone.stages.0.2.pwconv1.weight as id 1
+2024-10-17 16:37:57,009 - mmdet - INFO - set param backbone.stages.0.2.pwconv1.bias as id 1
+2024-10-17 16:37:57,009 - mmdet - INFO - set param backbone.stages.0.2.pwconv2.weight as id 1
+2024-10-17 16:37:57,010 - mmdet - INFO - set param backbone.stages.0.2.pwconv2.bias as id 1
+2024-10-17 16:37:57,010 - mmdet - INFO - set param backbone.stages.1.0.gamma as id 2
+2024-10-17 16:37:57,010 - mmdet - INFO - set param backbone.stages.1.0.dwconv.weight as id 2
+2024-10-17 16:37:57,010 - mmdet - INFO - set param backbone.stages.1.0.dwconv.bias as id 2
+2024-10-17 16:37:57,010 - mmdet - INFO - set param backbone.stages.1.0.norm.weight as id 2
+2024-10-17 16:37:57,010 - mmdet - INFO - set param backbone.stages.1.0.norm.bias as id 2
+2024-10-17 16:37:57,010 - mmdet - INFO - set param backbone.stages.1.0.pwconv1.weight as id 2
+2024-10-17 16:37:57,010 - mmdet - INFO - set param backbone.stages.1.0.pwconv1.bias as id 2
+2024-10-17 16:37:57,011 - mmdet - INFO - set param backbone.stages.1.0.pwconv2.weight as id 2
+2024-10-17 16:37:57,011 - mmdet - INFO - set param backbone.stages.1.0.pwconv2.bias as id 2
+2024-10-17 16:37:57,011 - mmdet - INFO - set param backbone.stages.1.1.gamma as id 2
+2024-10-17 16:37:57,011 - mmdet - INFO - set param backbone.stages.1.1.dwconv.weight as id 2
+2024-10-17 16:37:57,011 - mmdet - INFO - set param backbone.stages.1.1.dwconv.bias as id 2
+2024-10-17 16:37:57,011 - mmdet - INFO - set param backbone.stages.1.1.norm.weight as id 2
+2024-10-17 16:37:57,011 - mmdet - INFO - set param backbone.stages.1.1.norm.bias as id 2
+2024-10-17 16:37:57,011 - mmdet - INFO - set param backbone.stages.1.1.pwconv1.weight as id 2
+2024-10-17 16:37:57,012 - mmdet - INFO - set param backbone.stages.1.1.pwconv1.bias as id 2
+2024-10-17 16:37:57,012 - mmdet - INFO - set param backbone.stages.1.1.pwconv2.weight as id 2
+2024-10-17 16:37:57,012 - mmdet - INFO - set param backbone.stages.1.1.pwconv2.bias as id 2
+2024-10-17 16:37:57,012 - mmdet - INFO - set param backbone.stages.1.2.gamma as id 2
+2024-10-17 16:37:57,012 - mmdet - INFO - set param backbone.stages.1.2.dwconv.weight as id 2
+2024-10-17 16:37:57,012 - mmdet - INFO - set param backbone.stages.1.2.dwconv.bias as id 2
+2024-10-17 16:37:57,012 - mmdet - INFO - set param backbone.stages.1.2.norm.weight as id 2
+2024-10-17 16:37:57,012 - mmdet - INFO - set param backbone.stages.1.2.norm.bias as id 2
+2024-10-17 16:37:57,013 - mmdet - INFO - set param backbone.stages.1.2.pwconv1.weight as id 2
+2024-10-17 16:37:57,013 - mmdet - INFO - set param backbone.stages.1.2.pwconv1.bias as id 2
+2024-10-17 16:37:57,013 - mmdet - INFO - set param backbone.stages.1.2.pwconv2.weight as id 2
+2024-10-17 16:37:57,013 - mmdet - INFO - set param backbone.stages.1.2.pwconv2.bias as id 2
+2024-10-17 16:37:57,013 - mmdet - INFO - set param backbone.stages.2.0.gamma as id 3
+2024-10-17 16:37:57,013 - mmdet - INFO - set param backbone.stages.2.0.dwconv.weight as id 3
+2024-10-17 16:37:57,013 - mmdet - INFO - set param backbone.stages.2.0.dwconv.bias as id 3
+2024-10-17 16:37:57,013 - mmdet - INFO - set param backbone.stages.2.0.norm.weight as id 3
+2024-10-17 16:37:57,014 - mmdet - INFO - set param backbone.stages.2.0.norm.bias as id 3
+2024-10-17 16:37:57,014 - mmdet - INFO - set param backbone.stages.2.0.pwconv1.weight as id 3
+2024-10-17 16:37:57,014 - mmdet - INFO - set param backbone.stages.2.0.pwconv1.bias as id 3
+2024-10-17 16:37:57,014 - mmdet - INFO - set param backbone.stages.2.0.pwconv2.weight as id 3
+2024-10-17 16:37:57,014 - mmdet - INFO - set param backbone.stages.2.0.pwconv2.bias as id 3
+2024-10-17 16:37:57,014 - mmdet - INFO - set param backbone.stages.2.1.gamma as id 3
+2024-10-17 16:37:57,014 - mmdet - INFO - set param backbone.stages.2.1.dwconv.weight as id 3
+2024-10-17 16:37:57,014 - mmdet - INFO - set param backbone.stages.2.1.dwconv.bias as id 3
+2024-10-17 16:37:57,015 - mmdet - INFO - set param backbone.stages.2.1.norm.weight as id 3
+2024-10-17 16:37:57,015 - mmdet - INFO - set param backbone.stages.2.1.norm.bias as id 3
+2024-10-17 16:37:57,015 - mmdet - INFO - set param backbone.stages.2.1.pwconv1.weight as id 3
+2024-10-17 16:37:57,015 - mmdet - INFO - set param backbone.stages.2.1.pwconv1.bias as id 3
+2024-10-17 16:37:57,015 - mmdet - INFO - set param backbone.stages.2.1.pwconv2.weight as id 3
+2024-10-17 16:37:57,015 - mmdet - INFO - set param backbone.stages.2.1.pwconv2.bias as id 3
+2024-10-17 16:37:57,015 - mmdet - INFO - set param backbone.stages.2.2.gamma as id 3
+2024-10-17 16:37:57,015 - mmdet - INFO - set param backbone.stages.2.2.dwconv.weight as id 3
+2024-10-17 16:37:57,016 - mmdet - INFO - set param backbone.stages.2.2.dwconv.bias as id 3
+2024-10-17 16:37:57,016 - mmdet - INFO - set param backbone.stages.2.2.norm.weight as id 3
+2024-10-17 16:37:57,016 - mmdet - INFO - set param backbone.stages.2.2.norm.bias as id 3
+2024-10-17 16:37:57,016 - mmdet - INFO - set param backbone.stages.2.2.pwconv1.weight as id 3
+2024-10-17 16:37:57,016 - mmdet - INFO - set param backbone.stages.2.2.pwconv1.bias as id 3
+2024-10-17 16:37:57,016 - mmdet - INFO - set param backbone.stages.2.2.pwconv2.weight as id 3
+2024-10-17 16:37:57,016 - mmdet - INFO - set param backbone.stages.2.2.pwconv2.bias as id 3
+2024-10-17 16:37:57,016 - mmdet - INFO - set param backbone.stages.2.3.gamma as id 4
+2024-10-17 16:37:57,017 - mmdet - INFO - set param backbone.stages.2.3.dwconv.weight as id 4
+2024-10-17 16:37:57,017 - mmdet - INFO - set param backbone.stages.2.3.dwconv.bias as id 4
+2024-10-17 16:37:57,017 - mmdet - INFO - set param backbone.stages.2.3.norm.weight as id 4
+2024-10-17 16:37:57,017 - mmdet - INFO - set param backbone.stages.2.3.norm.bias as id 4
+2024-10-17 16:37:57,017 - mmdet - INFO - set param backbone.stages.2.3.pwconv1.weight as id 4
+2024-10-17 16:37:57,017 - mmdet - INFO - set param backbone.stages.2.3.pwconv1.bias as id 4
+2024-10-17 16:37:57,017 - mmdet - INFO - set param backbone.stages.2.3.pwconv2.weight as id 4
+2024-10-17 16:37:57,017 - mmdet - INFO - set param backbone.stages.2.3.pwconv2.bias as id 4
+2024-10-17 16:37:57,017 - mmdet - INFO - set param backbone.stages.2.4.gamma as id 4
+2024-10-17 16:37:57,018 - mmdet - INFO - set param backbone.stages.2.4.dwconv.weight as id 4
+2024-10-17 16:37:57,018 - mmdet - INFO - set param backbone.stages.2.4.dwconv.bias as id 4
+2024-10-17 16:37:57,018 - mmdet - INFO - set param backbone.stages.2.4.norm.weight as id 4
+2024-10-17 16:37:57,018 - mmdet - INFO - set param backbone.stages.2.4.norm.bias as id 4
+2024-10-17 16:37:57,018 - mmdet - INFO - set param backbone.stages.2.4.pwconv1.weight as id 4
+2024-10-17 16:37:57,018 - mmdet - INFO - set param backbone.stages.2.4.pwconv1.bias as id 4
+2024-10-17 16:37:57,018 - mmdet - INFO - set param backbone.stages.2.4.pwconv2.weight as id 4
+2024-10-17 16:37:57,018 - mmdet - INFO - set param backbone.stages.2.4.pwconv2.bias as id 4
+2024-10-17 16:37:57,018 - mmdet - INFO - set param backbone.stages.2.5.gamma as id 4
+2024-10-17 16:37:57,019 - mmdet - INFO - set param backbone.stages.2.5.dwconv.weight as id 4
+2024-10-17 16:37:57,019 - mmdet - INFO - set param backbone.stages.2.5.dwconv.bias as id 4
+2024-10-17 16:37:57,019 - mmdet - INFO - set param backbone.stages.2.5.norm.weight as id 4
+2024-10-17 16:37:57,019 - mmdet - INFO - set param backbone.stages.2.5.norm.bias as id 4
+2024-10-17 16:37:57,019 - mmdet - INFO - set param backbone.stages.2.5.pwconv1.weight as id 4
+2024-10-17 16:37:57,019 - mmdet - INFO - set param backbone.stages.2.5.pwconv1.bias as id 4
+2024-10-17 16:37:57,019 - mmdet - INFO - set param backbone.stages.2.5.pwconv2.weight as id 4
+2024-10-17 16:37:57,019 - mmdet - INFO - set param backbone.stages.2.5.pwconv2.bias as id 4
+2024-10-17 16:37:57,019 - mmdet - INFO - set param backbone.stages.2.6.gamma as id 5
+2024-10-17 16:37:57,019 - mmdet - INFO - set param backbone.stages.2.6.dwconv.weight as id 5
+2024-10-17 16:37:57,020 - mmdet - INFO - set param backbone.stages.2.6.dwconv.bias as id 5
+2024-10-17 16:37:57,020 - mmdet - INFO - set param backbone.stages.2.6.norm.weight as id 5
+2024-10-17 16:37:57,020 - mmdet - INFO - set param backbone.stages.2.6.norm.bias as id 5
+2024-10-17 16:37:57,020 - mmdet - INFO - set param backbone.stages.2.6.pwconv1.weight as id 5
+2024-10-17 16:37:57,020 - mmdet - INFO - set param backbone.stages.2.6.pwconv1.bias as id 5
+2024-10-17 16:37:57,020 - mmdet - INFO - set param backbone.stages.2.6.pwconv2.weight as id 5
+2024-10-17 16:37:57,020 - mmdet - INFO - set param backbone.stages.2.6.pwconv2.bias as id 5
+2024-10-17 16:37:57,020 - mmdet - INFO - set param backbone.stages.2.7.gamma as id 5
+2024-10-17 16:37:57,020 - mmdet - INFO - set param backbone.stages.2.7.dwconv.weight as id 5
+2024-10-17 16:37:57,021 - mmdet - INFO - set param backbone.stages.2.7.dwconv.bias as id 5
+2024-10-17 16:37:57,021 - mmdet - INFO - set param backbone.stages.2.7.norm.weight as id 5
+2024-10-17 16:37:57,021 - mmdet - INFO - set param backbone.stages.2.7.norm.bias as id 5
+2024-10-17 16:37:57,021 - mmdet - INFO - set param backbone.stages.2.7.pwconv1.weight as id 5
+2024-10-17 16:37:57,021 - mmdet - INFO - set param backbone.stages.2.7.pwconv1.bias as id 5
+2024-10-17 16:37:57,021 - mmdet - INFO - set param backbone.stages.2.7.pwconv2.weight as id 5
+2024-10-17 16:37:57,021 - mmdet - INFO - set param backbone.stages.2.7.pwconv2.bias as id 5
+2024-10-17 16:37:57,021 - mmdet - INFO - set param backbone.stages.2.8.gamma as id 5
+2024-10-17 16:37:57,022 - mmdet - INFO - set param backbone.stages.2.8.dwconv.weight as id 5
+2024-10-17 16:37:57,022 - mmdet - INFO - set param backbone.stages.2.8.dwconv.bias as id 5
+2024-10-17 16:37:57,022 - mmdet - INFO - set param backbone.stages.2.8.norm.weight as id 5
+2024-10-17 16:37:57,022 - mmdet - INFO - set param backbone.stages.2.8.norm.bias as id 5
+2024-10-17 16:37:57,022 - mmdet - INFO - set param backbone.stages.2.8.pwconv1.weight as id 5
+2024-10-17 16:37:57,022 - mmdet - INFO - set param backbone.stages.2.8.pwconv1.bias as id 5
+2024-10-17 16:37:57,022 - mmdet - INFO - set param backbone.stages.2.8.pwconv2.weight as id 5
+2024-10-17 16:37:57,022 - mmdet - INFO - set param backbone.stages.2.8.pwconv2.bias as id 5
+2024-10-17 16:37:57,023 - mmdet - INFO - set param backbone.stages.2.9.gamma as id 6
+2024-10-17 16:37:57,023 - mmdet - INFO - set param backbone.stages.2.9.dwconv.weight as id 6
+2024-10-17 16:37:57,023 - mmdet - INFO - set param backbone.stages.2.9.dwconv.bias as id 6
+2024-10-17 16:37:57,023 - mmdet - INFO - set param backbone.stages.2.9.norm.weight as id 6
+2024-10-17 16:37:57,023 - mmdet - INFO - set param backbone.stages.2.9.norm.bias as id 6
+2024-10-17 16:37:57,023 - mmdet - INFO - set param backbone.stages.2.9.pwconv1.weight as id 6
+2024-10-17 16:37:57,023 - mmdet - INFO - set param backbone.stages.2.9.pwconv1.bias as id 6
+2024-10-17 16:37:57,023 - mmdet - INFO - set param backbone.stages.2.9.pwconv2.weight as id 6
+2024-10-17 16:37:57,023 - mmdet - INFO - set param backbone.stages.2.9.pwconv2.bias as id 6
+2024-10-17 16:37:57,024 - mmdet - INFO - set param backbone.stages.2.10.gamma as id 6
+2024-10-17 16:37:57,024 - mmdet - INFO - set param backbone.stages.2.10.dwconv.weight as id 6
+2024-10-17 16:37:57,024 - mmdet - INFO - set param backbone.stages.2.10.dwconv.bias as id 6
+2024-10-17 16:37:57,024 - mmdet - INFO - set param backbone.stages.2.10.norm.weight as id 6
+2024-10-17 16:37:57,024 - mmdet - INFO - set param backbone.stages.2.10.norm.bias as id 6
+2024-10-17 16:37:57,024 - mmdet - INFO - set param backbone.stages.2.10.pwconv1.weight as id 6
+2024-10-17 16:37:57,024 - mmdet - INFO - set param backbone.stages.2.10.pwconv1.bias as id 6
+2024-10-17 16:37:57,024 - mmdet - INFO - set param backbone.stages.2.10.pwconv2.weight as id 6
+2024-10-17 16:37:57,024 - mmdet - INFO - set param backbone.stages.2.10.pwconv2.bias as id 6
+2024-10-17 16:37:57,025 - mmdet - INFO - set param backbone.stages.2.11.gamma as id 6
+2024-10-17 16:37:57,025 - mmdet - INFO - set param backbone.stages.2.11.dwconv.weight as id 6
+2024-10-17 16:37:57,025 - mmdet - INFO - set param backbone.stages.2.11.dwconv.bias as id 6
+2024-10-17 16:37:57,025 - mmdet - INFO - set param backbone.stages.2.11.norm.weight as id 6
+2024-10-17 16:37:57,025 - mmdet - INFO - set param backbone.stages.2.11.norm.bias as id 6
+2024-10-17 16:37:57,025 - mmdet - INFO - set param backbone.stages.2.11.pwconv1.weight as id 6
+2024-10-17 16:37:57,025 - mmdet - INFO - set param backbone.stages.2.11.pwconv1.bias as id 6
+2024-10-17 16:37:57,025 - mmdet - INFO - set param backbone.stages.2.11.pwconv2.weight as id 6
+2024-10-17 16:37:57,026 - mmdet - INFO - set param backbone.stages.2.11.pwconv2.bias as id 6
+2024-10-17 16:37:57,026 - mmdet - INFO - set param backbone.stages.2.12.gamma as id 7
+2024-10-17 16:37:57,026 - mmdet - INFO - set param backbone.stages.2.12.dwconv.weight as id 7
+2024-10-17 16:37:57,026 - mmdet - INFO - set param backbone.stages.2.12.dwconv.bias as id 7
+2024-10-17 16:37:57,026 - mmdet - INFO - set param backbone.stages.2.12.norm.weight as id 7
+2024-10-17 16:37:57,026 - mmdet - INFO - set param backbone.stages.2.12.norm.bias as id 7
+2024-10-17 16:37:57,026 - mmdet - INFO - set param backbone.stages.2.12.pwconv1.weight as id 7
+2024-10-17 16:37:57,026 - mmdet - INFO - set param backbone.stages.2.12.pwconv1.bias as id 7
+2024-10-17 16:37:57,027 - mmdet - INFO - set param backbone.stages.2.12.pwconv2.weight as id 7
+2024-10-17 16:37:57,027 - mmdet - INFO - set param backbone.stages.2.12.pwconv2.bias as id 7
+2024-10-17 16:37:57,027 - mmdet - INFO - set param backbone.stages.2.13.gamma as id 7
+2024-10-17 16:37:57,027 - mmdet - INFO - set param backbone.stages.2.13.dwconv.weight as id 7
+2024-10-17 16:37:57,027 - mmdet - INFO - set param backbone.stages.2.13.dwconv.bias as id 7
+2024-10-17 16:37:57,027 - mmdet - INFO - set param backbone.stages.2.13.norm.weight as id 7
+2024-10-17 16:37:57,027 - mmdet - INFO - set param backbone.stages.2.13.norm.bias as id 7
+2024-10-17 16:37:57,027 - mmdet - INFO - set param backbone.stages.2.13.pwconv1.weight as id 7
+2024-10-17 16:37:57,028 - mmdet - INFO - set param backbone.stages.2.13.pwconv1.bias as id 7
+2024-10-17 16:37:57,028 - mmdet - INFO - set param backbone.stages.2.13.pwconv2.weight as id 7
+2024-10-17 16:37:57,028 - mmdet - INFO - set param backbone.stages.2.13.pwconv2.bias as id 7
+2024-10-17 16:37:57,028 - mmdet - INFO - set param backbone.stages.2.14.gamma as id 7
+2024-10-17 16:37:57,028 - mmdet - INFO - set param backbone.stages.2.14.dwconv.weight as id 7
+2024-10-17 16:37:57,028 - mmdet - INFO - set param backbone.stages.2.14.dwconv.bias as id 7
+2024-10-17 16:37:57,028 - mmdet - INFO - set param backbone.stages.2.14.norm.weight as id 7
+2024-10-17 16:37:57,028 - mmdet - INFO - set param backbone.stages.2.14.norm.bias as id 7
+2024-10-17 16:37:57,029 - mmdet - INFO - set param backbone.stages.2.14.pwconv1.weight as id 7
+2024-10-17 16:37:57,029 - mmdet - INFO - set param backbone.stages.2.14.pwconv1.bias as id 7
+2024-10-17 16:37:57,029 - mmdet - INFO - set param backbone.stages.2.14.pwconv2.weight as id 7
+2024-10-17 16:37:57,029 - mmdet - INFO - set param backbone.stages.2.14.pwconv2.bias as id 7
+2024-10-17 16:37:57,029 - mmdet - INFO - set param backbone.stages.2.15.gamma as id 8
+2024-10-17 16:37:57,029 - mmdet - INFO - set param backbone.stages.2.15.dwconv.weight as id 8
+2024-10-17 16:37:57,029 - mmdet - INFO - set param backbone.stages.2.15.dwconv.bias as id 8
+2024-10-17 16:37:57,030 - mmdet - INFO - set param backbone.stages.2.15.norm.weight as id 8
+2024-10-17 16:37:57,030 - mmdet - INFO - set param backbone.stages.2.15.norm.bias as id 8
+2024-10-17 16:37:57,030 - mmdet - INFO - set param backbone.stages.2.15.pwconv1.weight as id 8
+2024-10-17 16:37:57,030 - mmdet - INFO - set param backbone.stages.2.15.pwconv1.bias as id 8
+2024-10-17 16:37:57,030 - mmdet - INFO - set param backbone.stages.2.15.pwconv2.weight as id 8
+2024-10-17 16:37:57,030 - mmdet - INFO - set param backbone.stages.2.15.pwconv2.bias as id 8
+2024-10-17 16:37:57,030 - mmdet - INFO - set param backbone.stages.2.16.gamma as id 8
+2024-10-17 16:37:57,030 - mmdet - INFO - set param backbone.stages.2.16.dwconv.weight as id 8
+2024-10-17 16:37:57,030 - mmdet - INFO - set param backbone.stages.2.16.dwconv.bias as id 8
+2024-10-17 16:37:57,031 - mmdet - INFO - set param backbone.stages.2.16.norm.weight as id 8
+2024-10-17 16:37:57,031 - mmdet - INFO - set param backbone.stages.2.16.norm.bias as id 8
+2024-10-17 16:37:57,031 - mmdet - INFO - set param backbone.stages.2.16.pwconv1.weight as id 8
+2024-10-17 16:37:57,031 - mmdet - INFO - set param backbone.stages.2.16.pwconv1.bias as id 8
+2024-10-17 16:37:57,031 - mmdet - INFO - set param backbone.stages.2.16.pwconv2.weight as id 8
+2024-10-17 16:37:57,031 - mmdet - INFO - set param backbone.stages.2.16.pwconv2.bias as id 8
+2024-10-17 16:37:57,031 - mmdet - INFO - set param backbone.stages.2.17.gamma as id 8
+2024-10-17 16:37:57,031 - mmdet - INFO - set param backbone.stages.2.17.dwconv.weight as id 8
+2024-10-17 16:37:57,032 - mmdet - INFO - set param backbone.stages.2.17.dwconv.bias as id 8
+2024-10-17 16:37:57,032 - mmdet - INFO - set param backbone.stages.2.17.norm.weight as id 8
+2024-10-17 16:37:57,032 - mmdet - INFO - set param backbone.stages.2.17.norm.bias as id 8
+2024-10-17 16:37:57,032 - mmdet - INFO - set param backbone.stages.2.17.pwconv1.weight as id 8
+2024-10-17 16:37:57,032 - mmdet - INFO - set param backbone.stages.2.17.pwconv1.bias as id 8
+2024-10-17 16:37:57,032 - mmdet - INFO - set param backbone.stages.2.17.pwconv2.weight as id 8
+2024-10-17 16:37:57,032 - mmdet - INFO - set param backbone.stages.2.17.pwconv2.bias as id 8
+2024-10-17 16:37:57,032 - mmdet - INFO - set param backbone.stages.2.18.gamma as id 9
+2024-10-17 16:37:57,033 - mmdet - INFO - set param backbone.stages.2.18.dwconv.weight as id 9
+2024-10-17 16:37:57,033 - mmdet - INFO - set param backbone.stages.2.18.dwconv.bias as id 9
+2024-10-17 16:37:57,033 - mmdet - INFO - set param backbone.stages.2.18.norm.weight as id 9
+2024-10-17 16:37:57,033 - mmdet - INFO - set param backbone.stages.2.18.norm.bias as id 9
+2024-10-17 16:37:57,033 - mmdet - INFO - set param backbone.stages.2.18.pwconv1.weight as id 9
+2024-10-17 16:37:57,033 - mmdet - INFO - set param backbone.stages.2.18.pwconv1.bias as id 9
+2024-10-17 16:37:57,033 - mmdet - INFO - set param backbone.stages.2.18.pwconv2.weight as id 9
+2024-10-17 16:37:57,033 - mmdet - INFO - set param backbone.stages.2.18.pwconv2.bias as id 9
+2024-10-17 16:37:57,034 - mmdet - INFO - set param backbone.stages.2.19.gamma as id 9
+2024-10-17 16:37:57,034 - mmdet - INFO - set param backbone.stages.2.19.dwconv.weight as id 9
+2024-10-17 16:37:57,034 - mmdet - INFO - set param backbone.stages.2.19.dwconv.bias as id 9
+2024-10-17 16:37:57,034 - mmdet - INFO - set param backbone.stages.2.19.norm.weight as id 9
+2024-10-17 16:37:57,034 - mmdet - INFO - set param backbone.stages.2.19.norm.bias as id 9
+2024-10-17 16:37:57,034 - mmdet - INFO - set param backbone.stages.2.19.pwconv1.weight as id 9
+2024-10-17 16:37:57,034 - mmdet - INFO - set param backbone.stages.2.19.pwconv1.bias as id 9
+2024-10-17 16:37:57,034 - mmdet - INFO - set param backbone.stages.2.19.pwconv2.weight as id 9
+2024-10-17 16:37:57,035 - mmdet - INFO - set param backbone.stages.2.19.pwconv2.bias as id 9
+2024-10-17 16:37:57,035 - mmdet - INFO - set param backbone.stages.2.20.gamma as id 9
+2024-10-17 16:37:57,035 - mmdet - INFO - set param backbone.stages.2.20.dwconv.weight as id 9
+2024-10-17 16:37:57,035 - mmdet - INFO - set param backbone.stages.2.20.dwconv.bias as id 9
+2024-10-17 16:37:57,035 - mmdet - INFO - set param backbone.stages.2.20.norm.weight as id 9
+2024-10-17 16:37:57,035 - mmdet - INFO - set param backbone.stages.2.20.norm.bias as id 9
+2024-10-17 16:37:57,035 - mmdet - INFO - set param backbone.stages.2.20.pwconv1.weight as id 9
+2024-10-17 16:37:57,035 - mmdet - INFO - set param backbone.stages.2.20.pwconv1.bias as id 9
+2024-10-17 16:37:57,036 - mmdet - INFO - set param backbone.stages.2.20.pwconv2.weight as id 9
+2024-10-17 16:37:57,036 - mmdet - INFO - set param backbone.stages.2.20.pwconv2.bias as id 9
+2024-10-17 16:37:57,036 - mmdet - INFO - set param backbone.stages.2.21.gamma as id 10
+2024-10-17 16:37:57,036 - mmdet - INFO - set param backbone.stages.2.21.dwconv.weight as id 10
+2024-10-17 16:37:57,036 - mmdet - INFO - set param backbone.stages.2.21.dwconv.bias as id 10
+2024-10-17 16:37:57,036 - mmdet - INFO - set param backbone.stages.2.21.norm.weight as id 10
+2024-10-17 16:37:57,036 - mmdet - INFO - set param backbone.stages.2.21.norm.bias as id 10
+2024-10-17 16:37:57,036 - mmdet - INFO - set param backbone.stages.2.21.pwconv1.weight as id 10
+2024-10-17 16:37:57,036 - mmdet - INFO - set param backbone.stages.2.21.pwconv1.bias as id 10
+2024-10-17 16:37:57,037 - mmdet - INFO - set param backbone.stages.2.21.pwconv2.weight as id 10
+2024-10-17 16:37:57,037 - mmdet - INFO - set param backbone.stages.2.21.pwconv2.bias as id 10
+2024-10-17 16:37:57,037 - mmdet - INFO - set param backbone.stages.2.22.gamma as id 10
+2024-10-17 16:37:57,037 - mmdet - INFO - set param backbone.stages.2.22.dwconv.weight as id 10
+2024-10-17 16:37:57,037 - mmdet - INFO - set param backbone.stages.2.22.dwconv.bias as id 10
+2024-10-17 16:37:57,037 - mmdet - INFO - set param backbone.stages.2.22.norm.weight as id 10
+2024-10-17 16:37:57,037 - mmdet - INFO - set param backbone.stages.2.22.norm.bias as id 10
+2024-10-17 16:37:57,038 - mmdet - INFO - set param backbone.stages.2.22.pwconv1.weight as id 10
+2024-10-17 16:37:57,038 - mmdet - INFO - set param backbone.stages.2.22.pwconv1.bias as id 10
+2024-10-17 16:37:57,038 - mmdet - INFO - set param backbone.stages.2.22.pwconv2.weight as id 10
+2024-10-17 16:37:57,038 - mmdet - INFO - set param backbone.stages.2.22.pwconv2.bias as id 10
+2024-10-17 16:37:57,038 - mmdet - INFO - set param backbone.stages.2.23.gamma as id 10
+2024-10-17 16:37:57,038 - mmdet - INFO - set param backbone.stages.2.23.dwconv.weight as id 10
+2024-10-17 16:37:57,038 - mmdet - INFO - set param backbone.stages.2.23.dwconv.bias as id 10
+2024-10-17 16:37:57,038 - mmdet - INFO - set param backbone.stages.2.23.norm.weight as id 10
+2024-10-17 16:37:57,039 - mmdet - INFO - set param backbone.stages.2.23.norm.bias as id 10
+2024-10-17 16:37:57,039 - mmdet - INFO - set param backbone.stages.2.23.pwconv1.weight as id 10
+2024-10-17 16:37:57,039 - mmdet - INFO - set param backbone.stages.2.23.pwconv1.bias as id 10
+2024-10-17 16:37:57,039 - mmdet - INFO - set param backbone.stages.2.23.pwconv2.weight as id 10
+2024-10-17 16:37:57,039 - mmdet - INFO - set param backbone.stages.2.23.pwconv2.bias as id 10
+2024-10-17 16:37:57,039 - mmdet - INFO - set param backbone.stages.2.24.gamma as id 11
+2024-10-17 16:37:57,039 - mmdet - INFO - set param backbone.stages.2.24.dwconv.weight as id 11
+2024-10-17 16:37:57,039 - mmdet - INFO - set param backbone.stages.2.24.dwconv.bias as id 11
+2024-10-17 16:37:57,040 - mmdet - INFO - set param backbone.stages.2.24.norm.weight as id 11
+2024-10-17 16:37:57,040 - mmdet - INFO - set param backbone.stages.2.24.norm.bias as id 11
+2024-10-17 16:37:57,040 - mmdet - INFO - set param backbone.stages.2.24.pwconv1.weight as id 11
+2024-10-17 16:37:57,040 - mmdet - INFO - set param backbone.stages.2.24.pwconv1.bias as id 11
+2024-10-17 16:37:57,040 - mmdet - INFO - set param backbone.stages.2.24.pwconv2.weight as id 11
+2024-10-17 16:37:57,040 - mmdet - INFO - set param backbone.stages.2.24.pwconv2.bias as id 11
+2024-10-17 16:37:57,040 - mmdet - INFO - set param backbone.stages.2.25.gamma as id 11
+2024-10-17 16:37:57,040 - mmdet - INFO - set param backbone.stages.2.25.dwconv.weight as id 11
+2024-10-17 16:37:57,041 - mmdet - INFO - set param backbone.stages.2.25.dwconv.bias as id 11
+2024-10-17 16:37:57,041 - mmdet - INFO - set param backbone.stages.2.25.norm.weight as id 11
+2024-10-17 16:37:57,041 - mmdet - INFO - set param backbone.stages.2.25.norm.bias as id 11
+2024-10-17 16:37:57,041 - mmdet - INFO - set param backbone.stages.2.25.pwconv1.weight as id 11
+2024-10-17 16:37:57,041 - mmdet - INFO - set param backbone.stages.2.25.pwconv1.bias as id 11
+2024-10-17 16:37:57,041 - mmdet - INFO - set param backbone.stages.2.25.pwconv2.weight as id 11
+2024-10-17 16:37:57,041 - mmdet - INFO - set param backbone.stages.2.25.pwconv2.bias as id 11
+2024-10-17 16:37:57,041 - mmdet - INFO - set param backbone.stages.2.26.gamma as id 11
+2024-10-17 16:37:57,042 - mmdet - INFO - set param backbone.stages.2.26.dwconv.weight as id 11
+2024-10-17 16:37:57,042 - mmdet - INFO - set param backbone.stages.2.26.dwconv.bias as id 11
+2024-10-17 16:37:57,042 - mmdet - INFO - set param backbone.stages.2.26.norm.weight as id 11
+2024-10-17 16:37:57,042 - mmdet - INFO - set param backbone.stages.2.26.norm.bias as id 11
+2024-10-17 16:37:57,042 - mmdet - INFO - set param backbone.stages.2.26.pwconv1.weight as id 11
+2024-10-17 16:37:57,042 - mmdet - INFO - set param backbone.stages.2.26.pwconv1.bias as id 11
+2024-10-17 16:37:57,042 - mmdet - INFO - set param backbone.stages.2.26.pwconv2.weight as id 11
+2024-10-17 16:37:57,042 - mmdet - INFO - set param backbone.stages.2.26.pwconv2.bias as id 11
+2024-10-17 16:37:57,043 - mmdet - INFO - set param backbone.stages.3.0.gamma as id 12
+2024-10-17 16:37:57,043 - mmdet - INFO - set param backbone.stages.3.0.dwconv.weight as id 12
+2024-10-17 16:37:57,043 - mmdet - INFO - set param backbone.stages.3.0.dwconv.bias as id 12
+2024-10-17 16:37:57,043 - mmdet - INFO - set param backbone.stages.3.0.norm.weight as id 12
+2024-10-17 16:37:57,043 - mmdet - INFO - set param backbone.stages.3.0.norm.bias as id 12
+2024-10-17 16:37:57,043 - mmdet - INFO - set param backbone.stages.3.0.pwconv1.weight as id 12
+2024-10-17 16:37:57,043 - mmdet - INFO - set param backbone.stages.3.0.pwconv1.bias as id 12
+2024-10-17 16:37:57,043 - mmdet - INFO - set param backbone.stages.3.0.pwconv2.weight as id 12
+2024-10-17 16:37:57,044 - mmdet - INFO - set param backbone.stages.3.0.pwconv2.bias as id 12
+2024-10-17 16:37:57,044 - mmdet - INFO - set param backbone.stages.3.1.gamma as id 12
+2024-10-17 16:37:57,044 - mmdet - INFO - set param backbone.stages.3.1.dwconv.weight as id 12
+2024-10-17 16:37:57,044 - mmdet - INFO - set param backbone.stages.3.1.dwconv.bias as id 12
+2024-10-17 16:37:57,044 - mmdet - INFO - set param backbone.stages.3.1.norm.weight as id 12
+2024-10-17 16:37:57,044 - mmdet - INFO - set param backbone.stages.3.1.norm.bias as id 12
+2024-10-17 16:37:57,044 - mmdet - INFO - set param backbone.stages.3.1.pwconv1.weight as id 12
+2024-10-17 16:37:57,044 - mmdet - INFO - set param backbone.stages.3.1.pwconv1.bias as id 12
+2024-10-17 16:37:57,045 - mmdet - INFO - set param backbone.stages.3.1.pwconv2.weight as id 12
+2024-10-17 16:37:57,045 - mmdet - INFO - set param backbone.stages.3.1.pwconv2.bias as id 12
+2024-10-17 16:37:57,045 - mmdet - INFO - set param backbone.stages.3.2.gamma as id 12
+2024-10-17 16:37:57,045 - mmdet - INFO - set param backbone.stages.3.2.dwconv.weight as id 12
+2024-10-17 16:37:57,045 - mmdet - INFO - set param backbone.stages.3.2.dwconv.bias as id 12
+2024-10-17 16:37:57,045 - mmdet - INFO - set param backbone.stages.3.2.norm.weight as id 12
+2024-10-17 16:37:57,045 - mmdet - INFO - set param backbone.stages.3.2.norm.bias as id 12
+2024-10-17 16:37:57,045 - mmdet - INFO - set param backbone.stages.3.2.pwconv1.weight as id 12
+2024-10-17 16:37:57,046 - mmdet - INFO - set param backbone.stages.3.2.pwconv1.bias as id 12
+2024-10-17 16:37:57,046 - mmdet - INFO - set param backbone.stages.3.2.pwconv2.weight as id 12
+2024-10-17 16:37:57,046 - mmdet - INFO - set param backbone.stages.3.2.pwconv2.bias as id 12
+2024-10-17 16:37:57,046 - mmdet - INFO - set param backbone.norm0.weight as id 13
+2024-10-17 16:37:57,046 - mmdet - INFO - set param backbone.norm0.bias as id 13
+2024-10-17 16:37:57,046 - mmdet - INFO - set param backbone.norm1.weight as id 13
+2024-10-17 16:37:57,046 - mmdet - INFO - set param backbone.norm1.bias as id 13
+2024-10-17 16:37:57,046 - mmdet - INFO - set param backbone.norm2.weight as id 13
+2024-10-17 16:37:57,046 - mmdet - INFO - set param backbone.norm2.bias as id 13
+2024-10-17 16:37:57,047 - mmdet - INFO - set param backbone.norm3.weight as id 13
+2024-10-17 16:37:57,047 - mmdet - INFO - set param backbone.norm3.bias as id 13
+2024-10-17 16:37:57,047 - mmdet - INFO - set param neck.lateral_convs.0.conv.weight as id 13
+2024-10-17 16:37:57,047 - mmdet - INFO - set param neck.lateral_convs.0.conv.bias as id 13
+2024-10-17 16:37:57,047 - mmdet - INFO - set param neck.lateral_convs.1.conv.weight as id 13
+2024-10-17 16:37:57,047 - mmdet - INFO - set param neck.lateral_convs.1.conv.bias as id 13
+2024-10-17 16:37:57,047 - mmdet - INFO - set param neck.lateral_convs.2.conv.weight as id 13
+2024-10-17 16:37:57,047 - mmdet - INFO - set param neck.lateral_convs.2.conv.bias as id 13
+2024-10-17 16:37:57,048 - mmdet - INFO - set param neck.lateral_convs.3.conv.weight as id 13
+2024-10-17 16:37:57,048 - mmdet - INFO - set param neck.lateral_convs.3.conv.bias as id 13
+2024-10-17 16:37:57,048 - mmdet - INFO - set param neck.fpn_convs.0.conv.weight as id 13
+2024-10-17 16:37:57,048 - mmdet - INFO - set param neck.fpn_convs.0.conv.bias as id 13
+2024-10-17 16:37:57,048 - mmdet - INFO - set param neck.fpn_convs.1.conv.weight as id 13
+2024-10-17 16:37:57,048 - mmdet - INFO - set param neck.fpn_convs.1.conv.bias as id 13
+2024-10-17 16:37:57,048 - mmdet - INFO - set param neck.fpn_convs.2.conv.weight as id 13
+2024-10-17 16:37:57,048 - mmdet - INFO - set param neck.fpn_convs.2.conv.bias as id 13
+2024-10-17 16:37:57,048 - mmdet - INFO - set param neck.fpn_convs.3.conv.weight as id 13
+2024-10-17 16:37:57,049 - mmdet - INFO - set param neck.fpn_convs.3.conv.bias as id 13
+2024-10-17 16:37:57,049 - mmdet - INFO - set param rpn_head.rpn_conv.weight as id 13
+2024-10-17 16:37:57,049 - mmdet - INFO - set param rpn_head.rpn_conv.bias as id 13
+2024-10-17 16:37:57,049 - mmdet - INFO - set param rpn_head.rpn_cls.weight as id 13
+2024-10-17 16:37:57,049 - mmdet - INFO - set param rpn_head.rpn_cls.bias as id 13
+2024-10-17 16:37:57,049 - mmdet - INFO - set param rpn_head.rpn_reg.weight as id 13
+2024-10-17 16:37:57,049 - mmdet - INFO - set param rpn_head.rpn_reg.bias as id 13
+2024-10-17 16:37:57,050 - mmdet - INFO - set param roi_head.bbox_head.0.fc_cls.weight as id 13
+2024-10-17 16:37:57,050 - mmdet - INFO - set param roi_head.bbox_head.0.fc_cls.bias as id 13
+2024-10-17 16:37:57,050 - mmdet - INFO - set param roi_head.bbox_head.0.fc_reg.weight as id 13
+2024-10-17 16:37:57,050 - mmdet - INFO - set param roi_head.bbox_head.0.fc_reg.bias as id 13
+2024-10-17 16:37:57,050 - mmdet - INFO - set param roi_head.bbox_head.0.shared_convs.0.conv.weight as id 13
+2024-10-17 16:37:57,050 - mmdet - INFO - set param roi_head.bbox_head.0.shared_convs.0.bn.weight as id 13
+2024-10-17 16:37:57,050 - mmdet - INFO - set param roi_head.bbox_head.0.shared_convs.0.bn.bias as id 13
+2024-10-17 16:37:57,051 - mmdet - INFO - set param roi_head.bbox_head.0.shared_convs.1.conv.weight as id 13
+2024-10-17 16:37:57,051 - mmdet - INFO - set param roi_head.bbox_head.0.shared_convs.1.bn.weight as id 13
+2024-10-17 16:37:57,051 - mmdet - INFO - set param roi_head.bbox_head.0.shared_convs.1.bn.bias as id 13
+2024-10-17 16:37:57,051 - mmdet - INFO - set param roi_head.bbox_head.0.shared_convs.2.conv.weight as id 13
+2024-10-17 16:37:57,051 - mmdet - INFO - set param roi_head.bbox_head.0.shared_convs.2.bn.weight as id 13
+2024-10-17 16:37:57,051 - mmdet - INFO - set param roi_head.bbox_head.0.shared_convs.2.bn.bias as id 13
+2024-10-17 16:37:57,051 - mmdet - INFO - set param roi_head.bbox_head.0.shared_convs.3.conv.weight as id 13
+2024-10-17 16:37:57,051 - mmdet - INFO - set param roi_head.bbox_head.0.shared_convs.3.bn.weight as id 13
+2024-10-17 16:37:57,052 - mmdet - INFO - set param roi_head.bbox_head.0.shared_convs.3.bn.bias as id 13
+2024-10-17 16:37:57,052 - mmdet - INFO - set param roi_head.bbox_head.0.shared_fcs.0.weight as id 13
+2024-10-17 16:37:57,052 - mmdet - INFO - set param roi_head.bbox_head.0.shared_fcs.0.bias as id 13
+2024-10-17 16:37:57,052 - mmdet - INFO - set param roi_head.bbox_head.1.fc_cls.weight as id 13
+2024-10-17 16:37:57,052 - mmdet - INFO - set param roi_head.bbox_head.1.fc_cls.bias as id 13
+2024-10-17 16:37:57,052 - mmdet - INFO - set param roi_head.bbox_head.1.fc_reg.weight as id 13
+2024-10-17 16:37:57,052 - mmdet - INFO - set param roi_head.bbox_head.1.fc_reg.bias as id 13
+2024-10-17 16:37:57,052 - mmdet - INFO - set param roi_head.bbox_head.1.shared_convs.0.conv.weight as id 13
+2024-10-17 16:37:57,052 - mmdet - INFO - set param roi_head.bbox_head.1.shared_convs.0.bn.weight as id 13
+2024-10-17 16:37:57,053 - mmdet - INFO - set param roi_head.bbox_head.1.shared_convs.0.bn.bias as id 13
+2024-10-17 16:37:57,053 - mmdet - INFO - set param roi_head.bbox_head.1.shared_convs.1.conv.weight as id 13
+2024-10-17 16:37:57,053 - mmdet - INFO - set param roi_head.bbox_head.1.shared_convs.1.bn.weight as id 13
+2024-10-17 16:37:57,053 - mmdet - INFO - set param roi_head.bbox_head.1.shared_convs.1.bn.bias as id 13
+2024-10-17 16:37:57,053 - mmdet - INFO - set param roi_head.bbox_head.1.shared_convs.2.conv.weight as id 13
+2024-10-17 16:37:57,053 - mmdet - INFO - set param roi_head.bbox_head.1.shared_convs.2.bn.weight as id 13
+2024-10-17 16:37:57,053 - mmdet - INFO - set param roi_head.bbox_head.1.shared_convs.2.bn.bias as id 13
+2024-10-17 16:37:57,053 - mmdet - INFO - set param roi_head.bbox_head.1.shared_convs.3.conv.weight as id 13
+2024-10-17 16:37:57,054 - mmdet - INFO - set param roi_head.bbox_head.1.shared_convs.3.bn.weight as id 13
+2024-10-17 16:37:57,054 - mmdet - INFO - set param roi_head.bbox_head.1.shared_convs.3.bn.bias as id 13
+2024-10-17 16:37:57,054 - mmdet - INFO - set param roi_head.bbox_head.1.shared_fcs.0.weight as id 13
+2024-10-17 16:37:57,054 - mmdet - INFO - set param roi_head.bbox_head.1.shared_fcs.0.bias as id 13
+2024-10-17 16:37:57,054 - mmdet - INFO - set param roi_head.bbox_head.2.fc_cls.weight as id 13
+2024-10-17 16:37:57,054 - mmdet - INFO - set param roi_head.bbox_head.2.fc_cls.bias as id 13
+2024-10-17 16:37:57,054 - mmdet - INFO - set param roi_head.bbox_head.2.fc_reg.weight as id 13
+2024-10-17 16:37:57,055 - mmdet - INFO - set param roi_head.bbox_head.2.fc_reg.bias as id 13
+2024-10-17 16:37:57,055 - mmdet - INFO - set param roi_head.bbox_head.2.shared_convs.0.conv.weight as id 13
+2024-10-17 16:37:57,055 - mmdet - INFO - set param roi_head.bbox_head.2.shared_convs.0.bn.weight as id 13
+2024-10-17 16:37:57,055 - mmdet - INFO - set param roi_head.bbox_head.2.shared_convs.0.bn.bias as id 13
+2024-10-17 16:37:57,055 - mmdet - INFO - set param roi_head.bbox_head.2.shared_convs.1.conv.weight as id 13
+2024-10-17 16:37:57,055 - mmdet - INFO - set param roi_head.bbox_head.2.shared_convs.1.bn.weight as id 13
+2024-10-17 16:37:57,055 - mmdet - INFO - set param roi_head.bbox_head.2.shared_convs.1.bn.bias as id 13
+2024-10-17 16:37:57,055 - mmdet - INFO - set param roi_head.bbox_head.2.shared_convs.2.conv.weight as id 13
+2024-10-17 16:37:57,055 - mmdet - INFO - set param roi_head.bbox_head.2.shared_convs.2.bn.weight as id 13
+2024-10-17 16:37:57,056 - mmdet - INFO - set param roi_head.bbox_head.2.shared_convs.2.bn.bias as id 13
+2024-10-17 16:37:57,056 - mmdet - INFO - set param roi_head.bbox_head.2.shared_convs.3.conv.weight as id 13
+2024-10-17 16:37:57,056 - mmdet - INFO - set param roi_head.bbox_head.2.shared_convs.3.bn.weight as id 13
+2024-10-17 16:37:57,056 - mmdet - INFO - set param roi_head.bbox_head.2.shared_convs.3.bn.bias as id 13
+2024-10-17 16:37:57,056 - mmdet - INFO - set param roi_head.bbox_head.2.shared_fcs.0.weight as id 13
+2024-10-17 16:37:57,056 - mmdet - INFO - set param roi_head.bbox_head.2.shared_fcs.0.bias as id 13
+2024-10-17 16:37:57,057 - mmdet - INFO - Param groups = {
+  "layer_0_decay": {
+    "param_names": [
+      "backbone.downsample_layers.0.0.weight"
+    ],
+    "lr_scale": 0.054975581388800036,
+    "lr": 5.497558138880004e-06,
+    "weight_decay": 0.05
+  },
+  "layer_0_no_decay": {
+    "param_names": [
+      "backbone.downsample_layers.0.0.bias",
+      "backbone.downsample_layers.0.1.weight",
+      "backbone.downsample_layers.0.1.bias"
+    ],
+    "lr_scale": 0.054975581388800036,
+    "lr": 5.497558138880004e-06,
+    "weight_decay": 0.0
+  },
+  "layer_2_no_decay": {
+    "param_names": [
+      "backbone.downsample_layers.1.0.weight",
+      "backbone.downsample_layers.1.0.bias",
+      "backbone.downsample_layers.1.1.bias",
+      "backbone.stages.1.0.gamma",
+      "backbone.stages.1.0.dwconv.bias",
+      "backbone.stages.1.0.norm.weight",
+      "backbone.stages.1.0.norm.bias",
+      "backbone.stages.1.0.pwconv1.bias",
+      "backbone.stages.1.0.pwconv2.bias",
+      "backbone.stages.1.1.gamma",
+      "backbone.stages.1.1.dwconv.bias",
+      "backbone.stages.1.1.norm.weight",
+      "backbone.stages.1.1.norm.bias",
+      "backbone.stages.1.1.pwconv1.bias",
+      "backbone.stages.1.1.pwconv2.bias",
+      "backbone.stages.1.2.gamma",
+      "backbone.stages.1.2.dwconv.bias",
+      "backbone.stages.1.2.norm.weight",
+      "backbone.stages.1.2.norm.bias",
+      "backbone.stages.1.2.pwconv1.bias",
+      "backbone.stages.1.2.pwconv2.bias"
+    ],
+    "lr_scale": 0.08589934592000005,
+    "lr": 8.589934592000006e-06,
+    "weight_decay": 0.0
+  },
+  "layer_2_decay": {
+    "param_names": [
+      "backbone.downsample_layers.1.1.weight",
+      "backbone.stages.1.0.dwconv.weight",
+      "backbone.stages.1.0.pwconv1.weight",
+      "backbone.stages.1.0.pwconv2.weight",
+      "backbone.stages.1.1.dwconv.weight",
+      "backbone.stages.1.1.pwconv1.weight",
+      "backbone.stages.1.1.pwconv2.weight",
+      "backbone.stages.1.2.dwconv.weight",
+      "backbone.stages.1.2.pwconv1.weight",
+      "backbone.stages.1.2.pwconv2.weight"
+    ],
+    "lr_scale": 0.08589934592000005,
+    "lr": 8.589934592000006e-06,
+    "weight_decay": 0.05
+  },
+  "layer_3_no_decay": {
+    "param_names": [
+      "backbone.downsample_layers.2.0.weight",
+      "backbone.downsample_layers.2.0.bias",
+      "backbone.downsample_layers.2.1.bias",
+      "backbone.stages.2.0.gamma",
+      "backbone.stages.2.0.dwconv.bias",
+      "backbone.stages.2.0.norm.weight",
+      "backbone.stages.2.0.norm.bias",
+      "backbone.stages.2.0.pwconv1.bias",
+      "backbone.stages.2.0.pwconv2.bias",
+      "backbone.stages.2.1.gamma",
+      "backbone.stages.2.1.dwconv.bias",
+      "backbone.stages.2.1.norm.weight",
+      "backbone.stages.2.1.norm.bias",
+      "backbone.stages.2.1.pwconv1.bias",
+      "backbone.stages.2.1.pwconv2.bias",
+      "backbone.stages.2.2.gamma",
+      "backbone.stages.2.2.dwconv.bias",
+      "backbone.stages.2.2.norm.weight",
+      "backbone.stages.2.2.norm.bias",
+      "backbone.stages.2.2.pwconv1.bias",
+      "backbone.stages.2.2.pwconv2.bias"
+    ],
+    "lr_scale": 0.10737418240000006,
+    "lr": 1.0737418240000007e-05,
+    "weight_decay": 0.0
+  },
+  "layer_3_decay": {
+    "param_names": [
+      "backbone.downsample_layers.2.1.weight",
+      "backbone.stages.2.0.dwconv.weight",
+      "backbone.stages.2.0.pwconv1.weight",
+      "backbone.stages.2.0.pwconv2.weight",
+      "backbone.stages.2.1.dwconv.weight",
+      "backbone.stages.2.1.pwconv1.weight",
+      "backbone.stages.2.1.pwconv2.weight",
+      "backbone.stages.2.2.dwconv.weight",
+      "backbone.stages.2.2.pwconv1.weight",
+      "backbone.stages.2.2.pwconv2.weight"
+    ],
+    "lr_scale": 0.10737418240000006,
+    "lr": 1.0737418240000007e-05,
+    "weight_decay": 0.05
+  },
+  "layer_12_no_decay": {
+    "param_names": [
+      "backbone.downsample_layers.3.0.weight",
+      "backbone.downsample_layers.3.0.bias",
+      "backbone.downsample_layers.3.1.bias",
+      "backbone.stages.3.0.gamma",
+      "backbone.stages.3.0.dwconv.bias",
+      "backbone.stages.3.0.norm.weight",
+      "backbone.stages.3.0.norm.bias",
+      "backbone.stages.3.0.pwconv1.bias",
+      "backbone.stages.3.0.pwconv2.bias",
+      "backbone.stages.3.1.gamma",
+      "backbone.stages.3.1.dwconv.bias",
+      "backbone.stages.3.1.norm.weight",
+      "backbone.stages.3.1.norm.bias",
+      "backbone.stages.3.1.pwconv1.bias",
+      "backbone.stages.3.1.pwconv2.bias",
+      "backbone.stages.3.2.gamma",
+      "backbone.stages.3.2.dwconv.bias",
+      "backbone.stages.3.2.norm.weight",
+      "backbone.stages.3.2.norm.bias",
+      "backbone.stages.3.2.pwconv1.bias",
+      "backbone.stages.3.2.pwconv2.bias"
+    ],
+    "lr_scale": 0.8,
+    "lr": 8e-05,
+    "weight_decay": 0.0
+  },
+  "layer_12_decay": {
+    "param_names": [
+      "backbone.downsample_layers.3.1.weight",
+      "backbone.stages.3.0.dwconv.weight",
+      "backbone.stages.3.0.pwconv1.weight",
+      "backbone.stages.3.0.pwconv2.weight",
+      "backbone.stages.3.1.dwconv.weight",
+      "backbone.stages.3.1.pwconv1.weight",
+      "backbone.stages.3.1.pwconv2.weight",
+      "backbone.stages.3.2.dwconv.weight",
+      "backbone.stages.3.2.pwconv1.weight",
+      "backbone.stages.3.2.pwconv2.weight"
+    ],
+    "lr_scale": 0.8,
+    "lr": 8e-05,
+    "weight_decay": 0.05
+  },
+  "layer_1_no_decay": {
+    "param_names": [
+      "backbone.stages.0.0.gamma",
+      "backbone.stages.0.0.dwconv.bias",
+      "backbone.stages.0.0.norm.weight",
+      "backbone.stages.0.0.norm.bias",
+      "backbone.stages.0.0.pwconv1.bias",
+      "backbone.stages.0.0.pwconv2.bias",
+      "backbone.stages.0.1.gamma",
+      "backbone.stages.0.1.dwconv.bias",
+      "backbone.stages.0.1.norm.weight",
+      "backbone.stages.0.1.norm.bias",
+      "backbone.stages.0.1.pwconv1.bias",
+      "backbone.stages.0.1.pwconv2.bias",
+      "backbone.stages.0.2.gamma",
+      "backbone.stages.0.2.dwconv.bias",
+      "backbone.stages.0.2.norm.weight",
+      "backbone.stages.0.2.norm.bias",
+      "backbone.stages.0.2.pwconv1.bias",
+      "backbone.stages.0.2.pwconv2.bias"
+    ],
+    "lr_scale": 0.06871947673600004,
+    "lr": 6.871947673600004e-06,
+    "weight_decay": 0.0
+  },
+  "layer_1_decay": {
+    "param_names": [
+      "backbone.stages.0.0.dwconv.weight",
+      "backbone.stages.0.0.pwconv1.weight",
+      "backbone.stages.0.0.pwconv2.weight",
+      "backbone.stages.0.1.dwconv.weight",
+      "backbone.stages.0.1.pwconv1.weight",
+      "backbone.stages.0.1.pwconv2.weight",
+      "backbone.stages.0.2.dwconv.weight",
+      "backbone.stages.0.2.pwconv1.weight",
+      "backbone.stages.0.2.pwconv2.weight"
+    ],
+    "lr_scale": 0.06871947673600004,
+    "lr": 6.871947673600004e-06,
+    "weight_decay": 0.05
+  },
+  "layer_4_no_decay": {
+    "param_names": [
+      "backbone.stages.2.3.gamma",
+      "backbone.stages.2.3.dwconv.bias",
+      "backbone.stages.2.3.norm.weight",
+      "backbone.stages.2.3.norm.bias",
+      "backbone.stages.2.3.pwconv1.bias",
+      "backbone.stages.2.3.pwconv2.bias",
+      "backbone.stages.2.4.gamma",
+      "backbone.stages.2.4.dwconv.bias",
+      "backbone.stages.2.4.norm.weight",
+      "backbone.stages.2.4.norm.bias",
+      "backbone.stages.2.4.pwconv1.bias",
+      "backbone.stages.2.4.pwconv2.bias",
+      "backbone.stages.2.5.gamma",
+      "backbone.stages.2.5.dwconv.bias",
+      "backbone.stages.2.5.norm.weight",
+      "backbone.stages.2.5.norm.bias",
+      "backbone.stages.2.5.pwconv1.bias",
+      "backbone.stages.2.5.pwconv2.bias"
+    ],
+    "lr_scale": 0.13421772800000006,
+    "lr": 1.3421772800000007e-05,
+    "weight_decay": 0.0
+  },
+  "layer_4_decay": {
+    "param_names": [
+      "backbone.stages.2.3.dwconv.weight",
+      "backbone.stages.2.3.pwconv1.weight",
+      "backbone.stages.2.3.pwconv2.weight",
+      "backbone.stages.2.4.dwconv.weight",
+      "backbone.stages.2.4.pwconv1.weight",
+      "backbone.stages.2.4.pwconv2.weight",
+      "backbone.stages.2.5.dwconv.weight",
+      "backbone.stages.2.5.pwconv1.weight",
+      "backbone.stages.2.5.pwconv2.weight"
+    ],
+    "lr_scale": 0.13421772800000006,
+    "lr": 1.3421772800000007e-05,
+    "weight_decay": 0.05
+  },
+  "layer_5_no_decay": {
+    "param_names": [
+      "backbone.stages.2.6.gamma",
+      "backbone.stages.2.6.dwconv.bias",
+      "backbone.stages.2.6.norm.weight",
+      "backbone.stages.2.6.norm.bias",
+      "backbone.stages.2.6.pwconv1.bias",
+      "backbone.stages.2.6.pwconv2.bias",
+      "backbone.stages.2.7.gamma",
+      "backbone.stages.2.7.dwconv.bias",
+      "backbone.stages.2.7.norm.weight",
+      "backbone.stages.2.7.norm.bias",
+      "backbone.stages.2.7.pwconv1.bias",
+      "backbone.stages.2.7.pwconv2.bias",
+      "backbone.stages.2.8.gamma",
+      "backbone.stages.2.8.dwconv.bias",
+      "backbone.stages.2.8.norm.weight",
+      "backbone.stages.2.8.norm.bias",
+      "backbone.stages.2.8.pwconv1.bias",
+      "backbone.stages.2.8.pwconv2.bias"
+    ],
+    "lr_scale": 0.1677721600000001,
+    "lr": 1.677721600000001e-05,
+    "weight_decay": 0.0
+  },
+  "layer_5_decay": {
+    "param_names": [
+      "backbone.stages.2.6.dwconv.weight",
+      "backbone.stages.2.6.pwconv1.weight",
+      "backbone.stages.2.6.pwconv2.weight",
+      "backbone.stages.2.7.dwconv.weight",
+      "backbone.stages.2.7.pwconv1.weight",
+      "backbone.stages.2.7.pwconv2.weight",
+      "backbone.stages.2.8.dwconv.weight",
+      "backbone.stages.2.8.pwconv1.weight",
+      "backbone.stages.2.8.pwconv2.weight"
+    ],
+    "lr_scale": 0.1677721600000001,
+    "lr": 1.677721600000001e-05,
+    "weight_decay": 0.05
+  },
+  "layer_6_no_decay": {
+    "param_names": [
+      "backbone.stages.2.9.gamma",
+      "backbone.stages.2.9.dwconv.bias",
+      "backbone.stages.2.9.norm.weight",
+      "backbone.stages.2.9.norm.bias",
+      "backbone.stages.2.9.pwconv1.bias",
+      "backbone.stages.2.9.pwconv2.bias",
+      "backbone.stages.2.10.gamma",
+      "backbone.stages.2.10.dwconv.bias",
+      "backbone.stages.2.10.norm.weight",
+      "backbone.stages.2.10.norm.bias",
+      "backbone.stages.2.10.pwconv1.bias",
+      "backbone.stages.2.10.pwconv2.bias",
+      "backbone.stages.2.11.gamma",
+      "backbone.stages.2.11.dwconv.bias",
+      "backbone.stages.2.11.norm.weight",
+      "backbone.stages.2.11.norm.bias",
+      "backbone.stages.2.11.pwconv1.bias",
+      "backbone.stages.2.11.pwconv2.bias"
+    ],
+    "lr_scale": 0.20971520000000007,
+    "lr": 2.097152000000001e-05,
+    "weight_decay": 0.0
+  },
+  "layer_6_decay": {
+    "param_names": [
+      "backbone.stages.2.9.dwconv.weight",
+      "backbone.stages.2.9.pwconv1.weight",
+      "backbone.stages.2.9.pwconv2.weight",
+      "backbone.stages.2.10.dwconv.weight",
+      "backbone.stages.2.10.pwconv1.weight",
+      "backbone.stages.2.10.pwconv2.weight",
+      "backbone.stages.2.11.dwconv.weight",
+      "backbone.stages.2.11.pwconv1.weight",
+      "backbone.stages.2.11.pwconv2.weight"
+    ],
+    "lr_scale": 0.20971520000000007,
+    "lr": 2.097152000000001e-05,
+    "weight_decay": 0.05
+  },
+  "layer_7_no_decay": {
+    "param_names": [
+      "backbone.stages.2.12.gamma",
+      "backbone.stages.2.12.dwconv.bias",
+      "backbone.stages.2.12.norm.weight",
+      "backbone.stages.2.12.norm.bias",
+      "backbone.stages.2.12.pwconv1.bias",
+      "backbone.stages.2.12.pwconv2.bias",
+      "backbone.stages.2.13.gamma",
+      "backbone.stages.2.13.dwconv.bias",
+      "backbone.stages.2.13.norm.weight",
+      "backbone.stages.2.13.norm.bias",
+      "backbone.stages.2.13.pwconv1.bias",
+      "backbone.stages.2.13.pwconv2.bias",
+      "backbone.stages.2.14.gamma",
+      "backbone.stages.2.14.dwconv.bias",
+      "backbone.stages.2.14.norm.weight",
+      "backbone.stages.2.14.norm.bias",
+      "backbone.stages.2.14.pwconv1.bias",
+      "backbone.stages.2.14.pwconv2.bias"
+    ],
+    "lr_scale": 0.2621440000000001,
+    "lr": 2.621440000000001e-05,
+    "weight_decay": 0.0
+  },
+  "layer_7_decay": {
+    "param_names": [
+      "backbone.stages.2.12.dwconv.weight",
+      "backbone.stages.2.12.pwconv1.weight",
+      "backbone.stages.2.12.pwconv2.weight",
+      "backbone.stages.2.13.dwconv.weight",
+      "backbone.stages.2.13.pwconv1.weight",
+      "backbone.stages.2.13.pwconv2.weight",
+      "backbone.stages.2.14.dwconv.weight",
+      "backbone.stages.2.14.pwconv1.weight",
+      "backbone.stages.2.14.pwconv2.weight"
+    ],
+    "lr_scale": 0.2621440000000001,
+    "lr": 2.621440000000001e-05,
+    "weight_decay": 0.05
+  },
+  "layer_8_no_decay": {
+    "param_names": [
+      "backbone.stages.2.15.gamma",
+      "backbone.stages.2.15.dwconv.bias",
+      "backbone.stages.2.15.norm.weight",
+      "backbone.stages.2.15.norm.bias",
+      "backbone.stages.2.15.pwconv1.bias",
+      "backbone.stages.2.15.pwconv2.bias",
+      "backbone.stages.2.16.gamma",
+      "backbone.stages.2.16.dwconv.bias",
+      "backbone.stages.2.16.norm.weight",
+      "backbone.stages.2.16.norm.bias",
+      "backbone.stages.2.16.pwconv1.bias",
+      "backbone.stages.2.16.pwconv2.bias",
+      "backbone.stages.2.17.gamma",
+      "backbone.stages.2.17.dwconv.bias",
+      "backbone.stages.2.17.norm.weight",
+      "backbone.stages.2.17.norm.bias",
+      "backbone.stages.2.17.pwconv1.bias",
+      "backbone.stages.2.17.pwconv2.bias"
+    ],
+    "lr_scale": 0.3276800000000001,
+    "lr": 3.276800000000001e-05,
+    "weight_decay": 0.0
+  },
+  "layer_8_decay": {
+    "param_names": [
+      "backbone.stages.2.15.dwconv.weight",
+      "backbone.stages.2.15.pwconv1.weight",
+      "backbone.stages.2.15.pwconv2.weight",
+      "backbone.stages.2.16.dwconv.weight",
+      "backbone.stages.2.16.pwconv1.weight",
+      "backbone.stages.2.16.pwconv2.weight",
+      "backbone.stages.2.17.dwconv.weight",
+      "backbone.stages.2.17.pwconv1.weight",
+      "backbone.stages.2.17.pwconv2.weight"
+    ],
+    "lr_scale": 0.3276800000000001,
+    "lr": 3.276800000000001e-05,
+    "weight_decay": 0.05
+  },
+  "layer_9_no_decay": {
+    "param_names": [
+      "backbone.stages.2.18.gamma",
+      "backbone.stages.2.18.dwconv.bias",
+      "backbone.stages.2.18.norm.weight",
+      "backbone.stages.2.18.norm.bias",
+      "backbone.stages.2.18.pwconv1.bias",
+      "backbone.stages.2.18.pwconv2.bias",
+      "backbone.stages.2.19.gamma",
+      "backbone.stages.2.19.dwconv.bias",
+      "backbone.stages.2.19.norm.weight",
+      "backbone.stages.2.19.norm.bias",
+      "backbone.stages.2.19.pwconv1.bias",
+      "backbone.stages.2.19.pwconv2.bias",
+      "backbone.stages.2.20.gamma",
+      "backbone.stages.2.20.dwconv.bias",
+      "backbone.stages.2.20.norm.weight",
+      "backbone.stages.2.20.norm.bias",
+      "backbone.stages.2.20.pwconv1.bias",
+      "backbone.stages.2.20.pwconv2.bias"
+    ],
+    "lr_scale": 0.4096000000000001,
+    "lr": 4.096000000000001e-05,
+    "weight_decay": 0.0
+  },
+  "layer_9_decay": {
+    "param_names": [
+      "backbone.stages.2.18.dwconv.weight",
+      "backbone.stages.2.18.pwconv1.weight",
+      "backbone.stages.2.18.pwconv2.weight",
+      "backbone.stages.2.19.dwconv.weight",
+      "backbone.stages.2.19.pwconv1.weight",
+      "backbone.stages.2.19.pwconv2.weight",
+      "backbone.stages.2.20.dwconv.weight",
+      "backbone.stages.2.20.pwconv1.weight",
+      "backbone.stages.2.20.pwconv2.weight"
+    ],
+    "lr_scale": 0.4096000000000001,
+    "lr": 4.096000000000001e-05,
+    "weight_decay": 0.05
+  },
+  "layer_10_no_decay": {
+    "param_names": [
+      "backbone.stages.2.21.gamma",
+      "backbone.stages.2.21.dwconv.bias",
+      "backbone.stages.2.21.norm.weight",
+      "backbone.stages.2.21.norm.bias",
+      "backbone.stages.2.21.pwconv1.bias",
+      "backbone.stages.2.21.pwconv2.bias",
+      "backbone.stages.2.22.gamma",
+      "backbone.stages.2.22.dwconv.bias",
+      "backbone.stages.2.22.norm.weight",
+      "backbone.stages.2.22.norm.bias",
+      "backbone.stages.2.22.pwconv1.bias",
+      "backbone.stages.2.22.pwconv2.bias",
+      "backbone.stages.2.23.gamma",
+      "backbone.stages.2.23.dwconv.bias",
+      "backbone.stages.2.23.norm.weight",
+      "backbone.stages.2.23.norm.bias",
+      "backbone.stages.2.23.pwconv1.bias",
+      "backbone.stages.2.23.pwconv2.bias"
+    ],
+    "lr_scale": 0.5120000000000001,
+    "lr": 5.120000000000001e-05,
+    "weight_decay": 0.0
+  },
+  "layer_10_decay": {
+    "param_names": [
+      "backbone.stages.2.21.dwconv.weight",
+      "backbone.stages.2.21.pwconv1.weight",
+      "backbone.stages.2.21.pwconv2.weight",
+      "backbone.stages.2.22.dwconv.weight",
+      "backbone.stages.2.22.pwconv1.weight",
+      "backbone.stages.2.22.pwconv2.weight",
+      "backbone.stages.2.23.dwconv.weight",
+      "backbone.stages.2.23.pwconv1.weight",
+      "backbone.stages.2.23.pwconv2.weight"
+    ],
+    "lr_scale": 0.5120000000000001,
+    "lr": 5.120000000000001e-05,
+    "weight_decay": 0.05
+  },
+  "layer_11_no_decay": {
+    "param_names": [
+      "backbone.stages.2.24.gamma",
+      "backbone.stages.2.24.dwconv.bias",
+      "backbone.stages.2.24.norm.weight",
+      "backbone.stages.2.24.norm.bias",
+      "backbone.stages.2.24.pwconv1.bias",
+      "backbone.stages.2.24.pwconv2.bias",
+      "backbone.stages.2.25.gamma",
+      "backbone.stages.2.25.dwconv.bias",
+      "backbone.stages.2.25.norm.weight",
+      "backbone.stages.2.25.norm.bias",
+      "backbone.stages.2.25.pwconv1.bias",
+      "backbone.stages.2.25.pwconv2.bias",
+      "backbone.stages.2.26.gamma",
+      "backbone.stages.2.26.dwconv.bias",
+      "backbone.stages.2.26.norm.weight",
+      "backbone.stages.2.26.norm.bias",
+      "backbone.stages.2.26.pwconv1.bias",
+      "backbone.stages.2.26.pwconv2.bias"
+    ],
+    "lr_scale": 0.6400000000000001,
+    "lr": 6.400000000000001e-05,
+    "weight_decay": 0.0
+  },
+  "layer_11_decay": {
+    "param_names": [
+      "backbone.stages.2.24.dwconv.weight",
+      "backbone.stages.2.24.pwconv1.weight",
+      "backbone.stages.2.24.pwconv2.weight",
+      "backbone.stages.2.25.dwconv.weight",
+      "backbone.stages.2.25.pwconv1.weight",
+      "backbone.stages.2.25.pwconv2.weight",
+      "backbone.stages.2.26.dwconv.weight",
+      "backbone.stages.2.26.pwconv1.weight",
+      "backbone.stages.2.26.pwconv2.weight"
+    ],
+    "lr_scale": 0.6400000000000001,
+    "lr": 6.400000000000001e-05,
+    "weight_decay": 0.05
+  },
+  "layer_13_no_decay": {
+    "param_names": [
+      "backbone.norm0.weight",
+      "backbone.norm0.bias",
+      "backbone.norm1.weight",
+      "backbone.norm1.bias",
+      "backbone.norm2.weight",
+      "backbone.norm2.bias",
+      "backbone.norm3.weight",
+      "backbone.norm3.bias",
+      "neck.lateral_convs.0.conv.bias",
+      "neck.lateral_convs.1.conv.bias",
+      "neck.lateral_convs.2.conv.bias",
+      "neck.lateral_convs.3.conv.bias",
+      "neck.fpn_convs.0.conv.bias",
+      "neck.fpn_convs.1.conv.bias",
+      "neck.fpn_convs.2.conv.bias",
+      "neck.fpn_convs.3.conv.bias",
+      "rpn_head.rpn_conv.bias",
+      "rpn_head.rpn_cls.bias",
+      "rpn_head.rpn_reg.bias",
+      "roi_head.bbox_head.0.fc_cls.bias",
+      "roi_head.bbox_head.0.fc_reg.bias",
+      "roi_head.bbox_head.0.shared_convs.0.bn.weight",
+      "roi_head.bbox_head.0.shared_convs.0.bn.bias",
+      "roi_head.bbox_head.0.shared_convs.1.bn.weight",
+      "roi_head.bbox_head.0.shared_convs.1.bn.bias",
+      "roi_head.bbox_head.0.shared_convs.2.bn.weight",
+      "roi_head.bbox_head.0.shared_convs.2.bn.bias",
+      "roi_head.bbox_head.0.shared_convs.3.bn.weight",
+      "roi_head.bbox_head.0.shared_convs.3.bn.bias",
+      "roi_head.bbox_head.0.shared_fcs.0.bias",
+      "roi_head.bbox_head.1.fc_cls.bias",
+      "roi_head.bbox_head.1.fc_reg.bias",
+      "roi_head.bbox_head.1.shared_convs.0.bn.weight",
+      "roi_head.bbox_head.1.shared_convs.0.bn.bias",
+      "roi_head.bbox_head.1.shared_convs.1.bn.weight",
+      "roi_head.bbox_head.1.shared_convs.1.bn.bias",
+      "roi_head.bbox_head.1.shared_convs.2.bn.weight",
+      "roi_head.bbox_head.1.shared_convs.2.bn.bias",
+      "roi_head.bbox_head.1.shared_convs.3.bn.weight",
+      "roi_head.bbox_head.1.shared_convs.3.bn.bias",
+      "roi_head.bbox_head.1.shared_fcs.0.bias",
+      "roi_head.bbox_head.2.fc_cls.bias",
+      "roi_head.bbox_head.2.fc_reg.bias",
+      "roi_head.bbox_head.2.shared_convs.0.bn.weight",
+      "roi_head.bbox_head.2.shared_convs.0.bn.bias",
+      "roi_head.bbox_head.2.shared_convs.1.bn.weight",
+      "roi_head.bbox_head.2.shared_convs.1.bn.bias",
+      "roi_head.bbox_head.2.shared_convs.2.bn.weight",
+      "roi_head.bbox_head.2.shared_convs.2.bn.bias",
+      "roi_head.bbox_head.2.shared_convs.3.bn.weight",
+      "roi_head.bbox_head.2.shared_convs.3.bn.bias",
+      "roi_head.bbox_head.2.shared_fcs.0.bias"
+    ],
+    "lr_scale": 1.0,
+    "lr": 0.0001,
+    "weight_decay": 0.0
+  },
+  "layer_13_decay": {
+    "param_names": [
+      "neck.lateral_convs.0.conv.weight",
+      "neck.lateral_convs.1.conv.weight",
+      "neck.lateral_convs.2.conv.weight",
+      "neck.lateral_convs.3.conv.weight",
+      "neck.fpn_convs.0.conv.weight",
+      "neck.fpn_convs.1.conv.weight",
+      "neck.fpn_convs.2.conv.weight",
+      "neck.fpn_convs.3.conv.weight",
+      "rpn_head.rpn_conv.weight",
+      "rpn_head.rpn_cls.weight",
+      "rpn_head.rpn_reg.weight",
+      "roi_head.bbox_head.0.fc_cls.weight",
+      "roi_head.bbox_head.0.fc_reg.weight",
+      "roi_head.bbox_head.0.shared_convs.0.conv.weight",
+      "roi_head.bbox_head.0.shared_convs.1.conv.weight",
+      "roi_head.bbox_head.0.shared_convs.2.conv.weight",
+      "roi_head.bbox_head.0.shared_convs.3.conv.weight",
+      "roi_head.bbox_head.0.shared_fcs.0.weight",
+      "roi_head.bbox_head.1.fc_cls.weight",
+      "roi_head.bbox_head.1.fc_reg.weight",
+      "roi_head.bbox_head.1.shared_convs.0.conv.weight",
+      "roi_head.bbox_head.1.shared_convs.1.conv.weight",
+      "roi_head.bbox_head.1.shared_convs.2.conv.weight",
+      "roi_head.bbox_head.1.shared_convs.3.conv.weight",
+      "roi_head.bbox_head.1.shared_fcs.0.weight",
+      "roi_head.bbox_head.2.fc_cls.weight",
+      "roi_head.bbox_head.2.fc_reg.weight",
+      "roi_head.bbox_head.2.shared_convs.0.conv.weight",
+      "roi_head.bbox_head.2.shared_convs.1.conv.weight",
+      "roi_head.bbox_head.2.shared_convs.2.conv.weight",
+      "roi_head.bbox_head.2.shared_convs.3.conv.weight",
+      "roi_head.bbox_head.2.shared_fcs.0.weight"
+    ],
+    "lr_scale": 1.0,
+    "lr": 0.0001,
+    "weight_decay": 0.05
+  }
+}
+loading annotations into memory...
+Done (t=0.02s)
+creating index...
+index created!
+2024-10-17 16:37:57,091 - mmdet - INFO - load checkpoint from http path: https://dl.fbaipublicfiles.com/convnext/coco/cascade_mask_rcnn_convnext_base_22k_3x.pth
+Downloading: "https://dl.fbaipublicfiles.com/convnext/coco/cascade_mask_rcnn_convnext_base_22k_3x.pth" to /data/ephemeral/home/.cache/torch/hub/checkpoints/cascade_mask_rcnn_convnext_base_22k_3x.pth
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 556M/556M [00:32<00:00, 18.2MB/s]
+2024-10-17 16:38:30,760 - mmdet - WARNING - The model and loaded state dict do not match exactly
+
+size mismatch for roi_head.bbox_head.0.fc_cls.weight: copying a param with shape torch.Size([81, 1024]) from checkpoint, the shape in current model is torch.Size([11, 1024]).
+size mismatch for roi_head.bbox_head.0.fc_cls.bias: copying a param with shape torch.Size([81]) from checkpoint, the shape in current model is torch.Size([11]).
+size mismatch for roi_head.bbox_head.0.fc_reg.weight: copying a param with shape torch.Size([320, 1024]) from checkpoint, the shape in current model is torch.Size([40, 1024]).
+size mismatch for roi_head.bbox_head.0.fc_reg.bias: copying a param with shape torch.Size([320]) from checkpoint, the shape in current model is torch.Size([40]).
+size mismatch for roi_head.bbox_head.1.fc_cls.weight: copying a param with shape torch.Size([81, 1024]) from checkpoint, the shape in current model is torch.Size([11, 1024]).
+size mismatch for roi_head.bbox_head.1.fc_cls.bias: copying a param with shape torch.Size([81]) from checkpoint, the shape in current model is torch.Size([11]).
+size mismatch for roi_head.bbox_head.1.fc_reg.weight: copying a param with shape torch.Size([320, 1024]) from checkpoint, the shape in current model is torch.Size([40, 1024]).
+size mismatch for roi_head.bbox_head.1.fc_reg.bias: copying a param with shape torch.Size([320]) from checkpoint, the shape in current model is torch.Size([40]).
+size mismatch for roi_head.bbox_head.2.fc_cls.weight: copying a param with shape torch.Size([81, 1024]) from checkpoint, the shape in current model is torch.Size([11, 1024]).
+size mismatch for roi_head.bbox_head.2.fc_cls.bias: copying a param with shape torch.Size([81]) from checkpoint, the shape in current model is torch.Size([11]).
+size mismatch for roi_head.bbox_head.2.fc_reg.weight: copying a param with shape torch.Size([320, 1024]) from checkpoint, the shape in current model is torch.Size([40, 1024]).
+size mismatch for roi_head.bbox_head.2.fc_reg.bias: copying a param with shape torch.Size([320]) from checkpoint, the shape in current model is torch.Size([40]).
+unexpected key in source state_dict: roi_head.mask_head.0.convs.0.conv.weight, roi_head.mask_head.0.convs.0.conv.bias, roi_head.mask_head.0.convs.1.conv.weight, roi_head.mask_head.0.convs.1.conv.bias, roi_head.mask_head.0.convs.2.conv.weight, roi_head.mask_head.0.convs.2.conv.bias, roi_head.mask_head.0.convs.3.conv.weight, roi_head.mask_head.0.convs.3.conv.bias, roi_head.mask_head.0.upsample.weight, roi_head.mask_head.0.upsample.bias, roi_head.mask_head.0.conv_logits.weight, roi_head.mask_head.0.conv_logits.bias, roi_head.mask_head.1.convs.0.conv.weight, roi_head.mask_head.1.convs.0.conv.bias, roi_head.mask_head.1.convs.1.conv.weight, roi_head.mask_head.1.convs.1.conv.bias, roi_head.mask_head.1.convs.2.conv.weight, roi_head.mask_head.1.convs.2.conv.bias, roi_head.mask_head.1.convs.3.conv.weight, roi_head.mask_head.1.convs.3.conv.bias, roi_head.mask_head.1.upsample.weight, roi_head.mask_head.1.upsample.bias, roi_head.mask_head.1.conv_logits.weight, roi_head.mask_head.1.conv_logits.bias, roi_head.mask_head.2.convs.0.conv.weight, roi_head.mask_head.2.convs.0.conv.bias, roi_head.mask_head.2.convs.1.conv.weight, roi_head.mask_head.2.convs.1.conv.bias, roi_head.mask_head.2.convs.2.conv.weight, roi_head.mask_head.2.convs.2.conv.bias, roi_head.mask_head.2.convs.3.conv.weight, roi_head.mask_head.2.convs.3.conv.bias, roi_head.mask_head.2.upsample.weight, roi_head.mask_head.2.upsample.bias, roi_head.mask_head.2.conv_logits.weight, roi_head.mask_head.2.conv_logits.bias
+
+2024-10-17 16:38:30,784 - mmdet - INFO - Start running, host: root@instance-11761, work_dir: /data/ephemeral/home/JYP/level2-objectdetection-cv-14/mmdetection/work_dirs/cacade_rcnn_ConNeXt_base
+2024-10-17 16:38:30,784 - mmdet - INFO - Hooks will be executed in the following order:
+before_run:
+(VERY_HIGH   ) CosineAnnealingLrUpdaterHook
+(NORMAL      ) CheckpointHook
+(LOW         ) EvalHook
+(VERY_LOW    ) TextLoggerHook
+(VERY_LOW    ) WandbLoggerHook
+ --------------------
+before_train_epoch:
+(VERY_HIGH   ) CosineAnnealingLrUpdaterHook
+(NORMAL      ) NumClassCheckHook
+(LOW         ) IterTimerHook
+(LOW         ) EvalHook
+(VERY_LOW    ) TextLoggerHook
+(VERY_LOW    ) WandbLoggerHook
+ --------------------
+before_train_iter:
+(VERY_HIGH   ) CosineAnnealingLrUpdaterHook
+(LOW         ) IterTimerHook
+(LOW         ) EvalHook
+ --------------------
+after_train_iter:
+(ABOVE_NORMAL) OptimizerHook
+(NORMAL      ) CheckpointHook
+(LOW         ) IterTimerHook
+(LOW         ) EvalHook
+(VERY_LOW    ) TextLoggerHook
+(VERY_LOW    ) WandbLoggerHook
+ --------------------
+after_train_epoch:
+(NORMAL      ) CheckpointHook
+(LOW         ) EvalHook
+(VERY_LOW    ) TextLoggerHook
+(VERY_LOW    ) WandbLoggerHook
+ --------------------
+before_val_epoch:
+(NORMAL      ) NumClassCheckHook
+(LOW         ) IterTimerHook
+(VERY_LOW    ) TextLoggerHook
+(VERY_LOW    ) WandbLoggerHook
+ --------------------
+before_val_iter:
+(LOW         ) IterTimerHook
+ --------------------
+after_val_iter:
+(LOW         ) IterTimerHook
+ --------------------
+after_val_epoch:
+(VERY_LOW    ) TextLoggerHook
+(VERY_LOW    ) WandbLoggerHook
+ --------------------
+after_run:
+(VERY_LOW    ) TextLoggerHook
+(VERY_LOW    ) WandbLoggerHook
+ --------------------
+2024-10-17 16:38:30,784 - mmdet - INFO - workflow: [('train', 1)], max: 36 epochs
+2024-10-17 16:38:30,785 - mmdet - INFO - Checkpoints will be saved to /data/ephemeral/home/JYP/level2-objectdetection-cv-14/mmdetection/work_dirs/cacade_rcnn_ConNeXt_base by HardDiskBackend.
+2024-10-17 16:39:04,497 - mmdet - INFO - Epoch [1][50/1953]	lr: 7.922e-07, eta: 13:09:11, time: 0.674, data_time: 0.050, memory: 13002, loss_rpn_cls: 0.0930, loss_rpn_bbox: 0.0220, s0.loss_cls: 2.0969, s0.acc: 36.1387, s0.loss_bbox: 0.3391, s1.loss_cls: 0.9349, s1.acc: 53.5020, s1.loss_bbox: 0.0640, s2.loss_cls: 0.4144, s2.acc: 61.6816, s2.loss_bbox: 0.0084, loss: 3.9726
+2024-10-17 16:39:34,101 - mmdet - INFO - Epoch [1][100/1953]	lr: 1.040e-06, eta: 12:20:42, time: 0.592, data_time: 0.006, memory: 13002, loss_rpn_cls: 0.0724, loss_rpn_bbox: 0.0198, s0.loss_cls: 0.6647, s0.acc: 88.5938, s0.loss_bbox: 0.3970, s1.loss_cls: 0.2169, s1.acc: 94.2246, s1.loss_bbox: 0.0773, s2.loss_cls: 0.0695, s2.acc: 97.2871, s2.loss_bbox: 0.0103, loss: 1.5279
+2024-10-17 16:40:02,729 - mmdet - INFO - Epoch [1][150/1953]	lr: 1.287e-06, eta: 11:56:36, time: 0.573, data_time: 0.006, memory: 13002, loss_rpn_cls: 0.0432, loss_rpn_bbox: 0.0181, s0.loss_cls: 0.3828, s0.acc: 89.5293, s0.loss_bbox: 0.3960, s1.loss_cls: 0.1289, s1.acc: 94.1719, s1.loss_bbox: 0.0777, s2.loss_cls: 0.0399, s2.acc: 97.1406, s2.loss_bbox: 0.0114, loss: 1.0980
+2024-10-17 16:40:32,219 - mmdet - INFO - Epoch [1][200/1953]	lr: 1.534e-06, eta: 11:49:21, time: 0.590, data_time: 0.006, memory: 13002, loss_rpn_cls: 0.0420, loss_rpn_bbox: 0.0203, s0.loss_cls: 0.3666, s0.acc: 89.5430, s0.loss_bbox: 0.3925, s1.loss_cls: 0.1323, s1.acc: 93.1914, s1.loss_bbox: 0.0904, s2.loss_cls: 0.0433, s2.acc: 96.3281, s2.loss_bbox: 0.0158, loss: 1.1032
+2024-10-17 16:41:02,260 - mmdet - INFO - Epoch [1][250/1953]	lr: 1.782e-06, eta: 11:47:23, time: 0.601, data_time: 0.006, memory: 13002, loss_rpn_cls: 0.0363, loss_rpn_bbox: 0.0157, s0.loss_cls: 0.3290, s0.acc: 90.7949, s0.loss_bbox: 0.3611, s1.loss_cls: 0.1366, s1.acc: 92.5078, s1.loss_bbox: 0.1040, s2.loss_cls: 0.0501, s2.acc: 94.9551, s2.loss_bbox: 0.0235, loss: 1.0562
+2024-10-17 16:41:31,707 - mmdet - INFO - Epoch [1][300/1953]	lr: 2.029e-06, eta: 11:43:35, time: 0.589, data_time: 0.006, memory: 13002, loss_rpn_cls: 0.0466, loss_rpn_bbox: 0.0163, s0.loss_cls: 0.3232, s0.acc: 90.9824, s0.loss_bbox: 0.3013, s1.loss_cls: 0.1555, s1.acc: 91.4384, s1.loss_bbox: 0.1100, s2.loss_cls: 0.0670, s2.acc: 92.6826, s2.loss_bbox: 0.0337, loss: 1.0535
+2024-10-17 16:42:00,042 - mmdet - INFO - Epoch [1][350/1953]	lr: 2.276e-06, eta: 11:37:02, time: 0.567, data_time: 0.006, memory: 13002, loss_rpn_cls: 0.0395, loss_rpn_bbox: 0.0193, s0.loss_cls: 0.2954, s0.acc: 91.8047, s0.loss_bbox: 0.2107, s1.loss_cls: 0.1521, s1.acc: 91.3738, s1.loss_bbox: 0.0855, s2.loss_cls: 0.0719, s2.acc: 91.9253, s2.loss_bbox: 0.0308, loss: 0.9053
+2024-10-17 16:42:29,871 - mmdet - INFO - Epoch [1][400/1953]	lr: 2.524e-06, eta: 11:36:21, time: 0.597, data_time: 0.006, memory: 13002, loss_rpn_cls: 0.0435, loss_rpn_bbox: 0.0143, s0.loss_cls: 0.2823, s0.acc: 92.0000, s0.loss_bbox: 0.2033, s1.loss_cls: 0.1456, s1.acc: 91.6695, s1.loss_bbox: 0.0789, s2.loss_cls: 0.0715, s2.acc: 91.6841, s2.loss_bbox: 0.0304, loss: 0.8697
+2024-10-17 16:42:59,983 - mmdet - INFO - Epoch [1][450/1953]	lr: 2.771e-06, eta: 11:36:26, time: 0.602, data_time: 0.006, memory: 13002, loss_rpn_cls: 0.0294, loss_rpn_bbox: 0.0139, s0.loss_cls: 0.2572, s0.acc: 92.5898, s0.loss_bbox: 0.1858, s1.loss_cls: 0.1349, s1.acc: 92.3320, s1.loss_bbox: 0.0730, s2.loss_cls: 0.0660, s2.acc: 92.4646, s2.loss_bbox: 0.0269, loss: 0.7872
+2024-10-17 16:43:27,955 - mmdet - INFO - Epoch [1][500/1953]	lr: 3.018e-06, eta: 11:31:26, time: 0.559, data_time: 0.006, memory: 13002, loss_rpn_cls: 0.0336, loss_rpn_bbox: 0.0125, s0.loss_cls: 0.2880, s0.acc: 92.2109, s0.loss_bbox: 0.1870, s1.loss_cls: 0.1543, s1.acc: 91.4500, s1.loss_bbox: 0.0744, s2.loss_cls: 0.0728, s2.acc: 92.0866, s2.loss_bbox: 0.0268, loss: 0.8494
+2024-10-17 16:43:56,680 - mmdet - INFO - Epoch [1][550/1953]	lr: 3.266e-06, eta: 11:28:51, time: 0.574, data_time: 0.006, memory: 13002, loss_rpn_cls: 0.0308, loss_rpn_bbox: 0.0154, s0.loss_cls: 0.2712, s0.acc: 92.1973, s0.loss_bbox: 0.1934, s1.loss_cls: 0.1389, s1.acc: 92.0507, s1.loss_bbox: 0.0776, s2.loss_cls: 0.0691, s2.acc: 92.0036, s2.loss_bbox: 0.0269, loss: 0.8232
+2024-10-17 16:44:25,947 - mmdet - INFO - Epoch [1][600/1953]	lr: 3.513e-06, eta: 11:27:39, time: 0.585, data_time: 0.006, memory: 13002, loss_rpn_cls: 0.0304, loss_rpn_bbox: 0.0155, s0.loss_cls: 0.2608, s0.acc: 92.4121, s0.loss_bbox: 0.1895, s1.loss_cls: 0.1351, s1.acc: 91.8996, s1.loss_bbox: 0.0723, s2.loss_cls: 0.0655, s2.acc: 91.9990, s2.loss_bbox: 0.0272, loss: 0.7963
+Traceback (most recent call last):
+  File "/data/ephemeral/home/JYP/level2-objectdetection-cv-14/mmdetection/train.py", line 63, in <module>
+    train_detector(model, datasets[0], cfg, distributed=False, validate=args.validation)
+  File "/data/ephemeral/home/JYP/level2-objectdetection-cv-14/mmdetection/mmdet/apis/train.py", line 245, in train_detector
+    runner.run(data_loaders, cfg.workflow)
+  File "/opt/conda/lib/python3.10/site-packages/mmcv/runner/epoch_based_runner.py", line 136, in run
+    epoch_runner(data_loaders[i], **kwargs)
+  File "/opt/conda/lib/python3.10/site-packages/mmcv/runner/epoch_based_runner.py", line 54, in train
+    self.call_hook('after_train_iter')
+  File "/opt/conda/lib/python3.10/site-packages/mmcv/runner/base_runner.py", line 317, in call_hook
+    getattr(hook, fn_name)(self)
+  File "/opt/conda/lib/python3.10/site-packages/mmcv/runner/hooks/optimizer.py", line 69, in after_train_iter
+    runner.optimizer.step()
+  File "/opt/conda/lib/python3.10/site-packages/torch/optim/optimizer.py", line 113, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/conda/lib/python3.10/site-packages/torch/autograd/grad_mode.py", line 27, in decorate_context
+    return func(*args, **kwargs)
+  File "/opt/conda/lib/python3.10/site-packages/torch/optim/adamw.py", line 161, in step
+    adamw(params_with_grad,
+  File "/opt/conda/lib/python3.10/site-packages/torch/optim/adamw.py", line 218, in adamw
+    func(params,
+  File "/opt/conda/lib/python3.10/site-packages/torch/optim/adamw.py", line 311, in _single_tensor_adamw
+    param.addcdiv_(exp_avg, denom, value=-step_size)
+KeyboardInterrupt

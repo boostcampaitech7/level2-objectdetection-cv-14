@@ -1,0 +1,18 @@
+{"time":"2024-10-18T00:11:44.899289573+09:00","level":"INFO","msg":"using version","core version":"0.18.3"}
+{"time":"2024-10-18T00:11:44.899306316+09:00","level":"INFO","msg":"created symlink","path":"/data/ephemeral/home/JYP/level2-objectdetection-cv-14/mmdetection/wandb/run-20241018_001144-rezndkvt/logs/debug-core.log"}
+{"time":"2024-10-18T00:11:44.901115577+09:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-10-18T00:11:44.90519715+09:00","level":"INFO","msg":"created new stream","id":"rezndkvt"}
+{"time":"2024-10-18T00:11:44.905238401+09:00","level":"INFO","msg":"stream: started","id":"rezndkvt"}
+{"time":"2024-10-18T00:11:44.90527941+09:00","level":"INFO","msg":"handler: started","stream_id":{"value":"rezndkvt"}}
+{"time":"2024-10-18T00:11:44.90538394+09:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"rezndkvt"}}
+{"time":"2024-10-18T00:11:44.905399562+09:00","level":"INFO","msg":"sender: started","stream_id":{"value":"rezndkvt"}}
+{"time":"2024-10-18T00:11:45.396731646+09:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-10-18T00:11:45.397629338+09:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-10-18T00:12:01.364078403+09:00","level":"INFO","msg":"stream: closing","id":"rezndkvt"}
+{"time":"2024-10-18T00:12:01.364113596+09:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-10-18T00:12:01.365995108+09:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-10-18T00:12:02.618201585+09:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-10-18T00:12:02.914436387+09:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"rezndkvt"}}
+{"time":"2024-10-18T00:12:02.914481793+09:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"rezndkvt"}}
+{"time":"2024-10-18T00:12:02.914514208+09:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"rezndkvt"}}
+{"time":"2024-10-18T00:12:02.914552578+09:00","level":"INFO","msg":"stream: closed","id":"rezndkvt"}

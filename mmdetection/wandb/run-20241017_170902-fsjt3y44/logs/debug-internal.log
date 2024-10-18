@@ -1,0 +1,18 @@
+{"time":"2024-10-17T17:09:02.278395635+09:00","level":"INFO","msg":"using version","core version":"0.18.3"}
+{"time":"2024-10-17T17:09:02.278410159+09:00","level":"INFO","msg":"created symlink","path":"/data/ephemeral/home/JYP/level2-objectdetection-cv-14/mmdetection/wandb/run-20241017_170902-fsjt3y44/logs/debug-core.log"}
+{"time":"2024-10-17T17:09:02.280451567+09:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-10-17T17:09:02.282943587+09:00","level":"INFO","msg":"created new stream","id":"fsjt3y44"}
+{"time":"2024-10-17T17:09:02.282978267+09:00","level":"INFO","msg":"stream: started","id":"fsjt3y44"}
+{"time":"2024-10-17T17:09:02.283045575+09:00","level":"INFO","msg":"handler: started","stream_id":{"value":"fsjt3y44"}}
+{"time":"2024-10-17T17:09:02.28302939+09:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"fsjt3y44"}}
+{"time":"2024-10-17T17:09:02.283086834+09:00","level":"INFO","msg":"sender: started","stream_id":{"value":"fsjt3y44"}}
+{"time":"2024-10-17T17:09:02.647133989+09:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-10-17T17:09:02.648087843+09:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-10-17T17:09:02.898230065+09:00","level":"INFO","msg":"stream: closing","id":"fsjt3y44"}
+{"time":"2024-10-17T17:09:02.898265146+09:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-10-17T17:09:02.900229431+09:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-10-17T17:09:04.352933219+09:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-10-17T17:09:04.661720773+09:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"fsjt3y44"}}
+{"time":"2024-10-17T17:09:04.661780947+09:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"fsjt3y44"}}
+{"time":"2024-10-17T17:09:04.661761631+09:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"fsjt3y44"}}
+{"time":"2024-10-17T17:09:04.66205052+09:00","level":"INFO","msg":"stream: closed","id":"fsjt3y44"}

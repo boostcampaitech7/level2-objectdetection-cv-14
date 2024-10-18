@@ -1,0 +1,19 @@
+{"time":"2024-10-17T16:37:50.338643474+09:00","level":"INFO","msg":"using version","core version":"0.18.3"}
+{"time":"2024-10-17T16:37:50.338662597+09:00","level":"INFO","msg":"created symlink","path":"/data/ephemeral/home/JYP/level2-objectdetection-cv-14/mmdetection/wandb/run-20241017_163750-rq5by731/logs/debug-core.log"}
+{"time":"2024-10-17T16:37:50.341081676+09:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-10-17T16:37:50.345582214+09:00","level":"INFO","msg":"created new stream","id":"rq5by731"}
+{"time":"2024-10-17T16:37:50.345613161+09:00","level":"INFO","msg":"stream: started","id":"rq5by731"}
+{"time":"2024-10-17T16:37:50.345684758+09:00","level":"INFO","msg":"handler: started","stream_id":{"value":"rq5by731"}}
+{"time":"2024-10-17T16:37:50.345758387+09:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"rq5by731"}}
+{"time":"2024-10-17T16:37:50.345930807+09:00","level":"INFO","msg":"sender: started","stream_id":{"value":"rq5by731"}}
+{"time":"2024-10-17T16:37:50.898693086+09:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-10-17T16:37:50.901068916+09:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-10-17T16:44:36.067789389+09:00","level":"INFO","msg":"stream: closing","id":"rq5by731"}
+{"time":"2024-10-17T16:44:36.067827028+09:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-10-17T16:44:36.069873662+09:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-10-17T16:44:40.804495217+09:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-10-17T16:44:41.070301736+09:00","level":"ERROR","msg":"monitor: gpu: timeout waiting for process to exit"}
+{"time":"2024-10-17T16:44:41.092756171+09:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"rq5by731"}}
+{"time":"2024-10-17T16:44:41.092838454+09:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"rq5by731"}}
+{"time":"2024-10-17T16:44:41.092929128+09:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"rq5by731"}}
+{"time":"2024-10-17T16:44:41.092942711+09:00","level":"INFO","msg":"stream: closed","id":"rq5by731"}
