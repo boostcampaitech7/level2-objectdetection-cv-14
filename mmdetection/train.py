@@ -39,8 +39,9 @@ classes = ("General trash", "Paper", "Paper pack", "Metal", "Glass",
            "Plastic", "Styrofoam", "Plastic bag", "Battery", "Clothing")
 
 cfg = Config.fromfile(args.config)
-
+print('wandb : ', cfg['log_config']['hooks'][1]['init_kwargs']['name'])
 wandb.init(project=cfg['log_config']['hooks'][1]['init_kwargs']['project'], name=cfg['log_config']['hooks'][1]['init_kwargs']['name'])
+
 
 # dataset config 수정
 cfg.data.train.classes = classes
@@ -56,13 +57,10 @@ cfg.device = get_device()
 # build_dataset
 datasets = [build_dataset(cfg.data.train)]
 
-# 모델 build 및 pretrained network 불러오기
+# # 모델 build 및 pretrained network 불러오기
 model = build_detector(cfg.model)
 model.init_weights()
 
-# train_detector(model, datasets[0], cfg, distributed=False, validate=args.validation)
-print(cfg)
+train_detector(model, datasets[0], cfg, distributed=False, validate=args.validation)
 
-output = '/data/ephemeral/home/JYP/level2-objectdetection-cv-14/mmdetection/work_dirs/cascade_rcnn_ConvNeXt_multi_scale/'
-
-Gsheet_param(cfg, output)
+Gsheet_param(cfg, args.output)

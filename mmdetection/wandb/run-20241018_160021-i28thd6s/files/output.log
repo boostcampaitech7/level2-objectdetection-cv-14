@@ -1,0 +1,1733 @@
+wandb :  base_fold1
+loading annotations into memory...
+Done (t=0.34s)
+creating index...
+index created!
+2024-10-18 16:00:26,061 - mmcv - INFO - initialize FPN with init_cfg {'type': 'Xavier', 'layer': 'Conv2d', 'distribution': 'uniform'}
+2024-10-18 16:00:26,085 - mmcv - INFO - initialize RPNHead with init_cfg {'type': 'Normal', 'layer': 'Conv2d', 'std': 0.01}
+2024-10-18 16:00:26,092 - mmcv - INFO - initialize ConvFCBBoxHead with init_cfg [{'type': 'Normal', 'std': 0.01, 'override': {'name': 'fc_cls'}}, {'type': 'Normal', 'std': 0.001, 'override': {'name': 'fc_reg'}}, {'type': 'Xavier', 'distribution': 'uniform', 'override': [{'name': 'shared_fcs'}, {'name': 'cls_fcs'}, {'name': 'reg_fcs'}]}]
+2024-10-18 16:00:26,192 - mmcv - INFO - initialize ConvFCBBoxHead with init_cfg [{'type': 'Normal', 'std': 0.01, 'override': {'name': 'fc_cls'}}, {'type': 'Normal', 'std': 0.001, 'override': {'name': 'fc_reg'}}, {'type': 'Xavier', 'distribution': 'uniform', 'override': [{'name': 'shared_fcs'}, {'name': 'cls_fcs'}, {'name': 'reg_fcs'}]}]
+2024-10-18 16:00:26,294 - mmcv - INFO - initialize ConvFCBBoxHead with init_cfg [{'type': 'Normal', 'std': 0.01, 'override': {'name': 'fc_cls'}}, {'type': 'Normal', 'std': 0.001, 'override': {'name': 'fc_reg'}}, {'type': 'Xavier', 'distribution': 'uniform', 'override': [{'name': 'shared_fcs'}, {'name': 'cls_fcs'}, {'name': 'reg_fcs'}]}]
+2024-10-18 16:00:26,403 - mmcv - INFO -
+backbone.downsample_layers.0.0.weight - torch.Size([128, 3, 4, 4]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,404 - mmcv - INFO -
+backbone.downsample_layers.0.0.bias - torch.Size([128]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,405 - mmcv - INFO -
+backbone.downsample_layers.0.1.weight - torch.Size([128]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,405 - mmcv - INFO -
+backbone.downsample_layers.0.1.bias - torch.Size([128]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,405 - mmcv - INFO -
+backbone.downsample_layers.1.0.weight - torch.Size([128]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,405 - mmcv - INFO -
+backbone.downsample_layers.1.0.bias - torch.Size([128]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,406 - mmcv - INFO -
+backbone.downsample_layers.1.1.weight - torch.Size([256, 128, 2, 2]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,406 - mmcv - INFO -
+backbone.downsample_layers.1.1.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,406 - mmcv - INFO -
+backbone.downsample_layers.2.0.weight - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,406 - mmcv - INFO -
+backbone.downsample_layers.2.0.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,407 - mmcv - INFO -
+backbone.downsample_layers.2.1.weight - torch.Size([512, 256, 2, 2]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,407 - mmcv - INFO -
+backbone.downsample_layers.2.1.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,407 - mmcv - INFO -
+backbone.downsample_layers.3.0.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,407 - mmcv - INFO -
+backbone.downsample_layers.3.0.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,408 - mmcv - INFO -
+backbone.downsample_layers.3.1.weight - torch.Size([1024, 512, 2, 2]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,408 - mmcv - INFO -
+backbone.downsample_layers.3.1.bias - torch.Size([1024]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,408 - mmcv - INFO -
+backbone.stages.0.0.gamma - torch.Size([128]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,408 - mmcv - INFO -
+backbone.stages.0.0.dwconv.weight - torch.Size([128, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,409 - mmcv - INFO -
+backbone.stages.0.0.dwconv.bias - torch.Size([128]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,413 - mmcv - INFO -
+backbone.stages.0.0.norm.weight - torch.Size([128]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,415 - mmcv - INFO -
+backbone.stages.0.0.norm.bias - torch.Size([128]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,415 - mmcv - INFO -
+backbone.stages.0.0.pwconv1.weight - torch.Size([512, 128]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,416 - mmcv - INFO -
+backbone.stages.0.0.pwconv1.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,416 - mmcv - INFO -
+backbone.stages.0.0.pwconv2.weight - torch.Size([128, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,416 - mmcv - INFO -
+backbone.stages.0.0.pwconv2.bias - torch.Size([128]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,417 - mmcv - INFO -
+backbone.stages.0.1.gamma - torch.Size([128]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,417 - mmcv - INFO -
+backbone.stages.0.1.dwconv.weight - torch.Size([128, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,417 - mmcv - INFO -
+backbone.stages.0.1.dwconv.bias - torch.Size([128]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,418 - mmcv - INFO -
+backbone.stages.0.1.norm.weight - torch.Size([128]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,418 - mmcv - INFO -
+backbone.stages.0.1.norm.bias - torch.Size([128]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,418 - mmcv - INFO -
+backbone.stages.0.1.pwconv1.weight - torch.Size([512, 128]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,419 - mmcv - INFO -
+backbone.stages.0.1.pwconv1.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,419 - mmcv - INFO -
+backbone.stages.0.1.pwconv2.weight - torch.Size([128, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,419 - mmcv - INFO -
+backbone.stages.0.1.pwconv2.bias - torch.Size([128]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,420 - mmcv - INFO -
+backbone.stages.0.2.gamma - torch.Size([128]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,420 - mmcv - INFO -
+backbone.stages.0.2.dwconv.weight - torch.Size([128, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,420 - mmcv - INFO -
+backbone.stages.0.2.dwconv.bias - torch.Size([128]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,421 - mmcv - INFO -
+backbone.stages.0.2.norm.weight - torch.Size([128]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,421 - mmcv - INFO -
+backbone.stages.0.2.norm.bias - torch.Size([128]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,422 - mmcv - INFO -
+backbone.stages.0.2.pwconv1.weight - torch.Size([512, 128]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,422 - mmcv - INFO -
+backbone.stages.0.2.pwconv1.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,422 - mmcv - INFO -
+backbone.stages.0.2.pwconv2.weight - torch.Size([128, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,422 - mmcv - INFO -
+backbone.stages.0.2.pwconv2.bias - torch.Size([128]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,423 - mmcv - INFO -
+backbone.stages.1.0.gamma - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,423 - mmcv - INFO -
+backbone.stages.1.0.dwconv.weight - torch.Size([256, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,424 - mmcv - INFO -
+backbone.stages.1.0.dwconv.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,424 - mmcv - INFO -
+backbone.stages.1.0.norm.weight - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,425 - mmcv - INFO -
+backbone.stages.1.0.norm.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,425 - mmcv - INFO -
+backbone.stages.1.0.pwconv1.weight - torch.Size([1024, 256]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,425 - mmcv - INFO -
+backbone.stages.1.0.pwconv1.bias - torch.Size([1024]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,425 - mmcv - INFO -
+backbone.stages.1.0.pwconv2.weight - torch.Size([256, 1024]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,425 - mmcv - INFO -
+backbone.stages.1.0.pwconv2.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,426 - mmcv - INFO -
+backbone.stages.1.1.gamma - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,426 - mmcv - INFO -
+backbone.stages.1.1.dwconv.weight - torch.Size([256, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,426 - mmcv - INFO -
+backbone.stages.1.1.dwconv.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,426 - mmcv - INFO -
+backbone.stages.1.1.norm.weight - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,426 - mmcv - INFO -
+backbone.stages.1.1.norm.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,426 - mmcv - INFO -
+backbone.stages.1.1.pwconv1.weight - torch.Size([1024, 256]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,426 - mmcv - INFO -
+backbone.stages.1.1.pwconv1.bias - torch.Size([1024]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,427 - mmcv - INFO -
+backbone.stages.1.1.pwconv2.weight - torch.Size([256, 1024]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,427 - mmcv - INFO -
+backbone.stages.1.1.pwconv2.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,427 - mmcv - INFO -
+backbone.stages.1.2.gamma - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,427 - mmcv - INFO -
+backbone.stages.1.2.dwconv.weight - torch.Size([256, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,427 - mmcv - INFO -
+backbone.stages.1.2.dwconv.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,427 - mmcv - INFO -
+backbone.stages.1.2.norm.weight - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,427 - mmcv - INFO -
+backbone.stages.1.2.norm.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,427 - mmcv - INFO -
+backbone.stages.1.2.pwconv1.weight - torch.Size([1024, 256]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,428 - mmcv - INFO -
+backbone.stages.1.2.pwconv1.bias - torch.Size([1024]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,428 - mmcv - INFO -
+backbone.stages.1.2.pwconv2.weight - torch.Size([256, 1024]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,428 - mmcv - INFO -
+backbone.stages.1.2.pwconv2.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,428 - mmcv - INFO -
+backbone.stages.2.0.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,428 - mmcv - INFO -
+backbone.stages.2.0.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,428 - mmcv - INFO -
+backbone.stages.2.0.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,428 - mmcv - INFO -
+backbone.stages.2.0.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,428 - mmcv - INFO -
+backbone.stages.2.0.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,429 - mmcv - INFO -
+backbone.stages.2.0.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,429 - mmcv - INFO -
+backbone.stages.2.0.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,429 - mmcv - INFO -
+backbone.stages.2.0.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,429 - mmcv - INFO -
+backbone.stages.2.0.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,429 - mmcv - INFO -
+backbone.stages.2.1.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,429 - mmcv - INFO -
+backbone.stages.2.1.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,429 - mmcv - INFO -
+backbone.stages.2.1.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,429 - mmcv - INFO -
+backbone.stages.2.1.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,430 - mmcv - INFO -
+backbone.stages.2.1.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,430 - mmcv - INFO -
+backbone.stages.2.1.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,430 - mmcv - INFO -
+backbone.stages.2.1.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,430 - mmcv - INFO -
+backbone.stages.2.1.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,430 - mmcv - INFO -
+backbone.stages.2.1.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,430 - mmcv - INFO -
+backbone.stages.2.2.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,430 - mmcv - INFO -
+backbone.stages.2.2.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,430 - mmcv - INFO -
+backbone.stages.2.2.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,430 - mmcv - INFO -
+backbone.stages.2.2.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,431 - mmcv - INFO -
+backbone.stages.2.2.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,431 - mmcv - INFO -
+backbone.stages.2.2.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,431 - mmcv - INFO -
+backbone.stages.2.2.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,431 - mmcv - INFO -
+backbone.stages.2.2.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,431 - mmcv - INFO -
+backbone.stages.2.2.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,431 - mmcv - INFO -
+backbone.stages.2.3.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,431 - mmcv - INFO -
+backbone.stages.2.3.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,431 - mmcv - INFO -
+backbone.stages.2.3.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,432 - mmcv - INFO -
+backbone.stages.2.3.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,432 - mmcv - INFO -
+backbone.stages.2.3.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,432 - mmcv - INFO -
+backbone.stages.2.3.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,432 - mmcv - INFO -
+backbone.stages.2.3.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,432 - mmcv - INFO -
+backbone.stages.2.3.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,432 - mmcv - INFO -
+backbone.stages.2.3.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,432 - mmcv - INFO -
+backbone.stages.2.4.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,432 - mmcv - INFO -
+backbone.stages.2.4.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,433 - mmcv - INFO -
+backbone.stages.2.4.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,433 - mmcv - INFO -
+backbone.stages.2.4.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,433 - mmcv - INFO -
+backbone.stages.2.4.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,433 - mmcv - INFO -
+backbone.stages.2.4.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,433 - mmcv - INFO -
+backbone.stages.2.4.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,433 - mmcv - INFO -
+backbone.stages.2.4.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,433 - mmcv - INFO -
+backbone.stages.2.4.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,433 - mmcv - INFO -
+backbone.stages.2.5.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,434 - mmcv - INFO -
+backbone.stages.2.5.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,434 - mmcv - INFO -
+backbone.stages.2.5.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,434 - mmcv - INFO -
+backbone.stages.2.5.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,434 - mmcv - INFO -
+backbone.stages.2.5.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,434 - mmcv - INFO -
+backbone.stages.2.5.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,434 - mmcv - INFO -
+backbone.stages.2.5.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,434 - mmcv - INFO -
+backbone.stages.2.5.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,434 - mmcv - INFO -
+backbone.stages.2.5.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,434 - mmcv - INFO -
+backbone.stages.2.6.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,435 - mmcv - INFO -
+backbone.stages.2.6.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,435 - mmcv - INFO -
+backbone.stages.2.6.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,435 - mmcv - INFO -
+backbone.stages.2.6.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,435 - mmcv - INFO -
+backbone.stages.2.6.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,435 - mmcv - INFO -
+backbone.stages.2.6.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,435 - mmcv - INFO -
+backbone.stages.2.6.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,435 - mmcv - INFO -
+backbone.stages.2.6.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,435 - mmcv - INFO -
+backbone.stages.2.6.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,435 - mmcv - INFO -
+backbone.stages.2.7.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,436 - mmcv - INFO -
+backbone.stages.2.7.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,436 - mmcv - INFO -
+backbone.stages.2.7.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,436 - mmcv - INFO -
+backbone.stages.2.7.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,436 - mmcv - INFO -
+backbone.stages.2.7.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,436 - mmcv - INFO -
+backbone.stages.2.7.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,436 - mmcv - INFO -
+backbone.stages.2.7.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,436 - mmcv - INFO -
+backbone.stages.2.7.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,436 - mmcv - INFO -
+backbone.stages.2.7.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,436 - mmcv - INFO -
+backbone.stages.2.8.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,437 - mmcv - INFO -
+backbone.stages.2.8.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,437 - mmcv - INFO -
+backbone.stages.2.8.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,438 - mmcv - INFO -
+backbone.stages.2.8.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,438 - mmcv - INFO -
+backbone.stages.2.8.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,438 - mmcv - INFO -
+backbone.stages.2.8.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,438 - mmcv - INFO -
+backbone.stages.2.8.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,438 - mmcv - INFO -
+backbone.stages.2.8.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,438 - mmcv - INFO -
+backbone.stages.2.8.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,438 - mmcv - INFO -
+backbone.stages.2.9.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,439 - mmcv - INFO -
+backbone.stages.2.9.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,439 - mmcv - INFO -
+backbone.stages.2.9.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,439 - mmcv - INFO -
+backbone.stages.2.9.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,439 - mmcv - INFO -
+backbone.stages.2.9.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,439 - mmcv - INFO -
+backbone.stages.2.9.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,439 - mmcv - INFO -
+backbone.stages.2.9.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,439 - mmcv - INFO -
+backbone.stages.2.9.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,439 - mmcv - INFO -
+backbone.stages.2.9.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,439 - mmcv - INFO -
+backbone.stages.2.10.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,440 - mmcv - INFO -
+backbone.stages.2.10.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,440 - mmcv - INFO -
+backbone.stages.2.10.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,440 - mmcv - INFO -
+backbone.stages.2.10.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,440 - mmcv - INFO -
+backbone.stages.2.10.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,440 - mmcv - INFO -
+backbone.stages.2.10.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,440 - mmcv - INFO -
+backbone.stages.2.10.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,440 - mmcv - INFO -
+backbone.stages.2.10.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,440 - mmcv - INFO -
+backbone.stages.2.10.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,440 - mmcv - INFO -
+backbone.stages.2.11.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,441 - mmcv - INFO -
+backbone.stages.2.11.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,441 - mmcv - INFO -
+backbone.stages.2.11.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,441 - mmcv - INFO -
+backbone.stages.2.11.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,441 - mmcv - INFO -
+backbone.stages.2.11.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,441 - mmcv - INFO -
+backbone.stages.2.11.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,441 - mmcv - INFO -
+backbone.stages.2.11.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,441 - mmcv - INFO -
+backbone.stages.2.11.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,441 - mmcv - INFO -
+backbone.stages.2.11.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,442 - mmcv - INFO -
+backbone.stages.2.12.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,442 - mmcv - INFO -
+backbone.stages.2.12.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,442 - mmcv - INFO -
+backbone.stages.2.12.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,442 - mmcv - INFO -
+backbone.stages.2.12.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,442 - mmcv - INFO -
+backbone.stages.2.12.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,442 - mmcv - INFO -
+backbone.stages.2.12.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,442 - mmcv - INFO -
+backbone.stages.2.12.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,442 - mmcv - INFO -
+backbone.stages.2.12.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,442 - mmcv - INFO -
+backbone.stages.2.12.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,443 - mmcv - INFO -
+backbone.stages.2.13.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,443 - mmcv - INFO -
+backbone.stages.2.13.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,443 - mmcv - INFO -
+backbone.stages.2.13.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,443 - mmcv - INFO -
+backbone.stages.2.13.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,443 - mmcv - INFO -
+backbone.stages.2.13.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,443 - mmcv - INFO -
+backbone.stages.2.13.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,443 - mmcv - INFO -
+backbone.stages.2.13.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,443 - mmcv - INFO -
+backbone.stages.2.13.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,443 - mmcv - INFO -
+backbone.stages.2.13.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,443 - mmcv - INFO -
+backbone.stages.2.14.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,444 - mmcv - INFO -
+backbone.stages.2.14.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,444 - mmcv - INFO -
+backbone.stages.2.14.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,444 - mmcv - INFO -
+backbone.stages.2.14.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,444 - mmcv - INFO -
+backbone.stages.2.14.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,444 - mmcv - INFO -
+backbone.stages.2.14.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,444 - mmcv - INFO -
+backbone.stages.2.14.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,444 - mmcv - INFO -
+backbone.stages.2.14.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,444 - mmcv - INFO -
+backbone.stages.2.14.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,444 - mmcv - INFO -
+backbone.stages.2.15.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,445 - mmcv - INFO -
+backbone.stages.2.15.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,445 - mmcv - INFO -
+backbone.stages.2.15.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,445 - mmcv - INFO -
+backbone.stages.2.15.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,445 - mmcv - INFO -
+backbone.stages.2.15.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,446 - mmcv - INFO -
+backbone.stages.2.15.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,446 - mmcv - INFO -
+backbone.stages.2.15.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,446 - mmcv - INFO -
+backbone.stages.2.15.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,446 - mmcv - INFO -
+backbone.stages.2.15.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,446 - mmcv - INFO -
+backbone.stages.2.16.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,446 - mmcv - INFO -
+backbone.stages.2.16.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,446 - mmcv - INFO -
+backbone.stages.2.16.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,446 - mmcv - INFO -
+backbone.stages.2.16.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,446 - mmcv - INFO -
+backbone.stages.2.16.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,447 - mmcv - INFO -
+backbone.stages.2.16.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,447 - mmcv - INFO -
+backbone.stages.2.16.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,447 - mmcv - INFO -
+backbone.stages.2.16.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,447 - mmcv - INFO -
+backbone.stages.2.16.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,447 - mmcv - INFO -
+backbone.stages.2.17.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,447 - mmcv - INFO -
+backbone.stages.2.17.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,447 - mmcv - INFO -
+backbone.stages.2.17.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,447 - mmcv - INFO -
+backbone.stages.2.17.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,447 - mmcv - INFO -
+backbone.stages.2.17.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,448 - mmcv - INFO -
+backbone.stages.2.17.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,448 - mmcv - INFO -
+backbone.stages.2.17.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,448 - mmcv - INFO -
+backbone.stages.2.17.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,448 - mmcv - INFO -
+backbone.stages.2.17.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,448 - mmcv - INFO -
+backbone.stages.2.18.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,448 - mmcv - INFO -
+backbone.stages.2.18.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,448 - mmcv - INFO -
+backbone.stages.2.18.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,448 - mmcv - INFO -
+backbone.stages.2.18.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,449 - mmcv - INFO -
+backbone.stages.2.18.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,449 - mmcv - INFO -
+backbone.stages.2.18.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,449 - mmcv - INFO -
+backbone.stages.2.18.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,449 - mmcv - INFO -
+backbone.stages.2.18.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,449 - mmcv - INFO -
+backbone.stages.2.18.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,449 - mmcv - INFO -
+backbone.stages.2.19.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,449 - mmcv - INFO -
+backbone.stages.2.19.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,449 - mmcv - INFO -
+backbone.stages.2.19.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,449 - mmcv - INFO -
+backbone.stages.2.19.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,450 - mmcv - INFO -
+backbone.stages.2.19.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,450 - mmcv - INFO -
+backbone.stages.2.19.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,450 - mmcv - INFO -
+backbone.stages.2.19.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,450 - mmcv - INFO -
+backbone.stages.2.19.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,450 - mmcv - INFO -
+backbone.stages.2.19.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,450 - mmcv - INFO -
+backbone.stages.2.20.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,450 - mmcv - INFO -
+backbone.stages.2.20.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,450 - mmcv - INFO -
+backbone.stages.2.20.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,450 - mmcv - INFO -
+backbone.stages.2.20.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,451 - mmcv - INFO -
+backbone.stages.2.20.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,451 - mmcv - INFO -
+backbone.stages.2.20.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,451 - mmcv - INFO -
+backbone.stages.2.20.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,451 - mmcv - INFO -
+backbone.stages.2.20.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,451 - mmcv - INFO -
+backbone.stages.2.20.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,451 - mmcv - INFO -
+backbone.stages.2.21.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,451 - mmcv - INFO -
+backbone.stages.2.21.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,451 - mmcv - INFO -
+backbone.stages.2.21.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,451 - mmcv - INFO -
+backbone.stages.2.21.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,452 - mmcv - INFO -
+backbone.stages.2.21.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,452 - mmcv - INFO -
+backbone.stages.2.21.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,452 - mmcv - INFO -
+backbone.stages.2.21.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,452 - mmcv - INFO -
+backbone.stages.2.21.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,452 - mmcv - INFO -
+backbone.stages.2.21.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,452 - mmcv - INFO -
+backbone.stages.2.22.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,452 - mmcv - INFO -
+backbone.stages.2.22.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,452 - mmcv - INFO -
+backbone.stages.2.22.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,452 - mmcv - INFO -
+backbone.stages.2.22.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,452 - mmcv - INFO -
+backbone.stages.2.22.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,453 - mmcv - INFO -
+backbone.stages.2.22.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,453 - mmcv - INFO -
+backbone.stages.2.22.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,453 - mmcv - INFO -
+backbone.stages.2.22.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,453 - mmcv - INFO -
+backbone.stages.2.22.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,453 - mmcv - INFO -
+backbone.stages.2.23.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,453 - mmcv - INFO -
+backbone.stages.2.23.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,453 - mmcv - INFO -
+backbone.stages.2.23.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,453 - mmcv - INFO -
+backbone.stages.2.23.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,453 - mmcv - INFO -
+backbone.stages.2.23.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,454 - mmcv - INFO -
+backbone.stages.2.23.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,454 - mmcv - INFO -
+backbone.stages.2.23.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,454 - mmcv - INFO -
+backbone.stages.2.23.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,454 - mmcv - INFO -
+backbone.stages.2.23.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,454 - mmcv - INFO -
+backbone.stages.2.24.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,454 - mmcv - INFO -
+backbone.stages.2.24.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,454 - mmcv - INFO -
+backbone.stages.2.24.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,454 - mmcv - INFO -
+backbone.stages.2.24.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,455 - mmcv - INFO -
+backbone.stages.2.24.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,455 - mmcv - INFO -
+backbone.stages.2.24.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,455 - mmcv - INFO -
+backbone.stages.2.24.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,455 - mmcv - INFO -
+backbone.stages.2.24.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,455 - mmcv - INFO -
+backbone.stages.2.24.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,455 - mmcv - INFO -
+backbone.stages.2.25.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,455 - mmcv - INFO -
+backbone.stages.2.25.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,455 - mmcv - INFO -
+backbone.stages.2.25.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,455 - mmcv - INFO -
+backbone.stages.2.25.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,456 - mmcv - INFO -
+backbone.stages.2.25.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,456 - mmcv - INFO -
+backbone.stages.2.25.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,456 - mmcv - INFO -
+backbone.stages.2.25.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,456 - mmcv - INFO -
+backbone.stages.2.25.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,456 - mmcv - INFO -
+backbone.stages.2.25.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,456 - mmcv - INFO -
+backbone.stages.2.26.gamma - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,456 - mmcv - INFO -
+backbone.stages.2.26.dwconv.weight - torch.Size([512, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,456 - mmcv - INFO -
+backbone.stages.2.26.dwconv.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,456 - mmcv - INFO -
+backbone.stages.2.26.norm.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,456 - mmcv - INFO -
+backbone.stages.2.26.norm.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,457 - mmcv - INFO -
+backbone.stages.2.26.pwconv1.weight - torch.Size([2048, 512]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,457 - mmcv - INFO -
+backbone.stages.2.26.pwconv1.bias - torch.Size([2048]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,457 - mmcv - INFO -
+backbone.stages.2.26.pwconv2.weight - torch.Size([512, 2048]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,457 - mmcv - INFO -
+backbone.stages.2.26.pwconv2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,457 - mmcv - INFO -
+backbone.stages.3.0.gamma - torch.Size([1024]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,457 - mmcv - INFO -
+backbone.stages.3.0.dwconv.weight - torch.Size([1024, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,457 - mmcv - INFO -
+backbone.stages.3.0.dwconv.bias - torch.Size([1024]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,457 - mmcv - INFO -
+backbone.stages.3.0.norm.weight - torch.Size([1024]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,457 - mmcv - INFO -
+backbone.stages.3.0.norm.bias - torch.Size([1024]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,458 - mmcv - INFO -
+backbone.stages.3.0.pwconv1.weight - torch.Size([4096, 1024]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,458 - mmcv - INFO -
+backbone.stages.3.0.pwconv1.bias - torch.Size([4096]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,458 - mmcv - INFO -
+backbone.stages.3.0.pwconv2.weight - torch.Size([1024, 4096]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,458 - mmcv - INFO -
+backbone.stages.3.0.pwconv2.bias - torch.Size([1024]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,458 - mmcv - INFO -
+backbone.stages.3.1.gamma - torch.Size([1024]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,458 - mmcv - INFO -
+backbone.stages.3.1.dwconv.weight - torch.Size([1024, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,458 - mmcv - INFO -
+backbone.stages.3.1.dwconv.bias - torch.Size([1024]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,458 - mmcv - INFO -
+backbone.stages.3.1.norm.weight - torch.Size([1024]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,458 - mmcv - INFO -
+backbone.stages.3.1.norm.bias - torch.Size([1024]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,459 - mmcv - INFO -
+backbone.stages.3.1.pwconv1.weight - torch.Size([4096, 1024]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,459 - mmcv - INFO -
+backbone.stages.3.1.pwconv1.bias - torch.Size([4096]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,459 - mmcv - INFO -
+backbone.stages.3.1.pwconv2.weight - torch.Size([1024, 4096]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,459 - mmcv - INFO -
+backbone.stages.3.1.pwconv2.bias - torch.Size([1024]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,459 - mmcv - INFO -
+backbone.stages.3.2.gamma - torch.Size([1024]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,459 - mmcv - INFO -
+backbone.stages.3.2.dwconv.weight - torch.Size([1024, 1, 7, 7]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,459 - mmcv - INFO -
+backbone.stages.3.2.dwconv.bias - torch.Size([1024]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,459 - mmcv - INFO -
+backbone.stages.3.2.norm.weight - torch.Size([1024]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,461 - mmcv - INFO -
+backbone.stages.3.2.norm.bias - torch.Size([1024]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,461 - mmcv - INFO -
+backbone.stages.3.2.pwconv1.weight - torch.Size([4096, 1024]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,461 - mmcv - INFO -
+backbone.stages.3.2.pwconv1.bias - torch.Size([4096]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,461 - mmcv - INFO -
+backbone.stages.3.2.pwconv2.weight - torch.Size([1024, 4096]):
+Initialized by user-defined `init_weights` in ConvNeXt
+
+2024-10-18 16:00:26,461 - mmcv - INFO -
+backbone.stages.3.2.pwconv2.bias - torch.Size([1024]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,462 - mmcv - INFO -
+backbone.norm0.weight - torch.Size([128]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,462 - mmcv - INFO -
+backbone.norm0.bias - torch.Size([128]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,462 - mmcv - INFO -
+backbone.norm1.weight - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,462 - mmcv - INFO -
+backbone.norm1.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,462 - mmcv - INFO -
+backbone.norm2.weight - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,462 - mmcv - INFO -
+backbone.norm2.bias - torch.Size([512]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,462 - mmcv - INFO -
+backbone.norm3.weight - torch.Size([1024]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,462 - mmcv - INFO -
+backbone.norm3.bias - torch.Size([1024]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,463 - mmcv - INFO -
+neck.lateral_convs.0.conv.weight - torch.Size([256, 128, 1, 1]):
+XavierInit: gain=1, distribution=uniform, bias=0
+
+2024-10-18 16:00:26,463 - mmcv - INFO -
+neck.lateral_convs.0.conv.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,463 - mmcv - INFO -
+neck.lateral_convs.1.conv.weight - torch.Size([256, 256, 1, 1]):
+XavierInit: gain=1, distribution=uniform, bias=0
+
+2024-10-18 16:00:26,463 - mmcv - INFO -
+neck.lateral_convs.1.conv.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,463 - mmcv - INFO -
+neck.lateral_convs.2.conv.weight - torch.Size([256, 512, 1, 1]):
+XavierInit: gain=1, distribution=uniform, bias=0
+
+2024-10-18 16:00:26,463 - mmcv - INFO -
+neck.lateral_convs.2.conv.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,463 - mmcv - INFO -
+neck.lateral_convs.3.conv.weight - torch.Size([256, 1024, 1, 1]):
+XavierInit: gain=1, distribution=uniform, bias=0
+
+2024-10-18 16:00:26,464 - mmcv - INFO -
+neck.lateral_convs.3.conv.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,464 - mmcv - INFO -
+neck.fpn_convs.0.conv.weight - torch.Size([256, 256, 3, 3]):
+XavierInit: gain=1, distribution=uniform, bias=0
+
+2024-10-18 16:00:26,464 - mmcv - INFO -
+neck.fpn_convs.0.conv.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,464 - mmcv - INFO -
+neck.fpn_convs.1.conv.weight - torch.Size([256, 256, 3, 3]):
+XavierInit: gain=1, distribution=uniform, bias=0
+
+2024-10-18 16:00:26,464 - mmcv - INFO -
+neck.fpn_convs.1.conv.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,464 - mmcv - INFO -
+neck.fpn_convs.2.conv.weight - torch.Size([256, 256, 3, 3]):
+XavierInit: gain=1, distribution=uniform, bias=0
+
+2024-10-18 16:00:26,464 - mmcv - INFO -
+neck.fpn_convs.2.conv.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,464 - mmcv - INFO -
+neck.fpn_convs.3.conv.weight - torch.Size([256, 256, 3, 3]):
+XavierInit: gain=1, distribution=uniform, bias=0
+
+2024-10-18 16:00:26,464 - mmcv - INFO -
+neck.fpn_convs.3.conv.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,465 - mmcv - INFO -
+rpn_head.rpn_conv.weight - torch.Size([256, 256, 3, 3]):
+NormalInit: mean=0, std=0.01, bias=0
+
+2024-10-18 16:00:26,465 - mmcv - INFO -
+rpn_head.rpn_conv.bias - torch.Size([256]):
+NormalInit: mean=0, std=0.01, bias=0
+
+2024-10-18 16:00:26,465 - mmcv - INFO -
+rpn_head.rpn_cls.weight - torch.Size([3, 256, 1, 1]):
+NormalInit: mean=0, std=0.01, bias=0
+
+2024-10-18 16:00:26,465 - mmcv - INFO -
+rpn_head.rpn_cls.bias - torch.Size([3]):
+NormalInit: mean=0, std=0.01, bias=0
+
+2024-10-18 16:00:26,465 - mmcv - INFO -
+rpn_head.rpn_reg.weight - torch.Size([12, 256, 1, 1]):
+NormalInit: mean=0, std=0.01, bias=0
+
+2024-10-18 16:00:26,465 - mmcv - INFO -
+rpn_head.rpn_reg.bias - torch.Size([12]):
+NormalInit: mean=0, std=0.01, bias=0
+
+2024-10-18 16:00:26,466 - mmcv - INFO -
+roi_head.bbox_head.0.fc_cls.weight - torch.Size([11, 1024]):
+NormalInit: mean=0, std=0.01, bias=0
+
+2024-10-18 16:00:26,466 - mmcv - INFO -
+roi_head.bbox_head.0.fc_cls.bias - torch.Size([11]):
+NormalInit: mean=0, std=0.01, bias=0
+
+2024-10-18 16:00:26,466 - mmcv - INFO -
+roi_head.bbox_head.0.fc_reg.weight - torch.Size([40, 1024]):
+NormalInit: mean=0, std=0.001, bias=0
+
+2024-10-18 16:00:26,466 - mmcv - INFO -
+roi_head.bbox_head.0.fc_reg.bias - torch.Size([40]):
+NormalInit: mean=0, std=0.001, bias=0
+
+2024-10-18 16:00:26,467 - mmcv - INFO -
+roi_head.bbox_head.0.shared_convs.0.conv.weight - torch.Size([256, 256, 3, 3]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,467 - mmcv - INFO -
+roi_head.bbox_head.0.shared_convs.0.bn.weight - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,467 - mmcv - INFO -
+roi_head.bbox_head.0.shared_convs.0.bn.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,467 - mmcv - INFO -
+roi_head.bbox_head.0.shared_convs.1.conv.weight - torch.Size([256, 256, 3, 3]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,467 - mmcv - INFO -
+roi_head.bbox_head.0.shared_convs.1.bn.weight - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,467 - mmcv - INFO -
+roi_head.bbox_head.0.shared_convs.1.bn.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,467 - mmcv - INFO -
+roi_head.bbox_head.0.shared_convs.2.conv.weight - torch.Size([256, 256, 3, 3]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,467 - mmcv - INFO -
+roi_head.bbox_head.0.shared_convs.2.bn.weight - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,468 - mmcv - INFO -
+roi_head.bbox_head.0.shared_convs.2.bn.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,468 - mmcv - INFO -
+roi_head.bbox_head.0.shared_convs.3.conv.weight - torch.Size([256, 256, 3, 3]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,468 - mmcv - INFO -
+roi_head.bbox_head.0.shared_convs.3.bn.weight - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,468 - mmcv - INFO -
+roi_head.bbox_head.0.shared_convs.3.bn.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,468 - mmcv - INFO -
+roi_head.bbox_head.0.shared_fcs.0.weight - torch.Size([1024, 12544]):
+XavierInit: gain=1, distribution=uniform, bias=0
+
+2024-10-18 16:00:26,468 - mmcv - INFO -
+roi_head.bbox_head.0.shared_fcs.0.bias - torch.Size([1024]):
+XavierInit: gain=1, distribution=uniform, bias=0
+
+2024-10-18 16:00:26,468 - mmcv - INFO -
+roi_head.bbox_head.1.fc_cls.weight - torch.Size([11, 1024]):
+NormalInit: mean=0, std=0.01, bias=0
+
+2024-10-18 16:00:26,468 - mmcv - INFO -
+roi_head.bbox_head.1.fc_cls.bias - torch.Size([11]):
+NormalInit: mean=0, std=0.01, bias=0
+
+2024-10-18 16:00:26,469 - mmcv - INFO -
+roi_head.bbox_head.1.fc_reg.weight - torch.Size([40, 1024]):
+NormalInit: mean=0, std=0.001, bias=0
+
+2024-10-18 16:00:26,469 - mmcv - INFO -
+roi_head.bbox_head.1.fc_reg.bias - torch.Size([40]):
+NormalInit: mean=0, std=0.001, bias=0
+
+2024-10-18 16:00:26,469 - mmcv - INFO -
+roi_head.bbox_head.1.shared_convs.0.conv.weight - torch.Size([256, 256, 3, 3]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,469 - mmcv - INFO -
+roi_head.bbox_head.1.shared_convs.0.bn.weight - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,469 - mmcv - INFO -
+roi_head.bbox_head.1.shared_convs.0.bn.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,469 - mmcv - INFO -
+roi_head.bbox_head.1.shared_convs.1.conv.weight - torch.Size([256, 256, 3, 3]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,469 - mmcv - INFO -
+roi_head.bbox_head.1.shared_convs.1.bn.weight - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,469 - mmcv - INFO -
+roi_head.bbox_head.1.shared_convs.1.bn.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,469 - mmcv - INFO -
+roi_head.bbox_head.1.shared_convs.2.conv.weight - torch.Size([256, 256, 3, 3]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,470 - mmcv - INFO -
+roi_head.bbox_head.1.shared_convs.2.bn.weight - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,470 - mmcv - INFO -
+roi_head.bbox_head.1.shared_convs.2.bn.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,470 - mmcv - INFO -
+roi_head.bbox_head.1.shared_convs.3.conv.weight - torch.Size([256, 256, 3, 3]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,470 - mmcv - INFO -
+roi_head.bbox_head.1.shared_convs.3.bn.weight - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,470 - mmcv - INFO -
+roi_head.bbox_head.1.shared_convs.3.bn.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,470 - mmcv - INFO -
+roi_head.bbox_head.1.shared_fcs.0.weight - torch.Size([1024, 12544]):
+XavierInit: gain=1, distribution=uniform, bias=0
+
+2024-10-18 16:00:26,471 - mmcv - INFO -
+roi_head.bbox_head.1.shared_fcs.0.bias - torch.Size([1024]):
+XavierInit: gain=1, distribution=uniform, bias=0
+
+2024-10-18 16:00:26,471 - mmcv - INFO -
+roi_head.bbox_head.2.fc_cls.weight - torch.Size([11, 1024]):
+NormalInit: mean=0, std=0.01, bias=0
+
+2024-10-18 16:00:26,471 - mmcv - INFO -
+roi_head.bbox_head.2.fc_cls.bias - torch.Size([11]):
+NormalInit: mean=0, std=0.01, bias=0
+
+2024-10-18 16:00:26,471 - mmcv - INFO -
+roi_head.bbox_head.2.fc_reg.weight - torch.Size([40, 1024]):
+NormalInit: mean=0, std=0.001, bias=0
+
+2024-10-18 16:00:26,471 - mmcv - INFO -
+roi_head.bbox_head.2.fc_reg.bias - torch.Size([40]):
+NormalInit: mean=0, std=0.001, bias=0
+
+2024-10-18 16:00:26,471 - mmcv - INFO -
+roi_head.bbox_head.2.shared_convs.0.conv.weight - torch.Size([256, 256, 3, 3]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,471 - mmcv - INFO -
+roi_head.bbox_head.2.shared_convs.0.bn.weight - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,471 - mmcv - INFO -
+roi_head.bbox_head.2.shared_convs.0.bn.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,472 - mmcv - INFO -
+roi_head.bbox_head.2.shared_convs.1.conv.weight - torch.Size([256, 256, 3, 3]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,472 - mmcv - INFO -
+roi_head.bbox_head.2.shared_convs.1.bn.weight - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,472 - mmcv - INFO -
+roi_head.bbox_head.2.shared_convs.1.bn.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,472 - mmcv - INFO -
+roi_head.bbox_head.2.shared_convs.2.conv.weight - torch.Size([256, 256, 3, 3]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,472 - mmcv - INFO -
+roi_head.bbox_head.2.shared_convs.2.bn.weight - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,472 - mmcv - INFO -
+roi_head.bbox_head.2.shared_convs.2.bn.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,472 - mmcv - INFO -
+roi_head.bbox_head.2.shared_convs.3.conv.weight - torch.Size([256, 256, 3, 3]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,472 - mmcv - INFO -
+roi_head.bbox_head.2.shared_convs.3.bn.weight - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,472 - mmcv - INFO -
+roi_head.bbox_head.2.shared_convs.3.bn.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of CascadeRCNN
+
+2024-10-18 16:00:26,473 - mmcv - INFO -
+roi_head.bbox_head.2.shared_fcs.0.weight - torch.Size([1024, 12544]):
+XavierInit: gain=1, distribution=uniform, bias=0
+
+2024-10-18 16:00:26,473 - mmcv - INFO -
+roi_head.bbox_head.2.shared_fcs.0.bias - torch.Size([1024]):
+XavierInit: gain=1, distribution=uniform, bias=0
+
+2024-10-18 16:00:28,509 - mmdet - INFO - Automatic scaling of learning rate (LR) has been disabled.
+loading annotations into memory...
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.10/site-packages/mmcv/utils/registry.py", line 69, in build_from_cfg
+    return obj_cls(**args)
+  File "/data/ephemeral/home/JYP/level2-objectdetection-cv-14/mmdetection/mmdet/datasets/custom.py", line 97, in __init__
+    self.data_infos = self.load_annotations(local_path)
+  File "/data/ephemeral/home/JYP/level2-objectdetection-cv-14/mmdetection/mmdet/datasets/coco.py", line 72, in load_annotations
+    self.coco = COCO(ann_file)
+  File "/data/ephemeral/home/JYP/level2-objectdetection-cv-14/mmdetection/mmdet/datasets/api_wrappers/coco_api.py", line 23, in __init__
+    super().__init__(annotation_file=annotation_file)
+  File "/opt/conda/lib/python3.10/site-packages/pycocotools/coco.py", line 81, in __init__
+    with open(annotation_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '../../../dataset/pseudo_data_split/val_data.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data/ephemeral/home/JYP/level2-objectdetection-cv-14/mmdetection/train.py", line 64, in <module>
+    train_detector(model, datasets[0], cfg, distributed=False, validate=args.validation)
+  File "/data/ephemeral/home/JYP/level2-objectdetection-cv-14/mmdetection/mmdet/apis/train.py", line 223, in train_detector
+    val_dataset = build_dataset(cfg.data.val, dict(test_mode=True))
+  File "/data/ephemeral/home/JYP/level2-objectdetection-cv-14/mmdetection/mmdet/datasets/builder.py", line 82, in build_dataset
+    dataset = build_from_cfg(cfg, DATASETS, default_args)
+  File "/opt/conda/lib/python3.10/site-packages/mmcv/utils/registry.py", line 72, in build_from_cfg
+    raise type(e)(f'{obj_cls.__name__}: {e}')
+FileNotFoundError: CocoDataset: [Errno 2] No such file or directory: '../../../dataset/pseudo_data_split/val_data.json'

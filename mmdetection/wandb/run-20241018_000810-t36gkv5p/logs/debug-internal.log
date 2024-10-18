@@ -1,0 +1,18 @@
+{"time":"2024-10-18T00:08:10.650131977+09:00","level":"INFO","msg":"using version","core version":"0.18.3"}
+{"time":"2024-10-18T00:08:10.650146256+09:00","level":"INFO","msg":"created symlink","path":"/data/ephemeral/home/JYP/level2-objectdetection-cv-14/mmdetection/wandb/run-20241018_000810-t36gkv5p/logs/debug-core.log"}
+{"time":"2024-10-18T00:08:10.653215185+09:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-10-18T00:08:10.663192883+09:00","level":"INFO","msg":"created new stream","id":"t36gkv5p"}
+{"time":"2024-10-18T00:08:10.663244888+09:00","level":"INFO","msg":"stream: started","id":"t36gkv5p"}
+{"time":"2024-10-18T00:08:10.663311136+09:00","level":"INFO","msg":"handler: started","stream_id":{"value":"t36gkv5p"}}
+{"time":"2024-10-18T00:08:10.663433191+09:00","level":"INFO","msg":"sender: started","stream_id":{"value":"t36gkv5p"}}
+{"time":"2024-10-18T00:08:10.663449425+09:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"t36gkv5p"}}
+{"time":"2024-10-18T00:08:11.101520634+09:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-10-18T00:08:11.102539061+09:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-10-18T00:08:11.351880362+09:00","level":"INFO","msg":"stream: closing","id":"t36gkv5p"}
+{"time":"2024-10-18T00:08:11.351918691+09:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-10-18T00:08:11.354310327+09:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-10-18T00:08:13.140094887+09:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-10-18T00:08:13.443264821+09:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"t36gkv5p"}}
+{"time":"2024-10-18T00:08:13.443340102+09:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"t36gkv5p"}}
+{"time":"2024-10-18T00:08:13.443338332+09:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"t36gkv5p"}}
+{"time":"2024-10-18T00:08:13.443411688+09:00","level":"INFO","msg":"stream: closed","id":"t36gkv5p"}

@@ -1,0 +1,9 @@
+wandb :  base_fold1
+Traceback (most recent call last):
+  File "/data/ephemeral/home/JYP/level2-objectdetection-cv-14/mmdetection/train.py", line 58, in <module>
+    datasets = [build_dataset(cfg.data.train)]
+  File "/data/ephemeral/home/JYP/level2-objectdetection-cv-14/mmdetection/mmdet/datasets/builder.py", line 82, in build_dataset
+    dataset = build_from_cfg(cfg, DATASETS, default_args)
+  File "/opt/conda/lib/python3.10/site-packages/mmcv/utils/registry.py", line 61, in build_from_cfg
+    raise KeyError(
+KeyError: 'MosaicCocoDataset is not in the dataset registry'
