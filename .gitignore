@@ -31,3 +31,9 @@ sample_submission/
 
 # .env
 .env
+
+# wandb
+wandb
+
+# .out
+.out
