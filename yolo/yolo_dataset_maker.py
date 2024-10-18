@@ -4,12 +4,6 @@ import shutil
 
 origin_image_dir = './datasets/origin_dataset/train'
 
-train_fold_json_path = './datasets/sgkf_5_14/train_1fold.json'
-val_fold_json_path = './datasets/sgkf_5_14/val_1fold.json'
-train_output_dir = './datasets/recycle_trash_dataset/train'
-val_output_dir = './datasets/recycle_trash_dataset/valid'
-
-
 def dataset_maker(read_path, target_path):
     with open(read_path, 'r') as f:
         train_ann_data = json.load(f)        
@@ -30,10 +24,17 @@ def dataset_maker(read_path, target_path):
                 content = ''                    
 
             category_id = str(item['category_id'])
-            x_center = "{:.6f}".format(((item['bbox'][0]*2 + item['bbox'][2])/2.0) / 1024)
-            y_center = "{:.6f}".format(((item['bbox'][1]*2 + item['bbox'][3])/2.0) / 1024)
-            width = "{:.6f}".format(item['bbox'][2] / 1024)
-            height = "{:.6f}".format(item['bbox'][3] / 1024)
+            x,y,w,h = item['bbox'][0], item['bbox'][1], item['bbox'][2], item['bbox'][3]
+            centerx = x + w / 2.
+            centery = y + h / 2.
+            centerx /= 1024.
+            centery /= 1024.
+            w /= 1024.
+            h /= 1024.
+            x_center = "{:.6f}".format(centerx)
+            y_center = "{:.6f}".format(centery)
+            width = "{:.6f}".format(w)
+            height = "{:.6f}".format(h)
             data = category_id + " " + x_center + " " + y_center + " " + width + " " + height + "\n"
             content += data
     
@@ -48,10 +49,14 @@ def dataset_maker(read_path, target_path):
         shutil.copy2(src_path, dst_path)
 
 
+for i in range(1, 6):
+    train_fold_json_path = f'./datasets/sgkf_5_14/train_{i}fold.json'
+    val_fold_json_path = f'./datasets/sgkf_5_14/val_{i}fold.json'
+    train_output_dir = f'./datasets/recycle_trash_dataset{i}/train'
+    val_output_dir = f'./datasets/recycle_trash_dataset{i}/valid'
 
-
-dataset_maker(train_fold_json_path, train_output_dir)
-dataset_maker(val_fold_json_path, val_output_dir)
+    dataset_maker(train_fold_json_path, train_output_dir)
+    dataset_maker(val_fold_json_path, val_output_dir)
 
         
     
