@@ -130,7 +130,8 @@ def main():
     ]
 
     # inference시에는 wandb 제거
-    cfg.vis_backends = [visBackend for visBackend in cfg.vis_backeds if not visBackend['type'] == 'WandbVisBackend']
+    cfg.vis_backends = [visBackend for visBackend in cfg.vis_backends if not visBackend['type'] == 'WandbVisBackend']
+    cfg.visualizer = dict(type='DetLocalVisualizer', vis_backends=cfg.vis_backends, name='visualizer')
 
     # build the runner from config
     if 'runner_type' not in cfg:

@@ -2,8 +2,8 @@ _base_ = "./DINO_E12_5scale_Swin.py"
 
 # learning policy
 max_epochs = 15
-# train_cfg = dict(
-#     type='EpochBasedTrainLoop', max_epochs=max_epochs, val_interval=1)
+train_cfg = dict(
+    type='EpochBasedTrainLoop', max_epochs=max_epochs, val_interval=1)
 
 optim_wrapper = dict(
     optimizer=dict(
@@ -36,4 +36,7 @@ vis_backends = [
              'tags' : ['Swin384', '15Epoch', '5scale']
          })
 ]
+
+visualizer = dict(
+    type='DetLocalVisualizer', vis_backends=vis_backends, name='visualizer')
 
