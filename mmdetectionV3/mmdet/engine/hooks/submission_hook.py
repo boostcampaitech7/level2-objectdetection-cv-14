@@ -26,10 +26,11 @@ class SubmissionHook(Hook):
         test_out_dir (str) : 저장할 경로
     """
 
-    def __init__(self, test_out_dir=None):
+    def __init__(self, test_out_dir=None, thr=0.0):
         self.prediction_strings = []
         self.file_names = []
         self.test_out_dir = test_out_dir
+        self.thr = thr
 
     def after_test_iter(self, runner: Runner, batch_idx: int, data_batch: dict,
                         outputs: Sequence[DetDataSample]) -> None:
@@ -50,7 +51,8 @@ class SubmissionHook(Hook):
             for label, score, bbox in zip(output.pred_instances.labels, output.pred_instances.scores, output.pred_instances.bboxes):
                 bbox = bbox.cpu().numpy()
                 # 이미 xyxy로 되어있음
-                prediction_string += str(int(label.cpu())) + ' ' + str(float(score.cpu())) + ' ' + str(bbox[0]) + ' ' + str(bbox[1]) + ' ' + str(bbox[2]) + ' ' + str(bbox[3]) + ' '
+                if score > self.thr:
+                    prediction_string += str(int(label.cpu())) + ' ' + str(float(score.cpu())) + ' ' + str(bbox[0]) + ' ' + str(bbox[1]) + ' ' + str(bbox[2]) + ' ' + str(bbox[3]) + ' '
             self.prediction_strings.append(prediction_string)
             self.file_names.append(output.img_path[-13:])
 

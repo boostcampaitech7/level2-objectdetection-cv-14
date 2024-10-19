@@ -57,6 +57,10 @@ def parse_args():
     # will pass the `--local-rank` parameter to `tools/train.py` instead
     # of `--local_rank`.
     parser.add_argument('--local_rank', '--local-rank', type=int, default=0)
+
+    # thr 설정
+    parser.add_argument('--thr', type=float, default=0.0)
+
     args = parser.parse_args()
     if 'LOCAL_RANK' not in os.environ:
         os.environ['LOCAL_RANK'] = str(args.local_rank)
@@ -126,7 +130,7 @@ def main():
 
     # 제출 형식 맞추기
     cfg.custom_hooks = [
-        dict(type="SubmissionHook", test_out_dir=cfg.work_dir),
+        dict(type="SubmissionHook", test_out_dir=cfg.work_dir, thr=args.thr),
     ]
 
     # inference시에는 wandb 제거
