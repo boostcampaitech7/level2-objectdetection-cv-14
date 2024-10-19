@@ -39,7 +39,6 @@ classes = ("General trash", "Paper", "Paper pack", "Metal", "Glass",
            "Plastic", "Styrofoam", "Plastic bag", "Battery", "Clothing")
 
 cfg = Config.fromfile(args.config)
-print('wandb : ', cfg['log_config']['hooks'][1]['init_kwargs']['name'])
 wandb.init(project=cfg['log_config']['hooks'][1]['init_kwargs']['project'], name=cfg['log_config']['hooks'][1]['init_kwargs']['name'])
 
 
@@ -55,12 +54,12 @@ cfg.checkpoint_config = dict(max_keep_ckpts=3, interval=1)
 cfg.device = get_device()
 
 # build_dataset
-# datasets = [build_dataset(cfg.data.train)]
+datasets = [build_dataset(cfg.data.train)]
 
-# # # 모델 build 및 pretrained network 불러오기
-# model = build_detector(cfg.model)
-# model.init_weights()
+# # 모델 build 및 pretrained network 불러오기
+model = build_detector(cfg.model)
+model.init_weights()
 
-# train_detector(model, datasets[0], cfg, distributed=False, validate=args.validation)
+train_detector(model, datasets[0], cfg, distributed=False, validate=args.validation)
 
 Gsheet_param(cfg, args.output)
