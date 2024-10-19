@@ -2,6 +2,7 @@ import json
 import pandas as pd
 import numpy as np
 from collections import defaultdict
+import random
 
 # IoU 계산 함수 정의
 def calculate_iou(box1, box2):
@@ -26,8 +27,8 @@ def calculate_iou(box1, box2):
     return iou
 
 # Pseudo Label CSV 파일 경로 설정
-model_a_path ='/data/ephemeral/home/yj/level2-objectdetection-cv-14/mmdetection/swin_inference.csv'
-model_b_path ='/data/ephemeral/home/yj/level2-objectdetection-cv-14/mmdetection/convnext.csv'
+model_a_path = '/data/ephemeral/home/yj/level2-objectdetection-cv-14/mmdetection/swin_inference.csv'
+model_b_path = '/data/ephemeral/home/yj/level2-objectdetection-cv-14/mmdetection/convnext.csv'
 
 # 모델 결과 불러오기
 model_a = pd.read_csv(model_a_path)
@@ -55,11 +56,21 @@ for predictions in all_predictions:
             y_max = float(bboxes[i + 5])
             bbox_dict[image_id].append([class_id, confidence, x_min, y_min, x_max, y_max])
 
+# 기존 train.json을 불러와서 ID 업데이트
+train_json_path = '/data/ephemeral/home/dataset/train.json'
+with open(train_json_path, 'r') as f:
+    train_data = json.load(f)
+
+# 기존 train 데이터의 마지막 ID 확인
+last_image_id = max([img['id'] for img in train_data['images']]) if train_data['images'] else -1
+last_annotation_id = max([ann['id'] for ann in train_data['annotations']]) if train_data['annotations'] else -1
+
+# Pseudo Label의 ID를 기존 데이터의 마지막 ID 뒤에서 시작하도록 설정
+next_image_id = last_image_id + 1
+next_annotation_id = last_annotation_id + 1
+
 # IoU 기반 매칭 및 Weighted Average 계산
-pseudo_images = []
 pseudo_annotations = []
-next_image_id = 0
-next_annotation_id = 0
 
 for image_id, bboxes in bbox_dict.items():
     matched_boxes = []
@@ -82,35 +93,21 @@ for image_id, bboxes in bbox_dict.items():
         
         if avg_conf >= 0.6:  # 신뢰도 기준 필터링
             pseudo_annotations.append({
-                "id": next_annotation_id,
-                "image_id": next_image_id,
+                "image_id": image_id,  # 기존 이미지 ID 사용
                 "category_id": class_id,
-                "bbox": [round(x_min, 1), round(y_min, 1), round(x_max - x_min, 1), round(y_max - y_min, 1)],
                 "area": round((x_max - x_min) * (y_max - y_min), 2),
+                "bbox": [round(x_min, 1), round(y_min, 1), round(x_max - x_min, 1), round(y_max - y_min, 1)],
                 "iscrowd": 0,
-                "is_pseudo": True,
-                "score": avg_conf
+                "id": next_annotation_id,
+                "score": avg_conf,
+                "is_pseudo": True
             })
             next_annotation_id += 1
 
-    # 새로운 이미지 정보 추가
-    pseudo_images.append({
-        "id": next_image_id,
-        "file_name": image_id,
-        "width": 1024,
-        "height": 1024,
-        "license": 0,
-        "flickr_url": None,
-        "coco_url": None,
-        "date_captured": "2020-12-12 15:19:33",
-        "is_pseudo": True
-    })
-    next_image_id += 1
-
 # 결과 JSON 파일로 저장
 data = {
-    "images": pseudo_images,
-    "annotations": pseudo_annotations,
+    "images": train_data['images'],
+    "annotations": sorted(pseudo_annotations, key=lambda x: x['id']),  # ID 순서 정렬
     "categories": [
         {"id": 0, "name": "General trash", "supercategory": "General trash"},
         {"id": 1, "name": "Paper", "supercategory": "Paper"},
@@ -125,45 +122,50 @@ data = {
     ]
 }
 
-output_path = '/data/ephemeral/home/dataset/pseudo_labels.json'
+output_path = '/data/ephemeral/home/dataset/pseudo0.5_labels.json'
 with open(output_path, 'w') as f:
     json.dump(data, f, indent=4)
 
+# 출력 포맷
+total_images = len(train_data['images'])
+total_annotations = len(train_data['annotations'])
+combined_total_images = len(data['images'])
+average_bboxes = total_annotations / total_images if total_images > 0 else 0
+average_confidence = np.mean([ann['score'] for ann in pseudo_annotations]) if pseudo_annotations else 0
+average_area = np.mean([ann['area'] for ann in pseudo_annotations]) if pseudo_annotations else 0
+
 print(f'Pseudo Label JSON 파일이 {output_path}에 저장되었습니다.')
+print("===== 체크 정보 =====")
+print(f"총 이미지 수: {total_images}")
+print(f"총 어노테이션 수: {total_annotations}")
+print(f"평균 바운딩 박스 수: {average_bboxes:.2f}")
+print(f"최종 어노테이션 신뢰도 평균: {average_confidence:.2f}")
+print(f"최종 어노테이션 면적 평균: {average_area:.2f}")
 
-# 체크할만한 정보 출력
-print("\n===== 체크 정보 =====")
-print(f"총 이미지 수: {len(pseudo_images)}")
-print(f"총 어노테이션 수: {len(pseudo_annotations)}")
-print(f"평균 바운딩 박스 수: {len(pseudo_annotations) / len(pseudo_images) if len(pseudo_images) > 0 else 0:.2f}")
-print(f"최종 어노테이션 신뢰도 평균: {np.mean([ann['score'] for ann in pseudo_annotations]) if pseudo_annotations else 0:.2f}")
-print(f"최종 어노테이션 면적 평균: {np.mean([ann['area'] for ann in pseudo_annotations]) if pseudo_annotations else 0:.2f}")
+# 어노테이션 ID의 고유성 확인
+annotation_ids = [ann['id'] for ann in pseudo_annotations]
+if len(annotation_ids) == len(set(annotation_ids)):
+    print("모든 어노테이션 ID가 고유합니다.")
+else:
+    print("중복된 어노테이션 ID가 존재합니다.")
+    
+# # train.json과 pseudo_labels.json 병합하여 combine_pseudo.json 생성
+# combined_annotations = train_data['annotations'] + pseudo_annotations
+# random.shuffle(combined_annotations)  # 어노테이션 셔플
 
-# 기존 train.json과 pseudo_labels.json을 합쳐서 새로운 JSON 파일 생성
-train_json_path = '/data/ephemeral/home/dataset/train.json'
-with open(train_json_path, 'r') as f:
-    train_data = json.load(f)
+# combined_data = {
+#     "images": train_data['images'],
+#     "annotations": combined_annotations,
+#     "categories": train_data['categories']
+# }
 
-# 기존 train 데이터의 마지막 ID 확인
-last_image_id = max([img['id'] for img in train_data['images']]) if train_data['images'] else -1
-last_annotation_id = max([ann['id'] for ann in train_data['annotations']]) if train_data['annotations'] else -1
+# combined_output_path = '/data/ephemeral/home/dataset/combine_pseudo.json'
+# with open(combined_output_path, 'w') as f:
+#     json.dump(combined_data, f, indent=4)
 
-# Pseudo Label의 ID를 기존 데이터의 마지막 ID 뒤에서 시작하도록 설정
-next_image_id = last_image_id + 1
-next_annotation_id = last_annotation_id + 1
+# print(f'Combined JSON 파일이 {combined_output_path}에 저장되었습니다.')
 
-# 기존 train 데이터에 pseudo label 데이터 병합
-train_data['images'].extend(pseudo_images)
-train_data['annotations'].extend(pseudo_annotations)
-
-# 새로운 JSON 파일로 저장
-combined_output_path = 'combined_train_pseudo_labels.json'
-with open(combined_output_path, 'w') as f:
-    json.dump(train_data, f, indent=4)
-
-print(f'Combined JSON 파일이 {combined_output_path}에 저장되었습니다.')
-
-# Combined JSON 파일의 이미지 및 어노테이션 개수 출력
-print("===== Combined JSON 체크 정보 =====")
-print(f"총 이미지 수: {len(train_data['images'])}")
-print(f"총 어노테이션 수: {len(train_data['annotations'])}")
+# # Combined JSON 파일의 이미지 및 어노테이션 개수 출력
+# print("===== Combined JSON 체크 정보 =====")
+# print(f"총 이미지 수: {len(combined_data['images'])}")
+# print(f"총 어노테이션 수: {len(combined_data['annotations'])}")
