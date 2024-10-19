@@ -55,12 +55,12 @@ cfg.checkpoint_config = dict(max_keep_ckpts=3, interval=1)
 cfg.device = get_device()
 
 # build_dataset
-datasets = [build_dataset(cfg.data.train)]
+# datasets = [build_dataset(cfg.data.train)]
 
-# # 모델 build 및 pretrained network 불러오기
-model = build_detector(cfg.model)
-model.init_weights()
+# # # 모델 build 및 pretrained network 불러오기
+# model = build_detector(cfg.model)
+# model.init_weights()
 
-train_detector(model, datasets[0], cfg, distributed=False, validate=args.validation)
+# train_detector(model, datasets[0], cfg, distributed=False, validate=args.validation)
 
 Gsheet_param(cfg, args.output)

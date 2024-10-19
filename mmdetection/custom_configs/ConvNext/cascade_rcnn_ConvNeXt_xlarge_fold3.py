@@ -8,7 +8,7 @@
 
 _base_ = [
     'models/Cascade_rcnn_ConvNeXt.py',
-    'datasets/coco_detection_aug_3_pseudo_label.py',
+    'datasets/coco_detection_aug_3_fold3.py',
     'schedules/schedule_CosineAnnealing.py',
     'runtime.py'
 ]

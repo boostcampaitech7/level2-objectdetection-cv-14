@@ -594,7 +594,7 @@ class CocoDataset(CustomDataset):
                  metric='bbox',
                  logger=None,
                  jsonfile_prefix=None,
-                 classwise=True,
+                 classwise=False,
                  proposal_nums=(100, 300, 1000),
                  iou_thrs=None,
                  metric_items=None):
