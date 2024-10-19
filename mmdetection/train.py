@@ -12,9 +12,7 @@ from mmdet.datasets import (build_dataloader, build_dataset,
                             replace_ImageToTensor)
 from mmdet.utils import get_device
 import argparse
-import wandb
 
-wandb.init(project='Cascade_rcnn_ConvNeXt', name='test1')
 
 # config file 들고오기
 parser = argparse.ArgumentParser()
@@ -39,8 +37,6 @@ classes = ("General trash", "Paper", "Paper pack", "Metal", "Glass",
            "Plastic", "Styrofoam", "Plastic bag", "Battery", "Clothing")
 
 cfg = Config.fromfile(args.config)
-wandb.init(project=cfg['log_config']['hooks'][1]['init_kwargs']['project'], name=cfg['log_config']['hooks'][1]['init_kwargs']['name'])
-
 
 # dataset config 수정
 cfg.data.train.classes = classes
@@ -56,7 +52,7 @@ cfg.device = get_device()
 # build_dataset
 datasets = [build_dataset(cfg.data.train)]
 
-# # 모델 build 및 pretrained network 불러오기
+# 모델 build 및 pretrained network 불러오기
 model = build_detector(cfg.model)
 model.init_weights()
 
