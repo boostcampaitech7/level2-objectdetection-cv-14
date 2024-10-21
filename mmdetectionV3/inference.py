@@ -61,6 +61,9 @@ def parse_args():
     # thr 설정
     parser.add_argument('--thr', type=float, default=0.0)
 
+    # submission 파일 이름 설정
+    parser.add_argument('--csv-name', default="submission.csv")
+
     args = parser.parse_args()
     if 'LOCAL_RANK' not in os.environ:
         os.environ['LOCAL_RANK'] = str(args.local_rank)
@@ -130,7 +133,7 @@ def main():
 
     # 제출 형식 맞추기
     cfg.custom_hooks = [
-        dict(type="SubmissionHook", test_out_dir=cfg.work_dir, thr=args.thr),
+        dict(type="SubmissionHook", test_out_dir=cfg.work_dir, output_name=args.csv_name, thr=args.thr),
     ]
 
     # inference시에는 wandb 제거
