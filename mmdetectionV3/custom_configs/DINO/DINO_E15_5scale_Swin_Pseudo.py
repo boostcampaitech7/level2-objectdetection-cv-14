@@ -10,7 +10,7 @@ train_dataloader = dict(
 )
 
 val_dataloader = None
-
+val_cfg = None
 val_evaluator = None
 
 train_cfg = dict(
