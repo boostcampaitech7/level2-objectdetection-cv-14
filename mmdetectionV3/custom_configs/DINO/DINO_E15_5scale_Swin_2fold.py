@@ -3,6 +3,7 @@ _base_ = "./DINO_E15_5scale_Swin.py"
 data_root = "../../../dataset/"
 
 train_dataloader = dict(
+    batch_size=1,
     dataset=dict(
         ann_file='sgkf_5_14/train_2fold.json'
     )
