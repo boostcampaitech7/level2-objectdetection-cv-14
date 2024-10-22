@@ -3,6 +3,8 @@ import pandas as pd
 import numpy as np
 from tqdm import tqdm
 from ensemble_boxes import *
+import matplotlib.pyplot as plt
+import argparse
 
 
 def main():
@@ -17,7 +19,7 @@ def main():
     file_names = []
 
     img_width, img_height = 1024, 1024
-
+    result = []
     for i, image_id in tqdm(enumerate(image_ids), total=len(image_ids)):
         prediction_string = ''
         boxes_list = []
@@ -43,25 +45,83 @@ def main():
                 box_list.append(box)
 
             boxes_list.append(box_list)
+            # 1보다 큰 값이 있는지 확인
+            large_value_exists = any(any(val > 1 for val in box)
+                                     for box in box_list)
+            if large_value_exists:
+                print(f"경고: image_id {image_id}에서 1보다 큰 값이 발견되었습니다.")
             scores_list.append(list(map(float, predict_list[:, 1].tolist())))
             labels_list.append(list(map(int, predict_list[:, 0].tolist())))
 
         # Ensemble 방법 선택
         iou_thr = 0.5
         if len(boxes_list):
-            # boxes, scores, labels = nms(boxes_list, scores_list, labels_list, iou_thr=iou_thr) # NMS
-            # boxes, scores, labels = soft_nms(boxes_list, scores_list, labels_list, iou_thr=iou_thr) # Soft_NMS
-            # boxes, scores, labels = weighted_boxes_fusion(boxes_list, scores_list, labels_list, iou_thr=iou_thr) # WBF
-            boxes, scores, labels = weighted_boxes_fusion(
-                boxes_list, scores_list, labels_list, iou_thr=iou_thr, conf_type='box_and_model_avg')  # WBF with box_and_model_avg
-            # boxes, scores, labels = non_maximum_weighted(boxes_list, scores_list, labels_list, iou_thr=iou_thr) # NMW
+            # 앙상블 방법 선택을 위한 인자 파싱
+            parser = argparse.ArgumentParser()
+            parser.add_argument('--ensemble_method', type=str, default='nms',
+                                choices=['nms', 'soft_nms', 'wbf',
+                                         'wbf2', 'nmw'],
+                                help='앙상블 방법 선택')
+            args = parser.parse_args()
 
+            # 선택된 앙상블 방법에 따라 실행
+            if args.ensemble_method == 'nms':
+                boxes, scores, labels = nms(
+                    boxes_list, scores_list, labels_list, iou_thr=iou_thr)
+            elif args.ensemble_method == 'soft_nms':
+                boxes, scores, labels = soft_nms(
+                    boxes_list, scores_list, labels_list, iou_thr=iou_thr)
+            elif args.ensemble_method == 'wbf':
+                boxes, scores, labels = weighted_boxes_fusion(
+                    boxes_list, scores_list, labels_list, iou_thr=iou_thr)
+            elif args.ensemble_method == 'wbf_box_model_avg':
+                boxes, scores, labels = weighted_boxes_fusion(
+                    boxes_list, scores_list, labels_list, iou_thr=iou_thr, conf_type='box_and_model_avg')
+            elif args.ensemble_method == 'nmw':
+                boxes, scores, labels = non_maximum_weighted(
+                    boxes_list, scores_list, labels_list, iou_thr=iou_thr)
+            else:
+                raise ValueError(f"알 수 없는 앙상블 방법: {args.ensemble_method}")
+
+            result.append(
+                {'boxes': boxes.tolist(), 'scores': scores.tolist(), 'labels': labels.tolist()})
             for box, score, label in zip(boxes, scores, labels):
                 prediction_string += str(int(label)) + ' ' + str(score) + ' ' + str(box[0] * img_width) + ' ' + str(
                     box[1] * img_height) + ' ' + str(box[2] * img_width) + ' ' + str(box[3] * img_height) + ' '
 
         prediction_strings.append(prediction_string)
         file_names.append(image_id)
+
+    # 모든 이미지의 boxes 개수의 합 계산
+    total_boxes = sum(len(res['boxes']) for res in result)
+    print(f"모든 이미지의 boxes 개수 합계: {total_boxes}")
+
+    # scores 통계값 계산 및 출력
+    all_scores = [score for res in result for score in res['scores']]
+    avg_score = sum(all_scores) / len(all_scores)
+    min_score = min(all_scores)
+    max_score = max(all_scores)
+    median_score = sorted(all_scores)[len(all_scores) // 2]
+
+    print(f"점수 통계:")
+    print(f"  평균: {avg_score:.4f}")
+    print(f"  최소값: {min_score:.4f}")
+    print(f"  최대값: {max_score:.4f}")
+    print(f"  중앙값: {median_score:.4f}")
+
+    # 점수 분포를 그래프로 표현
+    plt.figure(figsize=(10, 6))
+    plt.hist(all_scores, bins=50, edgecolor='black')
+    plt.title('Score Distribution')
+    plt.xlabel('Score')
+    plt.ylabel('Frequency')
+
+    # 그래프 저장
+    plt.savefig('score_distribution.png')
+    print("점수 분포 그래프가 'score_distribution.png'로 저장되었습니다.")
+
+    # 그래프 표시 (선택사항)
+    # plt.show()
 
     submission = pd.DataFrame()
     submission['PredictionString'] = prediction_strings
