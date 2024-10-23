@@ -1,9 +1,15 @@
 import json
 import pandas as pd
 import numpy as np
+import argparse
 
-# Pseudo Label CSV 파일 경로 설정
-ensemble_csv_path = '/data/ephemeral/home/yj/level2-objectdetection-cv-14/mmdetection/nms.csv'
+parser = argparse.ArgumentParser(description='Pseudo label generation from ensemble results.')
+parser.add_argument('--csv_path', type=str, required=True, help='Path to the ensemble result CSV file.')
+
+args = parser.parse_args()
+
+# CSV 파일 경로 설정 (명령줄에서 받은 인자 사용)
+ensemble_csv_path = args.csv_path
 
 # 앙상블 모델 결과 불러오기
 ensemble_df = pd.read_csv(ensemble_csv_path)
