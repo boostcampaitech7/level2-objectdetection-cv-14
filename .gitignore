@@ -33,7 +33,10 @@ sample_submission/
 .env
 
 # wandb
-wandb
+wandb/
 
 # .out
-.out
+*.out
+
+# .sh
+.sh
