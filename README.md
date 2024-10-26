@@ -1,28 +1,3 @@
-# Level2-Object-Detection-CV-14
-
-# 😄 팀 소개
-
-<table align="center">
-    <tr align="center">
-        <td><img src="https://github.com/user-attachments/assets/3560856a-8cac-4079-8494-4f1bf13d0eb5" width="125"></td>
-        <td><img src="https://github.com/user-attachments/assets/3560856a-8cac-4079-8494-4f1bf13d0eb5" width="125"></td>
-        <td><img src="https://github.com/user-attachments/assets/3560856a-8cac-4079-8494-4f1bf13d0eb5" width="125"></td>
-        <td><img src="https://github.com/user-attachments/assets/3560856a-8cac-4079-8494-4f1bf13d0eb5" width="125"></td>
-        <td><img src="https://github.com/user-attachments/assets/fdce3bf1-4dd2-44c9-b4db-1599c4d3826d" width="125" height="125"></td>
-        <td><img src="https://github.com/user-attachments/assets/3560856a-8cac-4079-8494-4f1bf13d0eb5" width="125"></td>
-    </tr>
-    <tr align="center">
-        <td><a href="https://github.com/kimgeonsu" target="_blank">김건수</a></td>
-        <td><a href="https://github.com/202250274" target="_blank">박진영</a></td>
-        <td><a href="https://github.com/oweixx" target="_blank">방민혁</a></td>
-        <td><a href="https://github.com/lkl4502" target="_blank">오홍석</a></td>
-        <td><a href="https://github.com/Soy17" target="_blank">이소영</a></td>
-        <td><a href="https://github.com/yejin-s9" target="_blank">이예진</a></td>
-    </tr>
-</table>
-
-<br/>
-
 # 📋 Project Overview
 
 ![project_image](https://github.com/user-attachments/assets/a15ac710-0ed3-496b-9e86-00213727cde5)
@@ -58,6 +33,48 @@
   - **1024 x 1024**
 
 <br/>
+
+# 😄 Team Member
+
+<table align="center">
+    <tr align="center">
+        <td><img src="https://github.com/user-attachments/assets/3560856a-8cac-4079-8494-4f1bf13d0eb5" width="140"></td>
+        <td><img src="https://github.com/user-attachments/assets/3560856a-8cac-4079-8494-4f1bf13d0eb5" width="140"></td>
+        <td><img src="https://github.com/user-attachments/assets/3560856a-8cac-4079-8494-4f1bf13d0eb5" width="140"></td>
+        <td><img src="https://github.com/user-attachments/assets/3560856a-8cac-4079-8494-4f1bf13d0eb5" width="140"></td>
+        <td><img src="https://github.com/user-attachments/assets/fdce3bf1-4dd2-44c9-b4db-1599c4d3826d" width="140" height="140"></td>
+        <td><img src="https://github.com/user-attachments/assets/3560856a-8cac-4079-8494-4f1bf13d0eb5" width="140"></td>
+    </tr>
+    <tr align="center">
+        <td><a href="https://github.com/kimgeonsu" target="_blank">김건수</a></td>
+        <td><a href="https://github.com/202250274" target="_blank">박진영</a></td>
+        <td><a href="https://github.com/oweixx" target="_blank">방민혁</a></td>
+        <td><a href="https://github.com/lkl4502" target="_blank">오홍석</a></td>
+        <td><a href="https://github.com/Soy17" target="_blank">이소영</a></td>
+        <td><a href="https://github.com/yejin-s9" target="_blank">이예진</a></td>
+    </tr>
+    <tr align="center">
+        <td>T7103</td>
+        <td>T7156</td>
+        <td>T7158</td>
+        <td>T7208</td>
+        <td>T7222</td>
+        <td>T7225</td>
+    </tr>
+</table>
+
+<br/>
+
+# 🗂️ Role
+
+| Member |                                            Role                                            |
+| :----: | :----------------------------------------------------------------------------------------: |
+| 김건수 |                            PM 역할 수행, YOLO Develop, Ensemble                            |
+| 박진영 |                         ConvNeXT Develop, Ensemble, Util 기능 구현                         |
+| 방민혁 |                       EDA, Data Relabel, ATSS Swin Develop, Ensemble                       |
+| 오홍석 | PM 역할 수행, DETR 기반 Model Develop, <br> Util 기능 구현, Project 구조 및 서버 환경 구성 |
+| 이소영 |                        VFNet, RTMDet Model Develop, Util 기능 구현                         |
+| 이예진 |                          EDA, Data Relabel, Pseudo Labeling, TTA                           |
 
 ## Commit Convention
 
