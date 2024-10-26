@@ -3,6 +3,9 @@ import pandas as pd
 import numpy as np
 from collections import defaultdict
 import random
+import argparse 
+# 2개의 모델 csv을 가져와 이를 앙상블하여 pseudo label을 생성하는 코드
+
 
 # IoU 계산 함수 정의
 def calculate_iou(box1, box2):
@@ -26,146 +29,102 @@ def calculate_iou(box1, box2):
     iou = inter_area / (box1_area + box2_area - inter_area)
     return iou
 
-# Pseudo Label CSV 파일 경로 설정
-model_a_path = '/data/ephemeral/home/yj/level2-objectdetection-cv-14/mmdetection/swin_inference.csv'
-model_b_path = '/data/ephemeral/home/yj/level2-objectdetection-cv-14/mmdetection/convnext.csv'
+# 데이터 로드 및 처리 함수
+def process_pseudo_labels(model_a_path, model_b_path, train_json_path, output_path):
+    # 모델 결과 불러오기
+    model_a = pd.read_csv(model_a_path)
+    model_b = pd.read_csv(model_b_path)
+    all_predictions = [model_a, model_b]
 
-# 모델 결과 불러오기
-model_a = pd.read_csv(model_a_path)
-model_b = pd.read_csv(model_b_path)
+    bbox_dict = defaultdict(list)
+    for predictions in all_predictions:
+        for _, row in predictions.iterrows():
+            image_id = row['image_id']
+            if pd.isna(row['PredictionString']):
+                continue
+            bboxes = row['PredictionString'].split()
+            for i in range(0, len(bboxes), 6):
+                class_id = int(bboxes[i])
+                confidence = float(bboxes[i + 1])
+                x_min = float(bboxes[i + 2])
+                y_min = float(bboxes[i + 3])
+                x_max = float(bboxes[i + 4])
+                y_max = float(bboxes[i + 5])
+                bbox_dict[image_id].append([class_id, confidence, x_min, y_min, x_max, y_max])
 
-# 모든 모델의 예측을 리스트로 저장
-all_predictions = [model_a, model_b]
+    with open(train_json_path, 'r') as f:
+        train_data = json.load(f)
 
-# 이미지별 바운딩 박스를 저장할 딕셔너리
-bbox_dict = defaultdict(list)
+    last_image_id = max([img['id'] for img in train_data['images']]) if train_data['images'] else -1
+    last_annotation_id = max([ann['id'] for ann in train_data['annotations']]) if train_data['annotations'] else -1
+    next_annotation_id = last_annotation_id + 1
 
-# 각 모델의 예측을 bbox_dict에 저장
-for predictions in all_predictions:
-    for _, row in predictions.iterrows():
-        image_id = row['image_id']
-        if pd.isna(row['PredictionString']):
-            continue
-        bboxes = row['PredictionString'].split()
-        for i in range(0, len(bboxes), 6):
-            class_id = int(bboxes[i])
-            confidence = float(bboxes[i + 1])
-            x_min = float(bboxes[i + 2])
-            y_min = float(bboxes[i + 3])
-            x_max = float(bboxes[i + 4])
-            y_max = float(bboxes[i + 5])
-            bbox_dict[image_id].append([class_id, confidence, x_min, y_min, x_max, y_max])
+    pseudo_annotations = []
+    for image_id, bboxes in bbox_dict.items():
+        while bboxes:
+            base_box = bboxes.pop(0)
+            class_id, base_conf, x_min, y_min, x_max, y_max = base_box
+            matched = [base_box]
+            for other_bbox in bboxes[:]:
+                if other_bbox[0] == class_id:
+                    iou = calculate_iou(base_box[2:], other_bbox[2:])
+                    if iou > 0.5:
+                        matched.append(other_bbox)
+                        bboxes.remove(other_bbox)
 
-# 기존 train.json을 불러와서 ID 업데이트
-train_json_path = '/data/ephemeral/home/dataset/train.json'
-with open(train_json_path, 'r') as f:
-    train_data = json.load(f)
+            total_conf = sum([box[1] for box in matched])
+            avg_conf = total_conf / len(matched)
+            
+            if avg_conf >= 0.6:
+                pseudo_annotations.append({
+                    "image_id": image_id,
+                    "category_id": class_id,
+                    "area": round((x_max - x_min) * (y_max - y_min), 2),
+                    "bbox": [round(x_min, 1), round(y_min, 1), round(x_max - x_min, 1), round(y_max - y_min, 1)],
+                    "iscrowd": 0,
+                    "id": next_annotation_id,
+                    "score": avg_conf,
+                    "is_pseudo": True
+                })
+                next_annotation_id += 1
 
-# 기존 train 데이터의 마지막 ID 확인
-last_image_id = max([img['id'] for img in train_data['images']]) if train_data['images'] else -1
-last_annotation_id = max([ann['id'] for ann in train_data['annotations']]) if train_data['annotations'] else -1
+    data = {
+        "images": train_data['images'],
+        "annotations": sorted(pseudo_annotations, key=lambda x: x['id']),
+        "categories": train_data["categories"]
+    }
 
-# Pseudo Label의 ID를 기존 데이터의 마지막 ID 뒤에서 시작하도록 설정
-next_image_id = last_image_id + 1
-next_annotation_id = last_annotation_id + 1
+    with open(output_path, 'w') as f:
+        json.dump(data, f, indent=4)
 
-# IoU 기반 매칭 및 Weighted Average 계산
-pseudo_annotations = []
+    total_images = len(train_data['images'])
+    total_annotations = len(train_data['annotations'])
+    combined_total_images = len(data['images'])
+    average_bboxes = total_annotations / total_images if total_images > 0 else 0
+    average_confidence = np.mean([ann['score'] for ann in pseudo_annotations]) if pseudo_annotations else 0
+    average_area = np.mean([ann['area'] for ann in pseudo_annotations]) if pseudo_annotations else 0
 
-for image_id, bboxes in bbox_dict.items():
-    matched_boxes = []
-    while bboxes:
-        base_box = bboxes.pop(0)
-        class_id, base_conf, x_min, y_min, x_max, y_max = base_box
-        matched = [base_box]
+    print(f'Pseudo Label JSON 파일이 {output_path}에 저장되었습니다.')
+    print("===== 체크 정보 =====")
+    print(f"총 이미지 수: {total_images}")
+    print(f"총 어노테이션 수: {total_annotations}")
+    print(f"평균 바운딩 박스 수: {average_bboxes:.2f}")
+    print(f"최종 어노테이션 신뢰도 평균: {average_confidence:.2f}")
+    print(f"최종 어노테이션 면적 평균: {average_area:.2f}")
 
-        # 나머지 바운딩 박스와 IoU 비교
-        for other_bbox in bboxes[:]:
-            if other_bbox[0] == class_id:  # 동일한 클래스에 대해서만 매칭
-                iou = calculate_iou(base_box[2:], other_bbox[2:])
-                if iou > 0.5:  # IoU threshold
-                    matched.append(other_bbox)
-                    bboxes.remove(other_bbox)
+    annotation_ids = [ann['id'] for ann in pseudo_annotations]
+    if len(annotation_ids) == len(set(annotation_ids)):
+        print("모든 어노테이션 ID가 고유합니다.")
+    else:
+        print("중복된 어노테이션 ID가 존재합니다.")
 
-        # 첫 번째 바운딩 박스의 좌표 사용, 가중 평균 신뢰도 계산 유지
-        total_conf = sum([box[1] for box in matched])
-        avg_conf = total_conf / len(matched)
-        
-        if avg_conf >= 0.6:  # 신뢰도 기준 필터링
-            pseudo_annotations.append({
-                "image_id": image_id,  # 기존 이미지 ID 사용
-                "category_id": class_id,
-                "area": round((x_max - x_min) * (y_max - y_min), 2),
-                "bbox": [round(x_min, 1), round(y_min, 1), round(x_max - x_min, 1), round(y_max - y_min, 1)],
-                "iscrowd": 0,
-                "id": next_annotation_id,
-                "score": avg_conf,
-                "is_pseudo": True
-            })
-            next_annotation_id += 1
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Process pseudo labels and generate JSON output.")
+    parser.add_argument("model_a_path", type=str, help="Path to model A CSV file")
+    parser.add_argument("model_b_path", type=str, help="Path to model B CSV file")
+    parser.add_argument("train_json_path", type=str, help="Path to the train JSON file")
+    parser.add_argument("output_path", type=str, help="Path to save the output JSON file")
 
-# 결과 JSON 파일로 저장
-data = {
-    "images": train_data['images'],
-    "annotations": sorted(pseudo_annotations, key=lambda x: x['id']),  # ID 순서 정렬
-    "categories": [
-        {"id": 0, "name": "General trash", "supercategory": "General trash"},
-        {"id": 1, "name": "Paper", "supercategory": "Paper"},
-        {"id": 2, "name": "Paper pack", "supercategory": "Paper pack"},
-        {"id": 3, "name": "Metal", "supercategory": "Metal"},
-        {"id": 4, "name": "Glass", "supercategory": "Glass"},
-        {"id": 5, "name": "Plastic", "supercategory": "Plastic"},
-        {"id": 6, "name": "Styrofoam", "supercategory": "Styrofoam"},
-        {"id": 7, "name": "Plastic bag", "supercategory": "Plastic bag"},
-        {"id": 8, "name": "Battery", "supercategory": "Battery"},
-        {"id": 9, "name": "Clothing", "supercategory": "Clothing"}
-    ]
-}
+    args = parser.parse_args()
 
-output_path = '/data/ephemeral/home/dataset/pseudo0.5_labels.json'
-with open(output_path, 'w') as f:
-    json.dump(data, f, indent=4)
-
-# 출력 포맷
-total_images = len(train_data['images'])
-total_annotations = len(train_data['annotations'])
-combined_total_images = len(data['images'])
-average_bboxes = total_annotations / total_images if total_images > 0 else 0
-average_confidence = np.mean([ann['score'] for ann in pseudo_annotations]) if pseudo_annotations else 0
-average_area = np.mean([ann['area'] for ann in pseudo_annotations]) if pseudo_annotations else 0
-
-print(f'Pseudo Label JSON 파일이 {output_path}에 저장되었습니다.')
-print("===== 체크 정보 =====")
-print(f"총 이미지 수: {total_images}")
-print(f"총 어노테이션 수: {total_annotations}")
-print(f"평균 바운딩 박스 수: {average_bboxes:.2f}")
-print(f"최종 어노테이션 신뢰도 평균: {average_confidence:.2f}")
-print(f"최종 어노테이션 면적 평균: {average_area:.2f}")
-
-# 어노테이션 ID의 고유성 확인
-annotation_ids = [ann['id'] for ann in pseudo_annotations]
-if len(annotation_ids) == len(set(annotation_ids)):
-    print("모든 어노테이션 ID가 고유합니다.")
-else:
-    print("중복된 어노테이션 ID가 존재합니다.")
-    
-# # train.json과 pseudo_labels.json 병합하여 combine_pseudo.json 생성
-# combined_annotations = train_data['annotations'] + pseudo_annotations
-# random.shuffle(combined_annotations)  # 어노테이션 셔플
-
-# combined_data = {
-#     "images": train_data['images'],
-#     "annotations": combined_annotations,
-#     "categories": train_data['categories']
-# }
-
-# combined_output_path = '/data/ephemeral/home/dataset/combine_pseudo.json'
-# with open(combined_output_path, 'w') as f:
-#     json.dump(combined_data, f, indent=4)
-
-# print(f'Combined JSON 파일이 {combined_output_path}에 저장되었습니다.')
-
-# # Combined JSON 파일의 이미지 및 어노테이션 개수 출력
-# print("===== Combined JSON 체크 정보 =====")
-# print(f"총 이미지 수: {len(combined_data['images'])}")
-# print(f"총 어노테이션 수: {len(combined_data['annotations'])}")
+    process_pseudo_labels(args.model_a_path, args.model_b_path, args.train_json_path, args.output_path)
