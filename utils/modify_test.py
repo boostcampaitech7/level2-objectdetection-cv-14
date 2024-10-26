@@ -1,5 +1,6 @@
 import json
-
+import argparse
+#test annotation의 id와 train annotation의 id가 겹치는 것을 방지하기 위해 10000을 더해주기 
 
 # pseudo_labels.json 파일의 annotations 부분에서 image_id 수정 후 저장하는 코드
 def modify_pseudo_labels(input_file, output_file):
@@ -20,7 +21,13 @@ def modify_pseudo_labels(input_file, output_file):
 
 
 
-# pseudo_labels.json 파일 수정 호출
-pseudo_input_file = '/data/ephemeral/home/dataset/csv_pseudo.json'
-pseudo_output_file = '/data/ephemeral/home/dataset/csv_pseudo_modified.json'
-modify_pseudo_labels(pseudo_input_file, pseudo_output_file)
+if __name__ == "__main__":
+    # Argument parser 설정
+    parser = argparse.ArgumentParser(description="Modify image_id in pseudo_labels JSON file.")
+    parser.add_argument("input_file", type=str, help="Path to the input JSON file")
+    parser.add_argument("output_file", type=str, help="Path to save the modified JSON file")
+
+    args = parser.parse_args()
+
+    # 파일 경로를 인자로 받아서 함수 호출
+    modify_pseudo_labels(args.input_file, args.output_file)

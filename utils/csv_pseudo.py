@@ -1,3 +1,4 @@
+# 앙상블된 csv를 가져와 pseudo label을 생성하는 py 
 import json
 import pandas as pd
 import numpy as np
