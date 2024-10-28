@@ -81,16 +81,52 @@
 # 🧳 Project Progress Summary
 
 아래의 항목들로 프로젝트를 진행한 과정을 설명한다.
+
 <br>
 
 ## Project Structure
+
+```
+📦 level2-objectdetection-cv-14
+┣ 📂 EDA_data
+┃ ┣ 📜 eda_(2).ipynb
+┃ ┣ 📜 eda_dataset.ipynb
+┃ ┣ 📜 eda_traindata.ipynb
+┣ 📂 mmdetection
+┃ ┣ 📂 configs
+┃ ┣ 📂 custom_configs
+┃ ┣ 📂 mmdet
+┃ ┗ 📜 train.py
+┃ ┗ 📜 inference.py
+┣ 📂 mmdetectionV3
+┃ ┣ 📂 configs
+┃ ┣ 📂 custom_configs
+┃ ┣ 📂 mmdet
+┃ ┗ 📜 train.py
+┃ ┗ 📜 inference.py
+┣ 📂 yolo
+┣ 📂 utils
+┃ ┣ 📜 csv_pseudo.py
+┃ ┣ 📜 Ensemble.py
+┃ ┣ 📜 Gsheet.py
+┃ ┣ 📜 modify_test.py
+┃ ┣ 📜 pseudo_data_split.py
+┃ ┣ 📜 pseudo_ensemble_labeling.py
+┃ ┣ 📜 pseudo_labeling.py
+┃ ┣ 📜 pseudo_labes_count.py
+┃ ┣ 📜 split_val_train_log.py
+┃ ┣ 📜 Stratified_Group_K_Fold.py
+┣ 📃 requirements.txt
+┗ 📃 README.md
+```
 
 <br>
 
 ## 🕵🏻 EDA
 
-진행한 EDA 방법론으로는 Class Imbalance, Object Size 등등 있다.  
-아래는 그 중 하나에 대한 예시이다. Wrap-UP Report 참고
+Class Imbalance, Object Size 등 여러 항목에 대해서 진행하였다.  
+아래는 그 중 하나에 대한 예시이다.  
+[Wrap-UP Report 참고](#-object-detection-wrap-up-report)
 
 > ### BBox Area Distribution
 
@@ -104,7 +140,8 @@
 ## 🧪 Experiments
 
 진행한 실험으로는 Data Relabeling, Pseudo Labeling 등이 있다.  
-아래는 그 중 하나에 대한 예시이다. Wrap-UP Report 참고
+아래는 그 중 하나에 대한 예시이다.  
+[Wrap-UP Report 참고](#-object-detection-wrap-up-report)
 
 > ### Data Relabeling
 
@@ -119,7 +156,8 @@
 ## 📚 Model Selection and Develop
 
 사용한 모델에는 ATSS Swin, ConvNeXT, DINO 등등 여러가지가 있다.  
-아래는 그 중 하나에 대한 예시이다. Wrap-UP Report 참고
+아래는 그 중 하나에 대한 예시이다.  
+[Wrap-UP Report 참고](#-object-detection-wrap-up-report)
 
 > ### ATSS Swin
 
@@ -144,7 +182,7 @@
   - 각기 다른 Fold에 학습한 같은 구조의 모델간 앙상블 (NMS, WBF)
 - 다른 모델간 앙상블
   - Confusion Matrix와 같은 평가 지표를 활용하여 모델간 특성을 파악
-  - 위를 바탕으로 최적의 모델 조합 선택
+  - 파악한 모델간 특성을 바탕으로 최적의 모델 조합 선택
 
 > ### Stratified Group K Fold Cross Validation Ensemble
 
@@ -166,7 +204,21 @@
 
 ## Utils
 
+프로젝트를 진행하면서 편의성을 위한 기능 또는 실험을 위한 추가 기능들을 구현하였다.
+
+- Stratified Group K Fold Cross Validation
+- Google Sheet을 이용한 실험 인자 기록 자동화
+- Pseudo Labeling 관련 기능
+- train / inference log 분할 기능 등등
+
+아래는 그 중 하나에 대한 예시이다.  
+[Notion 참고](#-object-detection-notion)
+
 > ### Stratified Group K Fold Cross Validation
+>
+> - 학습한 모델의 성능 평가를 위해서 Validation Set을 분리해낸다.
+> - 기존 데이터 셋의 클래스 분포를 유지한다. (아래 표 참고)
+> - 같은 이미지에서 나온 annotation이 Train 또는 Validation에만 포함되도록 구분한다.
 
 <table align="center">
   <thead align="center">
@@ -331,9 +383,25 @@
   </tbody>
 </table>
 
-## 📈 Project Result
+<br>
+
+## 🏆 Project Result
+
+**_<p align=center>Public Leader Board</p>_**
+<img src="https://github.com/user-attachments/assets/659d0f34-f546-4a6f-9939-d254bcb98a15" alt="Public Leader Board" >
+
+<br>
+
+**_<p align=center>Private Leader Board</p>_**
+<img src="https://github.com/user-attachments/assets/d870f505-96db-4dee-bd16-ab9e03f7ba66" alt="Private Leader Board" >
+
+<br>
 
 ## 🔗 Reference
+
+### [📎 Object Detection Wrap-UP Report](https://drive.google.com/file/d/1MvqASckPwXHHoGqNLIGiQHgjQBBYPDgK/view?usp=sharing)
+
+### [📎 Object Detection Notion](https://violet-join-36b.notion.site/Recycle-Object-Detection-f114581f9bae41faba6cd302474f02d5?pvs=4)
 
 <br>
 
