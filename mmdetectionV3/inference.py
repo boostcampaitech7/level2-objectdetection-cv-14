@@ -57,6 +57,13 @@ def parse_args():
     # will pass the `--local-rank` parameter to `tools/train.py` instead
     # of `--local_rank`.
     parser.add_argument('--local_rank', '--local-rank', type=int, default=0)
+
+    # thr 설정
+    parser.add_argument('--thr', type=float, default=0.0)
+
+    # submission 파일 이름 설정
+    parser.add_argument('--csv-name', default="submission.csv")
+
     args = parser.parse_args()
     if 'LOCAL_RANK' not in os.environ:
         os.environ['LOCAL_RANK'] = str(args.local_rank)
@@ -91,7 +98,6 @@ def main():
         cfg = trigger_visualization_hook(cfg, args)
 
     if args.tta:
-
         if 'tta_model' not in cfg:
             warnings.warn('Cannot find ``tta_model`` in config, '
                           'we will set it as default.')
@@ -127,8 +133,12 @@ def main():
 
     # 제출 형식 맞추기
     cfg.custom_hooks = [
-        dict(type="SubmissionHook", test_out_dir=cfg.work_dir),
+        dict(type="SubmissionHook", test_out_dir=cfg.work_dir, output_name=args.csv_name, thr=args.thr),
     ]
+
+    # inference시에는 wandb 제거
+    cfg.vis_backends = [visBackend for visBackend in cfg.vis_backends if not visBackend['type'] == 'WandbVisBackend']
+    cfg.visualizer = dict(type='DetLocalVisualizer', vis_backends=cfg.vis_backends, name='visualizer')
 
     # build the runner from config
     if 'runner_type' not in cfg:
